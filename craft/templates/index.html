@@ -1,0 +1,164 @@
+{#
+ # Homepage template
+ # ---------------
+ #
+ # When this template gets loaded, it will be because someone has accessed
+ # http://yoursite.com/ (without any URI). Craft checks to see if you have
+ # a Single section set to be the Homepage (as you do, by default), and
+ # loads the section’s Template (this file). A special ‘entry’ variable
+ # will already be set for you, assigned to the Homepage entry.
+ #
+ # It's worth noting that even if you didn't have a Homepage Single section,
+ # as long as this template remains at craft/templates/index.html, it
+ # would still be the one to get loaded when accessing http://yoursite.com/,
+ # albeit without an ‘entry’ variable already set for you.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+{% extends '_layout' %}
+
+{% block content %}
+<div class="container">
+
+	<div class='homepage-hero'>
+		<div class="cta">	
+			<a class="button" href="#" title="">Optional CTA</a>
+		</div>
+	</div>
+	
+	<div class='row index_intro'>
+		<h1 class='seven columns'>We improve children's health through Healthy Homes.<span>&nbsp;&nbsp;&nbsp;<a class='learnmore' href='#'>Learn&nbsp;More&nbsp;&#187;</a></span></h1>
+	</div>
+
+	<div class='row'>
+		<p class="six columns">What's New:</p>
+		<p class="follow">FOLLOW US!&nbsp;&nbsp;
+	        <a href="#" target="_blank"><i class='social-index fa fa-facebook'></i></a>&nbsp;&nbsp;
+	        <a href="#" target="_blank"><i class='social-index fa fa-twitter'></i></a>
+		</p>
+
+	</div>
+		
+	{% for entry in craft.entries.section('newsandevents').limit(2).find() %}
+
+	<div class="row">
+		<article class="post_preview has-image seven columns">
+			<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
+			<div class="preview_content">
+				<a href="{{ entry.url }}" title="{{ entry.title }}"><img src="img/image.png"></a>
+				<ul class="share_post">
+					<li>Share Now&nbsp;</li>
+					<li><a href="#" target="_blank"><i class='share fa fa-facebook fa-lg'></i></a></li>
+					<li><a href="#" target="_blank"><i class='share fa fa-twitter fa-lg'></i></a></li>
+				</ul>
+				<p class="readmore_link">
+					<a href="{{ entry.url }}" title="{{ entry.title }}">READ MORE &#187;</a>
+				</p>
+			</div>
+		</article>
+
+	</div>
+
+
+
+
+
+<!-- 
+
+	<div class="row">
+		<article class="post_preview seven columns">
+			<div class="post_preview-content ten columns">
+				<a href='{{ entry.url }}'><h2>{{ entry.title }}</h2></a>
+				<a href='{{ entry.url }}' title="">Read More &#187;</button></a>
+				<ul class="share_post">
+				  <li>Share Now</li>
+				  <li><a href="" target="_blank">F</a></li>
+				  <li><a href="" target="_blank">T</a></li>
+				</ul>
+				{% set options = {
+				      'title': 'foo',
+				      'url': 'http://google.com',
+				      'content': {
+				        'facebook': {
+				          'class': 'fa fa-facebook fa-lg',
+				          'size': {
+				          'width': '40px',
+				          'height': '40px'
+				          }
+				        },
+
+				        'twitter': {
+				          'item-type': 'text',
+				          'value': 'Twitter',
+				          'class': 'tw fa-twitter fa-lg',
+				          'id': 'twitter'
+				        },
+				      }
+				    }
+				  %}
+				{{ jSocialButtons('facebook|twitter', options) }}
+			</div>
+			
+			<img class="two columns" src='img/image.png'>
+
+		</article>
+	</div> -->
+
+	{% endfor %}
+
+	<div class='row'>
+		<a class="button" href="newsandevents" title="More News & Events">More News & Events</a>
+	</div>
+		
+	<div class="row what animate">
+		<div class="action-label">
+			<img class="whatword" src="img/what.png">
+		</div>
+		<div class="nine columns offset-by-three action">
+			<div class="caption">
+				<h3>A Healthy Home prevents many serious children's health problems.</h3>
+				<h4><a href="#">Learn More</a></h4>
+				<img class="whatkid" src="img/firstkid.png">
+			</div>
+		</div>
+	</div>
+
+	<div class="row animate why">
+		<div class="nine columns action">
+			<div class="caption-what">
+				<h3>A Healthy Home increases quality of life for children and parents.</h3>
+				<h4><a href="#">Learn More</a></h4>
+				<img class="whykid" src="img/secondkid.png">        			        
+			</div>
+		</div>
+		<div class="action-label why">
+			<img class="whyword" src="img/why.png">
+		</div>
+	</div>
+
+	<div class="row animate">
+		<div class="action-label">
+			<img src="img/how.png">
+		</div>
+		<div class="nine columns offset-by-three action how">
+			<div class="caption">
+				<h3>We help families make connections between health and housing issues.</h3>
+				<h4><a href="#">Learn More</a></h4>
+				<img src="img/thirdkid.png">   			        
+			</div>
+		</div>
+	</div>
+
+	<div class='row donate'>
+			<a href='http://www.omahahealthykids.org/get-involved/donate/'><img class='four columns offset-by-one' src="img/donate.png">
+			<h3 class='four columns'>Support Our Work</h3></a>
+		</div>
+	</div>
+
+</div>
+		
+<img class="u-max-full-width" src='img/groupimage.png'>
+
+{% endblock %}

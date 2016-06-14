@@ -1,0 +1,63 @@
+{#
+ # Resources index template
+ # -------------------
+ #
+ # This template is loaded whenever http://example.com/resources is
+ # requested, because it is located at resources/index.html in your
+ # craft/templates/ folder.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+{% extends "_layout" %}
+{% set title = "Resources" %}
+
+{% block content %}
+	<h1 class="bp-title">{{ title }}</h1>
+
+	<div class='container categories'>
+		<ul>
+			<li><a class="button button-square" href='{{ url('resources') }}' title='All Resources'>ALL</a></li>
+
+	    {% nav category in craft.categories.group('resources') %}        
+        <li>
+            <a class="button button-square" href="{{ category.url }}">{{ category.title }}</a>
+            {% ifchildren %}
+                <ul>
+                    {% children %}
+                </ul>
+            {% endifchildren %}
+        </li>
+	    {% endnav %}
+		</ul>
+	</div>
+
+
+	{% for entry in craft.entries.section('resources').find() %}
+	<div class='container'>
+		<article class="post_preview has-image">
+			<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
+			<div class="preview_content">
+				<a href="{{ entry.url }}" title="{{ entry.title }}"><img src="{{ siteUrl }}img/image.png"></a>
+				<p>{{ entry.summary }}</p>        
+				<p class="readmore_link">
+					<a href="{{ entry.url }}" title="{{ entry.title }}">READ MORE &#187;</a>
+				</p>
+				<ul class="share_post">
+					<li>Share Now&nbsp;</li>
+					<li><a href="#" target="_blank"><i class='fa fa-facebook fa-lg'></i></a></li>
+					<li><a href="#" target="_blank"><i class='fa fa-twitter fa-lg'></i></a></li>
+				</ul>
+			</div>
+		</article>
+	</div>
+	{% endfor %}
+	
+
+	<div class='container'>
+	{% include "_includes/pagination" %}
+	</div>
+
+
+{% endblock %}

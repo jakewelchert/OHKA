@@ -1,0 +1,74 @@
+.post-title {
+  position: relative;
+  background-image: url('');
+  padding: 350px 0 40px 0;
+  margin-bottom: 90px;
+}
+
+.post-date {
+  font-family: "Source Serif Pro";
+  text-transform: uppercase;
+  color: #508c9e;
+  margin-top: 30px;
+}
+
+.post-category, .post-author p {
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.post-author img {
+  display: inline-block;
+  border-radius: 100px;
+  width: 120px;
+  height: 120px;
+}
+
+.post-category, .post-author {
+  padding-bottom: 20px;
+}
+
+.post-author {
+  padding-bottom: 0;
+}
+
+.post-title-thumbnail {
+  position: absolute;
+  display: inline-block;
+  border-radius: 100px;
+  width: 180px;
+  height: 180px;
+  top: 40px;
+  right: 40px;
+}
+
+.post-title h1 {
+	font-size: 68px;
+	line-height: 1.1;
+	padding-bottom: 25px;
+ 	color: #fff;
+	font-family: "Source Serif Pro";
+}
+
+.post-title-social {
+  display: inline-block;
+  padding-top: 15px;
+  vertical-align: top;
+  list-style: none;
+}
+
+.post-title-social li {
+  float: left;
+  margin-right: 10px;
+}
+
+.post-title-social .circle-icon {
+  background-color: #fff;
+  margin-top: -10px;
+}
+
+.post-end {
+  border-top: 2px solid #153454;
+  margin-top: 100px;
+  padding-top: 30px;
+}

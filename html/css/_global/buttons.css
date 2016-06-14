@@ -1,0 +1,140 @@
+.button, button {
+  -moz-transition: all 0.3s ease-in,all 0.35s ease-out;
+  -o-transition: all 0.3s ease-in,all 0.35s ease-out;
+  -webkit-transition: all 0.3s ease-in,all 0.35s ease-out;
+  transition: all 0.3s ease-in,all 0.35s ease-out;
+  border: none;
+  background: #6cb358;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: .5px;
+  cursor: pointer;
+  display: inline-block;
+  z-index: 5000000;
+  line-height: 50px;
+  padding: 0px 40px 3px;
+  border-radius: 60px;
+}
+
+.button-square {
+  border-radius: 0px;
+}
+
+.button:hover, button:hover {
+  background: #558b46;
+  color: #fff;
+}
+
+.button:active, button:active {
+  background: grey;
+}
+
+button.btm-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: block;
+}
+
+.super-nav button {
+  line-height: 30px;
+  padding: 0 30px;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 12px;
+  text-transform: none;
+}
+
+.circle-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  vertical-align: middle;
+  padding: 15px;
+}
+
+.post-title-social .fa-envelope-o       {}
+.post-title-social .fa-envelope-o:hover { color: #fff; background-color: #fb9642; }
+
+.post-title-social .fa-facebook         { color: #0071bc; }
+.post-title-social .fa-facebook:hover   { color: #fff; background-color: #0071bc; }
+
+.post-title-social .fa-twitter          { color: #12c1fd; }
+.post-title-social .fa-twitter:hover    { color: #fff; background-color: #12c1fd; }
+
+
+.share-page {
+  width: 100px;
+  height: 30px;
+  border-radius: 100px;
+  text-align: center;
+  line-height: 30px;
+  vertical-align: middle;
+  padding: 20px 40px;
+  margin-right: 25px;
+  margin-bottom: 90px;
+}
+
+.share-page.fa-facebook         { color: #fff; background-color: #0071bc; }
+.share-page.fa-facebook:hover   {}
+
+.share-page.fa-twitter          { color: #fff; background-color: #12c1fd; }
+.share-page.fa-twitter:hover    {}
+
+
+.social {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  vertical-align: middle;
+  padding: 15px;
+}
+
+.social.fa-facebook         { color: #fff; background-color: #0071bc; }
+.social.fa-facebook:hover   {}
+
+.social.fa-twitter          { color: #fff; background-color: #12c1fd; }
+.social.fa-twitter:hover    {}
+
+
+.social-index {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 28px;
+  vertical-align: middle;
+  padding: 12px;
+}
+
+.social-index.fa-facebook         { color: #fff; background-color: #0071bc; }
+.social-index.fa-facebook:hover   {}
+
+.social-index.fa-twitter          { color: #fff; background-color: #12c1fd; }
+.social-index.fa-twitter:hover    {}
+
+
+.share {
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 24px;
+  vertical-align: middle;
+  padding: 5px;
+  margin-left: 10px;
+  margin-top: -8px;
+}
+
+.share.fa-facebook         { color: #0071bc; background-color: #fff; }
+.share.fa-facebook:hover   {}
+
+.share.fa-twitter          { color: #12c1fd; background-color: #fff; }
+.share.fa-twitter:hover    {}

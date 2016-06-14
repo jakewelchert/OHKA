@@ -1,0 +1,16 @@
+.categories {
+  text-align: center;
+  padding: 55px 0;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 40px;
+}
+
+.categories ul {
+	margin: 0;
+	padding: 0;
+}
+
+.categories ul li {
+	list-style: none;
+	display: inline-block;
+}

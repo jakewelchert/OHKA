@@ -1,0 +1,156 @@
+.follow {
+  text-align: right;
+}
+
+.learnmore {
+  font-size: 16px;
+  color: #68b54d;
+  letter-spacing: .2px;
+}
+
+
+.index_intro {
+  padding: 35px 0 60px;
+}
+
+  @media screen and (max-width: 1023px) {
+  .index_intro .seven {
+    width: 100%;
+  }
+  }
+
+.post_preview {
+  position: relative;
+  background-color: #f4ece3;
+  padding: 40px 40px 25px 40px;
+  margin-bottom: 20px;
+  min-height: 215px;
+}
+
+.post_preview h2 {
+  font-size: 4rem;
+  margin-bottom: 25px;
+}
+
+.post_preview h2 a { color: #568d9b; }
+.post_preview h2 a:hover { color: #406670; }
+
+
+.post_preview img {
+  border-radius: 100px;
+  width: 140px;
+  height: 140px;
+  display: inline-block;
+}
+
+.readmore_link {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  font-weight: bold;
+  vertical-align: top;
+  font-size: 14px;
+  margin-left: 180px;
+}
+
+.share_post {
+  position: absolute;
+  display: inline-block;
+  /*margin-left: 24px;*/
+  padding-top: 1px;
+  vertical-align: top;
+  text-align: center;
+  list-style: none;
+  font-size: 14px;
+}
+
+.share_post li {
+  float: left;
+}
+
+.has-image p, .has-image h2 {
+  padding-right: 190px;
+}
+
+.post_preview p {
+  padding: 0;
+}
+
+.post_preview img {
+  position: absolute;
+  left: auto;
+  top: 40px;
+  right: 40px;
+  max-width: 220px;
+}
+
+.action {
+  position: relative;
+  background-color: #f4f3f3;
+  min-height: 300px;
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+.action-label {
+  position: absolute;
+  z-index: 1;
+  margin-top: 2.5%;
+}
+
+.caption {
+  padding: 100px 150px;
+}
+
+.caption-what {
+  padding: 100px 150px 100px 350px;
+}
+.what {
+  margin-top: 150px;
+}
+
+.what .whatkid {
+  position: absolute;
+  width: 227px;
+  right: 90px;
+  top: -436px;
+}
+
+.what .whatword {
+  width: 450px;
+  right: 0px;
+  top: -100px;
+}
+
+.why {
+  right: 0;
+  min-height: 346px;
+  margin: 75px 0;
+}
+
+.why .whykid {
+  position: absolute;
+  width: 220px;
+  left: 40px;
+  top: -145px;
+}
+
+.whyword {
+  width: 379px;
+  left: 0px;
+  margin-top: 0;
+}
+
+.how {
+}
+
+.how img {
+  position: absolute;
+  width: 238px;
+  right: 100px;
+  top: 195px;
+}
+
+.donate {
+  margin: 150px 0;
+}

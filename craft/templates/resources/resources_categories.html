@@ -1,0 +1,73 @@
+{#
+ # What's A Healthy Home template
+ # ---------------
+ #
+ # When this template gets loaded, it will be because someone has accessed
+ # http://yoursite.com/ (without any URI). Craft checks to see if you have
+ # a Single section set to be the Homepage (as you do, by default), and
+ # loads the section’s Template (this file). A special ‘entry’ variable
+ # will already be set for you, assigned to the Homepage entry.
+ #
+ # It's worth noting that even if you didn't have a Homepage Single section,
+ # as long as this template remains at craft/templates/index.html, it
+ # would still be the one to get loaded when accessing http://yoursite.com/,
+ # albeit without an ‘entry’ variable already set for you.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+{% extends "_layout" %}
+
+{% block content %}
+<h1 class="bp-title">{{ category.title }}</h1>
+
+	<div class='container categories'>
+		<ul>
+
+			<li><a class="button" href='{{ url('resources') }}' title='All News & Events'>ALL</a></li>
+
+	    {% nav category in craft.categories.group('resources') %}        
+      <li>
+        <a class="button" href="{{ category.url }}">{{ category.title }}</a>
+        {% ifchildren %}
+          <ul>
+            {% children %}
+          </ul>
+        {% endifchildren %}
+      </li>
+	    {% endnav %}
+
+		</ul>
+	</div>
+
+
+<div class="container">
+	{# Fetch all of the entries related to this category #}
+	{% set entries = craft.entries.relatedTo(category) %}
+
+	{# Output them #}
+	{% for entry in entries %}
+		<article class="post_preview has-image">
+			
+			<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
+
+			<div class="preview_content">
+				<a href="{{ entry.url }}" title="{{ entry.title }}"><img src="{{ siteUrl }}img/image.png"></a>
+				<p>{{ entry.summary }}</p>        
+				<p class="readmore_link">
+					<a href="{{ entry.url }}" title="{{ entry.title }}">READ MORE &#187;</a>
+				</p>
+
+				<ul class="share_post">
+					<li>Share Now&nbsp;</li>
+					<li><a href="#" target="_blank"><i class='fa fa-facebook fa-lg'></i></a></li>
+					<li><a href="#" target="_blank"><i class='fa fa-twitter fa-lg'></i></a></li>
+				</ul>
+			</div>
+
+		</article>
+	{% endfor %}
+</div><!--     End Of Container    -->
+
+{% endblock %}

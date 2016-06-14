@@ -1,0 +1,129 @@
+{#
+ # News entry template
+ # -------------------
+ #
+ # This template gets loaded whenever a News entry’s URL is
+ # requested. That’s because the News section’s Template setting is
+ # set to “news/_entry”, the path to this template.
+ #
+ # When this template is loaded, it will already have an ‘entry’
+ # variable, set to the requested News entry.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+{% extends "_layout" %}
+
+{% block content %}
+
+<div class='container post-title' style='background-color: {{ entry.newsintroColor }}'>
+	<div class='ten columns offset-by-one'>
+		<h1>{{ entry.title }}</h1>
+		<ul class='post-title-social'>
+			<li><p>Tell Your Friends:&nbsp;</p></li>
+			<li><a href="#" target="_blank"><i class='circle-icon fa fa-envelope-o fa-lg'></i></a></li>
+			<li><a href="#" target="_blank"><i class='circle-icon fa fa-facebook fa-lg'></i></a></li>
+			<li><a href="#" target="_blank"><i class='circle-icon fa fa-twitter fa-lg'></i></a></li>
+		</ul>
+	</div>
+	<img class='post-title-thumbnail' src='{{ siteUrl }}img/image.png'>
+</div>
+
+
+<div class='container'>
+	<div class='three columns offset-by-one post-author'>
+		<img src='{{ siteUrl }}img/nancy.png'>
+		<p>By Nancy Gaarder</p>
+		<p>World-Herald staff writer</p>
+	</div>
+
+	<div class='seven columns'>
+		<h4 class='post-date'>{{ entry.postDate.format('F d, Y') }}</h4>
+
+		<p class='post-category'>Posted in:
+		{# Fetch all of the categories related to this entry #}
+		{% set categories = craft.categories.relatedTo(entry) %}
+
+		{# Output them #}
+		{% for category in categories %}
+		<a href="{{ category.url }}">{{ category.title }}&nbsp;</a>
+		{% endfor %}
+		</p>
+
+		{{ entry.body }}
+		
+		<img src='{{ siteUrl }}img/ohka-group.png'>
+
+		<p>Omaha's tap water meets federal standards for lead and has for years, officials say--but such assurances aren't enough for one local health organization, given the widespread lead contamination in Flint, Michigan.</p>
+
+		<p>The Omaha Healthy Kids Alliance will begin sampling tap water for lead this month, said Kara Eastman, chief executive officer. Testing, to be done in collaboration with Metropolitan Utilities District, will be at those homes where lead pipes may be in use.</p>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit nisi eget leo pellentesque, id scelerisque ligula faucibus. Cras pretium eleifend leo. Etiam auctor, tellus quis vestibulum pulvinar, metus ante scelerisque arcu, a convallis tellus odio vitae ligula. Morbi et ante posuere, laoreet libero dignissim, placerat nisi. Aenean accumsan id magna nec consequat. In euismod sapien interdum mauris rutrum, sit amet rhoncus est feugiat. Etiam ut commodo ante.</p>
+	</div>
+	
+	<div class='ten columns offset-by-one'>
+		<img class='' src='{{ siteUrl }}img/infographic.png'>
+	</div>
+
+	<div class='v-row post-end seven columns offset-by-four'>
+		<p>Thanks for reading.
+		<br>Remember to help us spread the word!</p>
+
+		<a href="#" target="_blank"><i class='share-page fa fa-facebook fa-lg'></i></a>
+		<a href="#" target="_blank"><i class='share-page fa fa-twitter fa-lg'></i></a>
+
+<!-- 		{% set options = 
+
+					{
+		      'title': 'foo',
+		      'url': 'http://google.com',
+		      'content': {
+		        'facebook': {
+		          'class': 'fa fa-facebook fa-lg',
+		          'size': {
+		          'width': '40px',
+		          'height': '40px'
+		          }
+		        },
+
+		        'twitter': {
+		          'item-type': 'text',
+		          'value': 'Twitter',
+		          'class': 'tw fa-twitter fa-lg',
+		          'id': 'twitter'
+		        },
+		      }
+		    }
+		  %}
+
+		{{ jSocialButtons('facebook|twitter', options) }} -->
+
+		<p>What's Next:</p>
+
+		{% paginate craft.entries.section('newsandevents').limit(2) as pageInfo, pageEntries %}
+		{% for entry in pageEntries %}
+		<article class="post_preview has-image">
+			<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
+			<div class="preview_content">
+				<a href="{{ entry.url }}" title="{{ entry.title }}"><img src="{{ siteUrl }}img/image.png"></a>
+				<p class="readmore_link">
+					<a href="{{ entry.url }}" title="{{ entry.title }}">READ MORE &#187;</a>
+				</p>
+
+				<ul class="share_post">
+					<li>Share Now&nbsp;</li>
+					<li><a href="#" target="_blank"><i class='fa fa-facebook fa-lg'></i></a></li>
+					<li><a href="#" target="_blank"><i class='fa fa-twitter fa-lg'></i></a></li>
+				</ul>
+			</div>
+		</article>
+		{% endfor %}
+		
+		<a class="button" href="#">More News & Events</a>
+
+	</div>
+
+</div>
+
+{% endblock %}

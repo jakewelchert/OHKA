@@ -1,0 +1,100 @@
+.bp-title {
+  position: relative;
+  background-image: url('');
+	background: #ddd;
+  background-position: top left;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+	padding: 130px 50px;
+  text-align: center;
+  margin-bottom: 120px;
+}
+
+.bp-subheader {
+	background: red;
+	padding: 50px;
+  text-align: center;
+  margin-bottom: 120px;
+}
+
+.creator {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 100px;
+  text-align: left;
+}
+
+.speaker-title {
+  height: 120px;
+  padding: 0 25px 0 135px;
+  width: 100%;
+  display: table;
+}
+
+.speaker-title img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 100px;
+  width: 180px;
+  height: 180px;
+}
+
+.speaker-title div {
+	padding: 0 120px 0 80px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.speaker-title div p {
+	font-size: 18px;
+}
+
+.bp-tertiary-list {
+ 	font-size: 0;
+  text-align: center;
+}
+
+.bp-tertiary-list a {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 50px;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+
+.bp-tertiary-list a:nth-child(4), .bp-tertiary-list a:nth-child(8) { border-right: 0px;}
+.bp-tertiary-list a:nth-child(5), .bp-tertiary-list a:nth-child(6), .bp-tertiary-list a:nth-child(7), .bp-tertiary-list a:nth-child(8) { border-bottom: 0px; }
+
+.bp-tertiary-list img {
+  transition: all .2s ease-in-out;
+	border-radius: 100px;
+  width: 150px;
+  height: 150px;
+}
+
+.bp-tertiary-list a img:hover {
+  -webkit-transform: translateY(-3px);
+  -moz-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  -o-transform: translateY(-3px);
+}
+
+
+.action-callout {
+	position: relative;
+  background-image: url("../img/image.png");
+  background: url("../../img/image.png") no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	padding: 200px 50px;
+	text-align: center;
+}
+
+.action-callout h3 {
+  color: #fff;
+  padding-bottom: 40px;
+}

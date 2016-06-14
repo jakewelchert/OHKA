@@ -1,0 +1,27 @@
+.alert {
+	text-align: left;
+	padding: 3px;
+	font-weight: 600;
+}
+
+.alert p {
+	margin: 0;
+	padding: 0;
+	color: #fff;
+}
+
+.alert-success {
+  color: #fff;
+  background-color: #fb9642;
+}
+
+.alert .read-more a {
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: .75px;
+	color: #fff;
+}
+
+.alert .read-more a:hover {
+	color: #d07f3c;
+}

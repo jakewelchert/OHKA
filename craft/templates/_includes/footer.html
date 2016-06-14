@@ -1,0 +1,86 @@
+<div class="stories">
+  <div class="container row">
+    <div class="two columns offset-by-one">
+      <img src='{{ siteUrl }}img/halie.png'>
+      <strong>Why We<br>Do This</strong>
+    </div>
+    <img class='one column' src='{{ siteUrl }}img/greendivider.png'>
+    <div class="seven columns">
+      <p>We went on a visit today and the client said her son has beein in the ICY 3 times (near death) because of his asthma and has had 4 asthma attacks in the past 3 months. We weren't initially going to be able to help his family as the home needed work far beyond our budget but the client's partner decided he would be willing to do a portion of the work. Because of his contribution, Omaha Healthy Kids Alliance feels confident we can make the home healthy enough to have a great impact on their child's asthma. Definately the highlight of our week.</p>
+      <p class='stories-author'><strong>- Halie Smith, Health Communication Specialist</strong></p>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+
+  <div class="footer-super-nav">
+    <button>Contact</button>
+    <button>Training</button>
+    <button>Donate</button>
+  </div>  
+
+  <div class="container">  
+
+    <div class="row">
+      <h5 class="five columns"><strong>MENU</strong></h5>  
+      <h5 class="three columns"><strong>MORE</strong></h5>  
+      <h5 class="four columns"><strong>NEWSLETTER</strong></h5>  
+    </div>
+
+    <div class="row">
+      <div class="five columns">
+        <ul class="footer-nav">
+          <li><a href="{{ url('whats-a-healthy-home') }}">What's A Healthy Home</a></li>
+          <li><a href="{{ url('why-healthy-homes-matter-in-omaha') }}">Why Healhty Homes Matter In Omaha</a></li>
+          <li><a href="{{ url('how-ohka-makes-a-difference') }}">How OHKA Makes A Difference</a></li>
+        </ul>
+      </div>
+
+      <div class="three columns">
+        {% set entries = craft.entries.section('basicpages') %}
+        <ul class="footer-nav" id="nav">
+          {% nav entry in entries %}
+            <li>
+              <a href="{{ entry.url }}">{{ entry.title }}</a>
+              {% ifchildren %}
+                <ul>
+                  {% children %}
+                </ul>
+              {% endifchildren %}
+            </li>
+          {% endnav %}
+        </ul>
+      </div>
+
+      <div class="four columns">
+        <p>Join our email list,<br>stay in the know.</p>
+        <form action="action_page.php">
+          <input type="text" name="Email Address" value="Your email">
+          <input type="submit" value="&#187;">
+        </form>
+      </div>
+    </div>
+
+    <div class="row footer-bottom">
+      <div class="three columns">
+        <p>Omaha Healthy Kids Alliance
+        <br>5006 Underwood Ave.
+        <br>Omaha, NE 68132</p>
+      </div>
+      <div class="five columns">
+        <p>p: 402-934-9700
+        <br>f: 402-934-9703
+        <br>info@omahahealthkids.org
+        <br>
+        <br>se habla espanol</p>
+      </div>
+      <div class="four columns">
+        <p><strong>FOLLOW US!</strong></p>
+        <a href="#" target="_blank"><i class='social fa fa-facebook fa-lg'></i></a>&nbsp;&nbsp;
+        <a href="#" target="_blank"><i class='social fa fa-twitter fa-lg'></i></a>&nbsp;&nbsp;
+      </div>
+    </div>
+  
+  </div>
+</footer>

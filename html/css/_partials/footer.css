@@ -1,0 +1,50 @@
+.stories {
+	background: #cee6c5;
+	padding: 100px 0;
+	color: #29465e;
+}
+
+.stories p {
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.stories-author {
+	float: right;
+}
+
+
+.footer-super-nav {
+	position: relative;
+	text-align: center;
+	padding-bottom: 40px;
+	top: -27px;
+}
+
+footer {
+	position: relative;
+	padding: 0 0 75px 0;
+	background-color: #fef9dd;
+}
+
+footer, footer a {
+	font-weight: 700;
+}
+
+footer h5 {
+	color: #153454;
+}
+
+footer .row {
+  padding: 15px 0;
+}
+
+.footer-nav {
+	list-style: none;
+	font-size: 20px;
+	font-weight: 100;
+}
+
+.footer-bottom p {
+	font-size: 16px;
+}

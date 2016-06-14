@@ -1,0 +1,117 @@
+{#
+ # News entry template
+ # -------------------
+ #
+ # This template gets loaded whenever a News entry’s URL is
+ # requested. That’s because the News section’s Template setting is
+ # set to “news/_entry”, the path to this template.
+ #
+ # When this template is loaded, it will already have an ‘entry’
+ # variable, set to the requested News entry.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+{% extends "_layout" %}
+
+{% block content %}
+
+<div class='post-title'>
+	<div class='container'>
+		<h1>{{ entry.title }}</h1>
+		<p>Tell Your Friends:&nbsp;</p>
+		<a href='#'>Email</a>
+		<a href='#'>Facebook</a>
+		<a href='#'>Twitter</a>
+	</div>
+</div>
+
+
+<div class='container'>
+	
+	<div class='four columns'>
+		<img src='{{ siteUrl }}img/image.png'>
+		<p>By Nancy Gaarder</p>
+		<p>World-Herald staff writer</p>
+	</div>
+
+	<div class='eight columns'>
+		<article>
+			<h4>{{ entry.postDate.format('F d, Y') }}</h4>
+
+			<p>Posted in:
+			{# Fetch all of the categories related to this entry #}
+			{% set categories = craft.categories.relatedTo(entry) %}
+
+			{# Output them #}
+			{% for category in categories %}
+			<a href="{{ category.url }}">{{ category.title }}&nbsp;</a>
+			{% endfor %}
+			</p>
+
+			{{ entry.body }}
+
+			<p><strong>Thanks for reading.
+			<br>Remember to help us spread the word!</strong></p>
+		</article>
+
+		<a class="button" href="#">Facebook</a>
+		<a class="button" href="#">Twitter</a>
+
+		{% set options = 
+
+					{
+		      'title': 'foo',
+		      'url': 'http://google.com',
+		      'content': {
+		        'facebook': {
+		          'class': 'fa fa-facebook fa-lg',
+		          'size': {
+		          'width': '40px',
+		          'height': '40px'
+		          }
+		        },
+
+		        'twitter': {
+		          'item-type': 'text',
+		          'value': 'Twitter',
+		          'class': 'tw fa-twitter fa-lg',
+		          'id': 'twitter'
+		        },
+		      }
+		    }
+		  %}
+
+		{{ jSocialButtons('facebook|twitter', options) }}
+
+
+		<p><strong>What's Next:</strong></p>
+
+
+		{% paginate craft.entries.section('newsandevents').limit(2) as pageInfo, pageEntries %}
+		{% for entry in pageEntries %}
+		<article class="post_preview has-image">
+			<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
+			<div class="preview_content">
+				<a href="{{ entry.url }}" title="{{ entry.title }}"><img src="{{ siteUrl }}img/image.png"></a>
+				<p class="readmore_link">
+					<a href="{{ entry.url }}" title="{{ entry.title }}">READ MORE &#187;</a>
+				</p>
+
+				<ul class="share_post">
+					<li>Share Now&nbsp;</li>
+					<li><a href="#" target="_blank"><i class='fa fa-facebook fa-lg'></i></a></li>
+					<li><a href="#" target="_blank"><i class='fa fa-twitter fa-lg'></i></a></li>
+				</ul>
+			</div>
+		</article>
+		{% endfor %}
+		{% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}">Previous Page</a>{% endif %}
+		{% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}">Next Page</a>{% endif %}
+
+	</div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+@import url(../css/normalize.css);
+
+/*    Global    */
+@import url(../css/_global/basestyles.css);
+@import url(../css/_global/typography.css);
+@import url(../css/_global/grid.css);
+@import url(../css/_global/font-awesome.css);
+@import url(../css/_global/buttons.css);
+@import url(../css/_global/forms.css);
+@import url(../css/_global/tables.css);
+@import url(../css/_global/lists.css);
+@import url(../css/_global/animate.css);
+@import url(../css/_global/alert.css);
+
+
+/*    Partials    */
+@import url(../css/_partials/header.css);
+@import url(../css/_partials/footer.css);
+@import url(../css/_partials/body.css);
+@import url(../css/_partials/nav.css);
+@import url(../css/_partials/pagination.css);
+
+
+/*    Pages    */
+@import url(../css/_pages/index.css);
+@import url(../css/_pages/visual.css);
+@import url(../css/_pages/basic.css);
+@import url(../css/_pages/newsandevents-archive.css);
+@import url(../css/_pages/newsandevents-post.css);

@@ -1,0 +1,61 @@
+{#
+ # Layout template
+ # ---------------
+ #
+ # This template defines your site’s global layout. It can be
+ # “extended” by other templates to fill in the gaps.
+ #
+ # Use: {% extends "_layout" %}
+ #      {% block content %}
+ #      {% endblock %}
+ #
+ #}
+
+ <!DOCTYPE html>
+ <!--[if IE 8]>         <html class="no-js ie8"> <![endif]-->
+ <!--[if IE 9]>         <html class="no-js ie9"> <![endif]-->
+ <!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}{% if tagline is defined %} - {{ tagline }}{% endif %}</title>
+  <link rel="home" href="{{ siteUrl }}" />
+
+  <meta name="description" content="">
+
+  <link rel="stylesheet" type="text/css" href="" />
+	<link rel="stylesheet" href="{{ siteUrl }}css/master.css">
+
+  <script src="/modernizr-custom.js"></script>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  {% include "_includes/analytics" %}
+
+  <!-- META -->
+  <meta property="og:title" content="{{ siteName }} | {% if title is defined %}{{ title }} - {% endif %}{% if tagline is defined %}{{ tagline }}{% endif %}"/>
+  <meta property="og:image" content="{{ siteUrl }}share.jpg"/>
+  <meta property="og:site_name" content="{{ siteName }}"/>
+  <meta property="og:description" content=""/>
+
+  <!-- Type -->
+  <script src="https://use.typekit.net/qdq4gvv.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700' rel='stylesheet' type='text/css'>  
+</head>
+
+<body class="page-{{ craft.request.getSegment(1) ?: 'home' }}">
+  {% include "_includes/header" %}
+
+  <div class="main">
+    {% block content %}
+    {% endblock %}
+  </div>
+
+  {% include "_includes/footer" %}
+  <script src="/js/scripts.js"></script>
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="{{ siteUrl }}js/animate.js"></script>
+  <script src='{{ siteUrl }}js/js.js'></script>
+
+ 
+</body>
+</html>
