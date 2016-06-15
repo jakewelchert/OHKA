@@ -38,6 +38,10 @@
       </div>
 
       <div class="three columns">
+        <ul class="footer-nav">
+          <li><a href="{{ url('newsandevents') }}">News & Events</a></li>
+          <li><a href="{{ url('resources') }}">Resources</a></li>
+        </ul>        
         {% set entries = craft.entries.section('basicpages') %}
         <ul class="footer-nav" id="nav">
           {% nav entry in entries %}

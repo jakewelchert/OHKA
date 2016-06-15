@@ -61,92 +61,50 @@
 
 	</div>
 
-
-
-
-
-<!-- 
-
-	<div class="row">
-		<article class="post_preview seven columns">
-			<div class="post_preview-content ten columns">
-				<a href='{{ entry.url }}'><h2>{{ entry.title }}</h2></a>
-				<a href='{{ entry.url }}' title="">Read More &#187;</button></a>
-				<ul class="share_post">
-				  <li>Share Now</li>
-				  <li><a href="" target="_blank">F</a></li>
-				  <li><a href="" target="_blank">T</a></li>
-				</ul>
-				{% set options = {
-				      'title': 'foo',
-				      'url': 'http://google.com',
-				      'content': {
-				        'facebook': {
-				          'class': 'fa fa-facebook fa-lg',
-				          'size': {
-				          'width': '40px',
-				          'height': '40px'
-				          }
-				        },
-
-				        'twitter': {
-				          'item-type': 'text',
-				          'value': 'Twitter',
-				          'class': 'tw fa-twitter fa-lg',
-				          'id': 'twitter'
-				        },
-				      }
-				    }
-				  %}
-				{{ jSocialButtons('facebook|twitter', options) }}
-			</div>
-			
-			<img class="two columns" src='img/image.png'>
-
-		</article>
-	</div> -->
-
 	{% endfor %}
 
 	<div class='row'>
 		<a class="button" href="newsandevents" title="More News & Events">More News & Events</a>
 	</div>
 		
-	<div class="row what animate">
+	<div class="row animate what">
 		<div class="action-label">
-			<img class="whatword" src="img/what.png">
+			<h6 class='whatword'>What</h6>
 		</div>
 		<div class="nine columns offset-by-three action">
-			<div class="caption">
+			<div class="caption-what">
+				<img class='whatkid' src="img/firstkid.png">
+				<h6 class='whatword-title'>What</h6>
 				<h3>A Healthy Home prevents many serious children's health problems.</h3>
 				<h4><a href="#">Learn More</a></h4>
-				<img class="whatkid" src="img/firstkid.png">
 			</div>
 		</div>
 	</div>
 
 	<div class="row animate why">
+		<div class="action-label whyword">
+			<h6>Why</h6>
+		</div>
 		<div class="nine columns action">
-			<div class="caption-what">
+			<div class="caption-why">
+				<img class="whykid" src="img/secondkid.png">  
+				<h6 class='whatword-title'>Why</h6>      			        
 				<h3>A Healthy Home increases quality of life for children and parents.</h3>
 				<h4><a href="#">Learn More</a></h4>
-				<img class="whykid" src="img/secondkid.png">        			        
 			</div>
-		</div>
-		<div class="action-label why">
-			<img class="whyword" src="img/why.png">
 		</div>
 	</div>
 
-	<div class="row animate">
+	<div class="row animate how">
 		<div class="action-label">
-			<img src="img/how.png">
+			<h6 class='howword'>How</h6>
 		</div>
-		<div class="nine columns offset-by-three action how">
-			<div class="caption">
+		<div class="nine columns offset-by-three action">
+			<div class="caption-how">
+				<img class="howkid" src="img/thirdkid.png">
+				<h6 class='whatword-title'>How</h6>      			        
 				<h3>We help families make connections between health and housing issues.</h3>
 				<h4><a href="#">Learn More</a></h4>
-				<img src="img/thirdkid.png">   			        
 			</div>
 		</div>
 	</div>
