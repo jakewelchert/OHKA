@@ -5,6 +5,9 @@
   text-align: center;
   font-size: 45px;
   margin-top: 105px;
+  background: url("../../img/ohka-pattern.svg");
+  background-position: center center;
+  background-repeat: repeat;
 }
 
 .v-intro-img {

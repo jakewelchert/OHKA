@@ -112,7 +112,7 @@
   padding: 0px;
 }
 
-.caption-what h3 {
+.caption-what h3, .caption-why h3, .caption-how h3{
   padding-bottom: 20px;
 }
 
@@ -262,7 +262,10 @@
 
 
 
-
 .donate {
   margin: 150px 0;
+}
+
+.support {
+  margin-top: 150px;
 }
