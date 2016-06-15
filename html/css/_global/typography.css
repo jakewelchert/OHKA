@@ -53,6 +53,14 @@ p {
 /*"verveine"*/
 
 
+.wf-loading body {
+font-family: "sofia-pro";
+visibility: hidden;
+}
+.wf-active body {
+visibility: visible;
+}
+
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
@@ -66,5 +74,5 @@ a {
   }
 
 a:hover {
-  color: #2752ff; 
+  color: #6cb358; 
 }

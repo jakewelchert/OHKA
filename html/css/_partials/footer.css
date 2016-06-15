@@ -48,3 +48,12 @@ footer .row {
 .footer-bottom p {
 	font-size: 16px;
 }
+
+.footer-email {
+	color: #153454;
+}
+
+.footer-email:hover {
+	cursor: pointer;
+	color: #fb9642;
+}
