@@ -9,8 +9,15 @@
 	font-weight: 400;
 }
 
+.stories-author-img {
+	width: 150px;
+	border-radius: 150px;
+	padding: 8%;
+}
+
 .stories-author {
-	float: right;
+	float: left;
+	text-align: center;
 }
 
 
