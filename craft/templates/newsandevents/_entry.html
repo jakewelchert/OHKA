@@ -77,21 +77,22 @@
 
 		{% paginate craft.entries.section('newsandevents').limit(2) as pageInfo, pageEntries %}
 		{% for entry in pageEntries %}
-		<article class="post_preview has-image">
-			<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
-			<div class="preview_content">
-				<a href="{{ entry.url }}" title="{{ entry.title }}"><img src="{{ siteUrl }}img/image.png"></a>
-				<p class="readmore_link">
-					<a href="{{ entry.url }}" title="{{ entry.title }}">READ MORE &#187;</a>
-				</p>
-
-				<ul class="share_post">
-					<li>Share Now&nbsp;</li>
-					<li><a href="#" target="_blank"><i class='fa fa-facebook fa-lg'></i></a></li>
-					<li><a href="#" target="_blank"><i class='fa fa-twitter fa-lg'></i></a></li>
-				</ul>
-			</div>
-		</article>
+		<div class="row post_preview">
+			<article class="has-image columns">
+				<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
+				<div class="preview_content">
+					<a href="{{ entry.url }}" title="{{ entry.title }}"><img src="img/image.png"></a>
+					<ul class="share_post">
+						<li>Share Now&nbsp;</li>
+						<li><a href="#" target="_blank"><i class='share fa fa-facebook fa-lg'></i></a></li>
+						<li><a href="#" target="_blank"><i class='share fa fa-twitter fa-lg'></i></a></li>
+					</ul>
+					<p class="readmore_link">
+						<a href="{{ entry.url }}" title="{{ entry.title }}">READ MORE &#187;</a>
+					</p>
+				</div>
+			</article>
+		</div>
 		{% endfor %}
 		
 		<a class="button" href="#">More News & Events</a>

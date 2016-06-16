@@ -20,11 +20,11 @@
 	
 		<div class='categories'>
 			<ul>
-				<li><a class="button button-square" href='{{ url('newsandevents') }}' title='All News & Events'>ALL</a></li>
+				<li><a class="button" href='{{ url('newsandevents') }}' title='All News & Events'>ALL</a></li>
 
 		    {% nav category in craft.categories.group('newsandevents') %}        
 	        <li>
-	            <a class="button button-square" href="{{ category.url }}">{{ category.title }}</a>
+	            <a class="button" href="{{ category.url }}">{{ category.title }}</a>
 	            {% ifchildren %}
 	                <ul>
 	                    {% children %}

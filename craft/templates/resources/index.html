@@ -21,11 +21,11 @@
 		<div class='categories'>
 		
 		<ul>
-			<li><a class="button button-square" href='{{ url('resources') }}' title='All Resources'>ALL</a></li>
+			<li><a class="button" href='{{ url('resources') }}' title='All Resources'>ALL</a></li>
 
 		    {% nav category in craft.categories.group('resources') %}        
 	        <li>
-	            <a class="button button-square" href="{{ category.url }}">{{ category.title }}</a>
+	            <a class="button" href="{{ category.url }}">{{ category.title }}</a>
 	            {% ifchildren %}
 	                <ul>
 	                    {% children %}
@@ -56,7 +56,7 @@
 				</div>
 			</article>
 		</div>
-		
+
 	</div>
 	{% endfor %}
 
