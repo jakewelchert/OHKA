@@ -42,7 +42,7 @@
 		
 	{% for entry in craft.entries.section('newsandevents').limit(2).find() %}
 
-	<div class="row post_preview">
+	<div class="row post_preview-index post_preview">
 		<article class="has-image columns">
 			<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
 			<div class="preview_content">
@@ -57,7 +57,6 @@
 				</p>
 			</div>
 		</article>
-
 	</div>
 
 	{% endfor %}

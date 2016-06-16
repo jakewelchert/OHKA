@@ -14,9 +14,12 @@
 {% set title = "Resources" %}
 
 {% block content %}
-	<h1 class="bp-title">{{ title }}</h1>
-
-	<div class='container categories'>
+	<div class='container'>
+		
+		<h1 class="bp-row bp-title">{{ title }}</h1>
+	
+		<div class='categories'>
+		
 		<ul>
 			<li><a class="button button-square" href='{{ url('resources') }}' title='All Resources'>ALL</a></li>
 
@@ -31,6 +34,7 @@
 	        </li>
 		    {% endnav %}
 		</ul>
+
 	</div>
 
 	{% for entry in craft.entries.section('resources').find() %}
@@ -53,8 +57,8 @@
 	</div>
 	{% endfor %}
 
-	<div class='container'>
-	{% include "_includes/pagination" %}
+	<div class='container pagination'>
+		{% include "_includes/pagination" %}
 	</div>
 
 {% endblock %}
