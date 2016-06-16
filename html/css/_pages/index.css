@@ -107,7 +107,6 @@
   }
 
 
-
   .post_preview img {
   position: absolute;
   left: auto;
@@ -157,25 +156,44 @@
 
 @media (min-width: 1024px) {
   .caption-what {
-    padding: 100px 100px 100px 250px;
+    padding: 75px 75px 75px 250px;
   }
 
   .caption-why {
-    padding: 100px 150px 100px 350px;
+    padding: 75px 100px 75px 300px;
   }
 
   .caption-how {
-    padding: 100px 150px 100px 150px;
+    padding: 75px 75px 75px 180px;
   }
 }
 
 
 /*    !!!!!!!!!!  WHAT  !!!!!!!!!!    */
 
+.actionblock {
+  position: relative;
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .actionblock { 
+    width: 74.0%;
+    border-bottom: none;
+  }
+
+  .action {
+    margin-left: 26%;
+  }
+}
+
+
+
+
 .what {
   position: relative;
   margin-top: 150px;
-  border-bottom: 1px solid #ddd;
 }
 
 .whatkid {
@@ -194,12 +212,12 @@
   .whatkid {
   position: absolute;
   width: 227px;
-  right: 90px;
-  top: -436px;
+  right: -40px;
+  top: -476px;
   }
     
   .whatword {
-  margin-top: -65px;
+  margin-top: 50px;
   }
 
   .whatword-title {
@@ -207,24 +225,42 @@
   }
   }
 
+  @media (min-width: 1200px) {
+  .caption-what {
+    padding: 100px 100px 100px 250px;
+  }
+
+
+  h6 { font-size: 24.0rem;
+  }
+
+  .whatkid {
+  right: 20px;
+  }
+
+  .whatword {
+  margin-top: 65px;
+  }
+  }
+
   @media (min-width: 1270px) {
   .whatword {
-  margin-top: -85px;
+  margin-top: 45px;
   }
   }
-
-
-
-
-
 
 
 .why {
   right: 0;
   min-height: 346px;
   margin: 75px 0;
-  border-bottom: 1px solid #ddd;
 }
+
+  @media (min-width: 1024px) {
+  .why {
+    margin-left: -20%;
+  }
+  }
 
 .whykid {
   float: left;
@@ -233,9 +269,9 @@
 }
 
 .whyword {
-  margin-top: -50px;
-  padding-right: 2%;
-  right: 0;
+  margin-top: 30px;
+  padding-right: 0%;
+  right: -52%;
 }
 
   @media (max-width: 1023px) {
@@ -256,8 +292,11 @@
   .whatword-title {
   display: none;
   }
-  }
 
+  .whyword {
+    margin-top: 50px;
+  }
+  }
 
 
 
@@ -265,7 +304,6 @@
 .how {
   min-height: 346px;
   margin: 75px 0;
-  border-bottom: 1px solid #ddd;
 }
 
 .howkid {
@@ -275,8 +313,7 @@
 }
 
 .howword {
-  margin-top: -100px;
-  padding-left: 7%;
+  margin-top: 10px;
 }
 
   @media (max-width: 1023px) {
@@ -286,6 +323,10 @@
   }
 
   @media (min-width: 1024px) {
+  .howword {
+    margin-top: 40px;
+  }
+
   .howkid {
   position: absolute;
   width: 238px;
@@ -294,6 +335,25 @@
   }
   }
 
+  @media (min-width: 1133px) {
+  .howword {
+    margin-top: 20px;
+  }
+
+
+  @media (min-width: 1200px) {
+  .caption-how {
+    padding: 100px 130px 100px 190px;
+  }
+
+  .caption-why {
+    padding: 100px 150px 100px 300px;
+  }
+
+  .whyword {
+    margin-top: 60px;
+  }
+  }
 
 
 .donate {

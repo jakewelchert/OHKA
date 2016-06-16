@@ -9,7 +9,7 @@
   text-transform: uppercase;
   text-align: center;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: .5px;
   cursor: pointer;
   display: inline-block;
@@ -46,11 +46,10 @@ button.btm-right {
 }
 
 .super-nav button {
-  line-height: 30px;
+  line-height: 35px;
   padding: 0 30px;
   text-align: center;
   margin-top: 15px;
-  font-size: 12px;
   text-transform: none;
 }
 
