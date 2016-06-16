@@ -328,18 +328,25 @@
   }
 
   .howkid {
-  position: absolute;
-  width: 238px;
-  right: 100px;
-  top: 195px;
+    position: absolute;
+    width: 238px;
+    right: -50px;
+    top: 195px;
   }
   }
+
+  @media (min-width: 1350px) {  
+  .howkid {
+    right: 50px;
+  } 
+  }
+
 
   @media (min-width: 1133px) {
   .howword {
     margin-top: 20px;
   }
-
+  }
 
   @media (min-width: 1200px) {
   .caption-how {
@@ -357,9 +364,30 @@
 
 
 .donate {
-  margin: 150px 0;
+  position: relative;
+  margin: 75px 0;
 }
 
 .support {
-  margin-top: 150px;
+  position: absolute;
+  top: -30px;
+  text-align: center;
 }
+
+  @media (min-width: 800px) {
+  .support {
+    position: relative;
+    text-align: left;
+    margin-top: 90px;
+  }
+  }
+  
+  @media (min-width: 1024px) {
+  .donate {
+    margin: -100px 0 100px 0;
+  }
+  
+  .support {
+    margin-top: 150px;
+  }
+  }
