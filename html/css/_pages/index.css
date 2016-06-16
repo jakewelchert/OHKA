@@ -309,7 +309,7 @@
 .howkid {
   float: left;
   width: 125px;
-  padding-right: 30px;
+  padding-right: 10px;
 }
 
 .howword {
@@ -365,12 +365,12 @@
 
 .donate {
   position: relative;
-  margin: 75px 0;
+  margin: 100px 0 75px 0;
 }
 
 .support {
   position: absolute;
-  top: -30px;
+  top: -35px;
   text-align: center;
 }
 
