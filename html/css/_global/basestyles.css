@@ -28,3 +28,14 @@ video {
   height: auto;
   max-height: 100%;
 }
+
+a img {
+  transition: all .2s ease-in-out;
+}
+
+a img:hover {
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  -o-transform: translateY(-4px);
+}
