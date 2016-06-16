@@ -20,19 +20,18 @@
 		<ul>
 			<li><a class="button button-square" href='{{ url('resources') }}' title='All Resources'>ALL</a></li>
 
-	    {% nav category in craft.categories.group('resources') %}        
-        <li>
-            <a class="button button-square" href="{{ category.url }}">{{ category.title }}</a>
-            {% ifchildren %}
-                <ul>
-                    {% children %}
-                </ul>
-            {% endifchildren %}
-        </li>
-	    {% endnav %}
+		    {% nav category in craft.categories.group('resources') %}        
+	        <li>
+	            <a class="button button-square" href="{{ category.url }}">{{ category.title }}</a>
+	            {% ifchildren %}
+	                <ul>
+	                    {% children %}
+	                </ul>
+	            {% endifchildren %}
+	        </li>
+		    {% endnav %}
 		</ul>
 	</div>
-
 
 	{% for entry in craft.entries.section('resources').find() %}
 	<div class='container'>
@@ -53,11 +52,9 @@
 		</article>
 	</div>
 	{% endfor %}
-	
 
 	<div class='container'>
 	{% include "_includes/pagination" %}
 	</div>
-
 
 {% endblock %}
