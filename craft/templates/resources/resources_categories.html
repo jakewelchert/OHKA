@@ -20,9 +20,11 @@
 {% extends "_layout" %}
 
 {% block content %}
-<h1 class="bp-title">{{ category.title }}</h1>
+	<div class='container'>
+		
+		<h1 class="bp-row bp-title">{{ category.title }}</h1>
 
-	<div class='container categories'>
+		<div class='categories'>
 		<ul>
 
 			<li><a class="button" href='{{ url('resources') }}' title='All News & Events'>ALL</a></li>
@@ -42,7 +44,6 @@
 	</div>
 
 
-<div class="container">
 	{# Fetch all of the entries related to this category #}
 	{% set entries = craft.entries.relatedTo(category) %}
 
