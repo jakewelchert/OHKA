@@ -17,6 +17,10 @@
   .index_intro .seven {
     width: 100%;
   }
+  
+  .follow {
+    display: none;
+  }
   }
 
 .post_preview {
@@ -365,29 +369,11 @@
 
 .donate {
   position: relative;
-  margin: 100px 0 75px 0;
+  margin: 75px 0;
 }
-
-.support {
-  position: absolute;
-  top: -35px;
-  text-align: center;
-}
-
-  @media (min-width: 800px) {
-  .support {
-    position: relative;
-    text-align: left;
-    margin-top: 90px;
-  }
-  }
   
   @media (min-width: 1024px) {
   .donate {
-    margin: -100px 0 100px 0;
-  }
-  
-  .support {
-    margin-top: 150px;
+    margin: -90px 0 100px 0;
   }
   }
