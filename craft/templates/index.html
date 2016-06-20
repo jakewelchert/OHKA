@@ -50,27 +50,6 @@
 
 	{% for entry in craft.entries.section('newsandevents').limit(2).find() %}
 
-
-	{% set options = {
-	    'content': {
-	      'facebook': {
-	        'item-type': 'icon',
-	        'value': 'share share-light share-post-preview fa fa-facebook fa-lg',
-	        'class': 'fb',
-	      },
-	      'twitter': {
-	        'item-type': 'icon',
-	        'value': 'share share-light share-post-preview fa fa-twitter fa-lg',
-	      },
-	      'email': {
-	        'item-type': 'icon',
-	        'value': 'fa fa-envelope-o',
-	        'class': 'email'
-	      }
-	    }
-	  }
-	%}
-
 	<div class="row post_preview-index post_preview">
 		<article class="has-image columns">
 			<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>

@@ -22,10 +22,11 @@
 		<h1>{{ entry.title }}</h1>
 		<ul class='post-title-social'>
 			<li><p>Tell Your Friends:&nbsp;</p></li>
-			<li><a href="#" target="_blank"><i class='share share-post share-light fa fa-envelope-o fa-lg'></i></a></li>
+<!-- 		<li><a href="#" target="_blank"><i class='share share-post share-light fa fa-envelope-o fa-lg'></i></a></li>
 			<li><a href="#" target="_blank"><i class='share share-post share-light fa fa-facebook fa-lg'></i></a></li>
-			<li><a href="#" target="_blank"><i class='share share-post share-light fa fa-twitter fa-lg'></i></a></li>
+			<li><a href="#" target="_blank"><i class='share share-post share-light fa fa-twitter fa-lg'></i></a></li> -->
 
+			<li><a href="#" target="_blank"><i>{{ jSocialButtons('email', options) }}</i></a></li>
 			<li><a href="#" target="_blank"><i>{{ jSocialButtons('facebook', options) }}</i></a></li>
 			<li><a href="#" target="_blank"><i>{{ jSocialButtons('twitter', options) }}</i></a></li>
 
