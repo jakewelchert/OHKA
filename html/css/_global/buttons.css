@@ -19,10 +19,6 @@
   border-radius: 60px;
 }
 
-.button-square {
-  border-radius: 0px;
-}
-
 @media (max-width: 1023px) {
 .button-news {
   display: block;
@@ -35,7 +31,7 @@
 }
 
 .button:active, button:active {
-  background: grey;
+  background: #406735;
 }
 
 button.btm-right {
@@ -53,77 +49,6 @@ button.btm-right {
   text-transform: none;
 }
 
-.circle-icon {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 30px;
-  vertical-align: middle;
-  padding: 15px;
-}
-
-.post-title-social .fa-envelope-o       {}
-.post-title-social .fa-envelope-o:hover { color: #fff; background-color: #fb9642; }
-
-.post-title-social .fa-facebook         { color: #0071bc; }
-.post-title-social .fa-facebook:hover   { color: #fff; background-color: #0071bc; }
-
-.post-title-social .fa-twitter          { color: #12c1fd; }
-.post-title-social .fa-twitter:hover    { color: #fff; background-color: #12c1fd; }
-
-
-.share-page {
-  width: 100px;
-  height: 30px;
-  border-radius: 100px;
-  text-align: center;
-  line-height: 30px;
-  vertical-align: middle;
-  padding: 20px 40px;
-  margin-right: 25px;
-  margin-bottom: 90px;
-}
-
-.share-page.fa-facebook         { color: #fff; background-color: #0071bc; }
-.share-page.fa-facebook:hover   {}
-
-.share-page.fa-twitter          { color: #fff; background-color: #12c1fd; }
-.share-page.fa-twitter:hover    {}
-
-
-.social {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 30px;
-  vertical-align: middle;
-  padding: 15px;
-}
-
-.social.fa-facebook         { color: #fff; background-color: #0071bc; }
-.social.fa-facebook:hover   {}
-
-.social.fa-twitter          { color: #fff; background-color: #12c1fd; }
-.social.fa-twitter:hover    {}
-
-
-.social-index {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 28px;
-  vertical-align: middle;
-  padding: 12px;
-}
-
-.social-index.fa-facebook         { color: #fff; background-color: #0071bc; }
-.social-index.fa-facebook:hover   {}
-
-.social-index.fa-twitter          { color: #fff; background-color: #12c1fd; }
-.social-index.fa-twitter:hover    {}
 
 
 .share {
@@ -131,15 +56,68 @@ button.btm-right {
   height: 23px;
   border-radius: 50%;
   text-align: center;
-  line-height: 24px;
   vertical-align: middle;
-  padding: 5px;
-  margin-left: 10px;
-  margin-top: -8px;
+  padding: 11px;
 }
 
-.share.fa-facebook         { color: #0071bc; background-color: #fff; }
-.share.fa-facebook:hover   {}
+.share-post {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  padding: 14px;
+}
 
-.share.fa-twitter          { color: #12c1fd; background-color: #fff; }
-.share.fa-twitter:hover    {}
+.share-post-preview {
+  line-height: 24px;
+  padding: 5px;
+  margin-left: 10px;
+  margin-top: -5px;
+}
+
+.share-page {
+  width: 100px;
+  height: 30px;
+  border-radius: 100px;
+  line-height: 30px;
+  padding: 20px 40px;
+  margin-right: 25px;
+  margin-bottom: 90px;
+}
+
+.share-footer {
+  width: 35px;
+  height: 35px;
+  line-height: 36px;
+  padding: 12px;
+}
+
+
+.share-dark                      { color: #fff; }
+
+.share-dark.fa-envelope-o:hover  { background-color: #fb9642; }
+ 
+.share-dark.fa-facebook          { background-color: #0071bc; }
+.share-dark.fa-facebook:hover    { background-color: #005790; }
+ 
+.share-dark.fa-twitter           { background-color: #12c1fd; }
+.share-dark.fa-twitter:hover     { background-color: #1296c4; }
+
+
+
+.share-light                     { background-color: #fff;    }
+
+.share-light.fa-envelope-o       { color: #fb9642; }
+.share-light.fa-envelope-o:hover { background-color: #fb9642; }
+
+.share-light.fa-facebook         { color: #0071bc; }
+.share-light.fa-facebook:hover   { background-color: #0071bc; }
+
+.share-light.fa-twitter          { color: #12c1fd; }
+.share-light.fa-twitter:hover    { background-color: #12c1fd; }
+
+.share-light:hover               { color: #fff; }
+
+
+.share.fa-facebook:active        { background-color: #003c63; }
+.share.fa-twitter:active         { background-color: #0c6584; }
+.share.fa-envelope-o:active      { background-color: #d07f3c; }
