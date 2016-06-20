@@ -52,8 +52,6 @@
 
 
 	{% set options = {
-	    'title': 'This is the article title',
-	    'url': 'http://google.com',
 	    'content': {
 	      'facebook': {
 	        'item-type': 'icon',
@@ -72,7 +70,7 @@
 	    }
 	  }
 	%}
-	
+
 	<div class="row post_preview-index post_preview">
 		<article class="has-image columns">
 			<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
