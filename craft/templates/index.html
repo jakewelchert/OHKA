@@ -36,14 +36,43 @@
 		<p class="six columns">What's New:</p>
 		<p class="follow">FOLLOW US!&nbsp;&nbsp;
 	
-	    <a href="#" target="_blank"><i class='share share-dark fa fa-facebook'></i></a>&nbsp;&nbsp;
-	    <a href="#" target="_blank"><i class='share share-dark fa fa-twitter'></i></a>
+	    <a href="https://www.facebook.com/Omahahealthykids" title='Omaha Healthy Kids Alliance - Facebook' target="_blank"><i class='share share-dark fa fa-facebook'></i></a>&nbsp;&nbsp;
+	    <a href="https://twitter.com/ohka1" title='Omaha Healthy Kids Alliance - Twitter' target="_blank"><i class='share share-dark fa fa-twitter'></i></a>
 	
 		</p>
 	</div>
-		
+
+
+
+
+
+
+
 	{% for entry in craft.entries.section('newsandevents').limit(2).find() %}
 
+
+	{% set options = {
+	    'title': 'This is the article title',
+	    'url': 'http://google.com',
+	    'content': {
+	      'facebook': {
+	        'item-type': 'icon',
+	        'value': 'share share-light share-post-preview fa fa-facebook fa-lg',
+	        'class': 'fb',
+	      },
+	      'twitter': {
+	        'item-type': 'icon',
+	        'value': 'share share-light share-post-preview fa fa-twitter fa-lg',
+	      },
+	      'email': {
+	        'item-type': 'icon',
+	        'value': 'fa fa-envelope-o',
+	        'class': 'email'
+	      }
+	    }
+	  }
+	%}
+	
 	<div class="row post_preview-index post_preview">
 		<article class="has-image columns">
 			<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
@@ -51,8 +80,11 @@
 				<a href="{{ entry.url }}" title="{{ entry.title }}"><img src="img/image.png"></a>
 				<ul class="share_post">
 					<li>Share Now&nbsp;</li>
-					<li><a href="#" target="_blank"><i class='share share-light share-post-preview fa fa-facebook fa-lg'></i></a></li>
-					<li><a href="#" target="_blank"><i class='share share-light share-post-preview fa fa-twitter fa-lg'></i></a></li>
+					<!-- <li><a href="#" target="_blank"><i class='share share-light share-post-preview fa fa-facebook fa-lg'></i></a></li> -->
+					<!-- <li><a href="#" target="_blank"><i class='share share-light share-post-preview fa fa-twitter fa-lg'></i></a></li> -->
+					<li><a href="#" target="_blank"><i>{{ jSocialButtons('facebook', options) }}</i></a></li>
+					<li><a href="#" target="_blank"><i>{{ jSocialButtons('twitter', options) }}</i></a></li>
+
 				</ul>
 				<p class="readmore_link">
 					<a href="{{ entry.url }}" title="{{ entry.title }}">READ MORE &#187;</a>
@@ -60,18 +92,11 @@
 			</div>
 		</article>
 	</div>
-
 	{% endfor %}
 
 	<div class='row'>
 		<a class="button button-news" href="{{ url('newsandevents') }}" title="More News & Events">More News & Events</a>
 	</div>
-
-
-
-
-
-
 
 
 	<div class="row animate what actionblock">
