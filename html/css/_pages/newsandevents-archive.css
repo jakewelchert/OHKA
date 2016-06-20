@@ -15,8 +15,16 @@
 
 .categories ul li {
 	list-style: none;
-	display: inline-block;
+	display: block;
+  margin-bottom: 10px;
 }
+
+  @media screen and (min-width: 1024px) {
+  .categories ul li {
+    display: inline-block;
+    margin-bottom: 0;
+  } 
+  }
 
 
 

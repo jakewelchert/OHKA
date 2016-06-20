@@ -20,8 +20,14 @@
 }
 
 @media (max-width: 1023px) {
-.button-news {
+.button-news, .button-category {
   display: block;
+}
+}
+
+@media (max-width: 1023px) {
+.button-category {
+  line-height: 30px;
 }
 }
 

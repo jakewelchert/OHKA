@@ -27,17 +27,12 @@
 		<div class='categories'>
 			<ul>
 
-				<li><a class="button" href='{{ url('newsandevents') }}' title='All News & Events'>ALL</a></li>
+				<li><a class='button button-category' href='{{ url('newsandevents') }}' title='All News & Events'>ALL</a></li>
 
 			    {% nav category in craft.categories.group('newsandevents') %}        
-		      <li>
-		        <a class="button" href="{{ category.url }}">{{ category.title }}</a>
-		        {% ifchildren %}
-		          <ul>
-		            {% children %}
-		          </ul>
-		        {% endifchildren %}
-		      </li>
+				<li>
+					<a class='button button-category' href="{{ category.url }}">{{ category.title }}</a>
+				</li>
 			    {% endnav %}
 
 			</ul>
@@ -55,8 +50,8 @@
 					<a href="{{ entry.url }}" title="{{ entry.title }}"><img src="img/image.png"></a>
 					<ul class="share_post">
 						<li>Share Now&nbsp;</li>
-						<li><a href="#" target="_blank"><i class='share fa fa-facebook fa-lg'></i></a></li>
-						<li><a href="#" target="_blank"><i class='share fa fa-twitter fa-lg'></i></a></li>
+						<li><a href="#" target="_blank"><i class='share share-light share-post-preview fa fa-facebook fa-lg'></i></a></li>
+						<li><a href="#" target="_blank"><i class='share share-light share-post-preview fa fa-twitter fa-lg'></i></a></li>
 					</ul>
 					<p class="readmore_link">
 						<a href="{{ entry.url }}" title="{{ entry.title }}">READ MORE &#187;</a>
