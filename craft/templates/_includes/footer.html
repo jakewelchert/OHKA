@@ -2,7 +2,11 @@
 <div class="stories">
   <div class="container stories-container row">
     <div class="stories-author">
-      <img class='stories-author-img' src='{{ siteUrl }}img/ohka-stories-halie.png'>
+    
+      {% for asset in entry.whywedothisAuthorImage %}
+      <img class='stories-author-img' src="{{ asset.url }}" alt="{{ asset.title }}">                               
+      {% endfor %}
+
       <strong>Why We<br>Do This</strong>
     </div>
 
