@@ -48,6 +48,15 @@
   }
 
 
+.post_featured {
+  position: relative;
+  background-color: lightblue;
+  padding: 200px 50px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
 /*    !!!!    POST PREVIEW    !!!!    */
 .post_preview {
   position: relative;

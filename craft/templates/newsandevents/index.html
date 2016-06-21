@@ -17,7 +17,55 @@
 	<div class='container'>
 		
 		<h1 class="bp-row bp-title">{{ title }}</h1>
-		
+
+
+		{% set featuredNews = craft.entries.section('newsandevents').featured('not 0').order('dateUpdated desc').limit(2) %}
+		{% for entry in featuredNews %}
+			<div class='row'>
+			<div class="ten columns offset-by-one post_featured">
+				<h3>Category Name</h3>
+				<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
+				<a href='{{ entry.url }} title='{{ entry.title }}''><button>CTA BUTTON</button></a>
+			</div>
+			</div>
+		{% endfor %}
+
+
+
+
+
+
+
+
+
+
+<!-- 		{% set featuredNews = craft.entries.section('newsandevents').featured('not 0').order('dateUpdated desc').limit(2) %}
+		{% for entry in featuredNews %}
+		<div class='container'>
+			<div class="row post_preview ten columns offset-by-one">
+				<article class="has-image columns">
+					<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
+					<div class="preview_content">
+						<p class="readmore_link">
+							<a href="{{ entry.url }}" title='{{ entry.title }}'>READ MORE &#187;</a>
+						</p>
+					</div>
+				</article>
+			</div>
+		</div>
+		{% endfor %}
+ -->
+
+
+
+
+
+
+
+
+
+
+
 		<div class='categories'>
 			<div class='row'>			
 			<select id='my_selection' class='category_filter six columns offset-by-three'>
