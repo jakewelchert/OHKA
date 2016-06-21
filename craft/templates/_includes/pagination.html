@@ -1,12 +1,9 @@
-<div class="center">
-  <ul class="pagination">
-    <li><a href="{{ pageInfo.firstUrl }}">First Page</a></li>
-    <li>{% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}">Previous Page</a>{% endif %}</li>
-    <li>{% for page, url in pageInfo.getPrevUrls(2) %}<a href="{{ url }}">{{ page }}</a>{% endfor %}</li>
-    <li><a class="current">{{ pageInfo.currentPage }}</a></li>
-    <li>{% for page, url in pageInfo.getNextUrls(2) %}<a href="{{ url }}">{{ page }}</a>{% endfor %}</li>
-    <li>{% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}">Next Page</a>{% endif %}</li>
-    <li><a href="{{ pageInfo.lastUrl }}">Last Page</a></li>
-  </ul>
-</div>
-
+<ul class="pagination">
+	<li><a href="{{ pageInfo.firstUrl }}">First Page</a></li>
+	<li>{% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}">Previous Page</a>{% endif %}</li>
+	<li>{% for page, url in pageInfo.getPrevUrls(2) %}<a href="{{ url }}">{{ page }}</a>{% endfor %}</li>
+	<li><a class="current">{{ pageInfo.currentPage }}</a></li>
+	<li>{% for page, url in pageInfo.getNextUrls(2) %}<a href="{{ url }}">{{ page }}</a>{% endfor %}</li>
+	<li>{% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}">Next Page</a>{% endif %}</li>
+	<li><a href="{{ pageInfo.lastUrl }}">Last Page</a></li>
+</ul>
