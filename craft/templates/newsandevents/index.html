@@ -1,5 +1,5 @@
 {#
- # News index template
+ # News And Events - Archive template
  # -------------------
  #
  # This template is loaded whenever http://example.com/newsandevents is
@@ -37,12 +37,11 @@
 		</div>
 	</div>
 
-
-    {% paginate craft.entries.section('newsandevents').limit(2) as pageInfo, pageEntries %}
-	<div class='container'>
+    {% paginate craft.entries.section('newsandevents').limit(5) as pageInfo, pageEntries %}
 	
+	<div class='container'>
 		{% for entry in pageEntries %}
-		<div class="row post_preview">
+		<div class="row post_preview ten columns offset-by-one">
 			<article class="has-image columns">
 				<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
 				<div class="preview_content">
@@ -59,10 +58,10 @@
 			</article>
 		</div>
 		{% endfor %}
+	</div><!--     End Of Container    -->
 
-		<div class='pagination'>
-			{% include "_includes/pagination" %}
-		</div>
+	<div class='container pagination'>
+		{% include "_includes/pagination" %}
 	</div>
 
 {% endblock %}

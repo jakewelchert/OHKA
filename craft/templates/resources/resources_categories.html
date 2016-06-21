@@ -28,7 +28,7 @@
 			<div class='row'>			
 			<select id='my_selection' class='category_filter six columns offset-by-three'>
 			    <option value=''>Select A Category</option>
-			    <option value='All' href='{{ url('newsandevents') }}'>All</option>
+			    <option value='All' href='{{ url('resources') }}'>All</option>
 				{% nav category in craft.categories.group('resources') %}  
 				<option value='{{ category.title }}' href='{{ category.url }}'>{{ category.title }}</option>
 				{% endnav %}
@@ -42,29 +42,31 @@
 			</script>
 		</div>
 
+    	{% paginate craft.entries.relatedTo(category).limit(5) as pageInfo, pageEntries %}
+		
+		<div class='container'>
+			{% for entry in pageEntries %}
+			<div class="row post_preview ten columns offset-by-one">
+				<article class="has-image columns">
+					<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
+					<div class="preview_content">
+						<a href="{{ entry.url }}" title="{{ entry.title }}"><img src="img/image.png"></a>
+						<ul class="share_post">
+							<li>Share Now&nbsp;</li>
+							<li><a href="#" target="_blank"><i class='share share-light share-post-preview fa fa-facebook fa-lg'></i></a></li>
+							<li><a href="#" target="_blank"><i class='share share-light share-post-preview fa fa-twitter fa-lg'></i></a></li>
+						</ul>
+						<p class="readmore_link">
+							<a href="{{ entry.url }}" title="{{ entry.title }}">READ MORE &#187;</a>
+						</p>
+					</div>
+				</article>
+			</div>
+			{% endfor %}
+		</div><!--     End Of Container    -->
 
-	{# Fetch all of the entries related to this category #}
-	{% set entries = craft.entries.relatedTo(category) %}
-
-	{# Output them #}
-	{% for entry in entries %}
-		<div class="row post_preview">
-			<article class="has-image columns">
-				<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
-				<div class="preview_content">
-					<a href="{{ entry.url }}" title="{{ entry.title }}"><img src="img/image.png"></a>
-					<ul class="share_post">
-						<li>Share Now&nbsp;</li>
-						<li><a href="#" target="_blank"><i class='share share-light share-post-preview fa fa-facebook fa-lg'></i></a></li>
-						<li><a href="#" target="_blank"><i class='share share-light share-post-preview fa fa-twitter fa-lg'></i></a></li>
-					</ul>
-					<p class="readmore_link">
-						<a href="{{ entry.url }}" title="{{ entry.title }}">READ MORE &#187;</a>
-					</p>
-				</div>
-			</article>
+		<div class='container pagination'>
+			{% include "_includes/pagination" %}
 		</div>
-	{% endfor %}
-</div><!--     End Of Container    -->
 
 {% endblock %}

@@ -6,15 +6,32 @@ ul.pagination {
 
 ul.pagination li {display: inline;}
 
+
 ul.pagination li a {
-  color: #ddd;
-  float: left;
-  padding: 6px 16px 10px;
-  text-decoration: none;
-  border: 1px solid #ddd;
-  margin: 5px;
-  border-radius: 5px;
+    color: #ddd;
+    float: left;
+    padding: 0px 6px 0px;
+    text-decoration: none;
 }
+
+  @media (max-width: 799px) {
+    ul.pagination li a { 
+      font-size: 17px;
+    }
+  }
+
+
+  @media (min-width: 800px) {
+    ul.pagination li a {
+      color: #ddd;
+      float: left;
+      padding: 6px 16px 10px;
+      text-decoration: none;
+      border: 1px solid #ddd;
+      margin: 5px;
+      border-radius: 5px;
+    }
+  }
 
 ul.pagination li a.active {
   background-color: #4CAF50;

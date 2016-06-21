@@ -45,7 +45,7 @@
 /* For devices larger than 400px */
 @media (min-width: 400px) {
   .container {
-    width: 85%;
+    width: 90%;
     padding: 0; 
 }
 }
@@ -54,9 +54,6 @@
 @media (min-width: 800px) {
   .container {
     max-width: 1300px; }
-
-  .projectcontainer {
-    max-width: 1600px; }
 
 
   .column,
