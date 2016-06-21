@@ -1,16 +1,18 @@
 .bp-title {
   position: relative;
-  background-image: url('');
-	background: #ddd;
-  background-position: top left;
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-	padding: 130px 50px;
+	padding: 50px;
   text-align: center;
-  /*margin-bottom: 120px;*/
+  margin-top: 105px;
+  background: url("../../img/ohka-pattern.svg");
+  background-position: center center;
+  background-repeat: repeat;
 }
+
+  @media (min-width: 700px) {
+  .bp-title {
+  padding: 130px 50px;
+  margin-top: 0;
+  }
 
 .bp-subheader {
 	background: red;
