@@ -19,24 +19,22 @@
 		<h1 class="bp-row bp-title">{{ title }}</h1>
 	
 		<div class='categories'>
-		
-		<ul>
+			<div class='row'>			
+			<select id='my_selection' class='category_filter six columns offset-by-three'>
+			    <option value=''>Select A Category</option>
+			    <option value='All' href='{{ url('newsandevents') }}'>All</option>
+				{% nav category in craft.categories.group('resources') %}  
+				<option value='{{ category.title }}' href='{{ category.url }}'>{{ category.title }}</option>
+				{% endnav %}
+			</select>
+			</div>
 
-			<li><a class="button" href='{{ url('resources') }}' title='All Resources'>ALL</a></li>
-
-		    {% nav category in craft.categories.group('resources') %}        
-	        <li>
-	            <a class="button" href="{{ category.url }}">{{ category.title }}</a>
-	            {% ifchildren %}
-	                <ul>
-	                    {% children %}
-	                </ul>
-	            {% endifchildren %}
-	        </li>
-		    {% endnav %}
-		</ul>
-
-	</div>
+			<script>
+			document.getElementById('my_selection').onchange = function() {
+			    window.location.href = this.children[this.selectedIndex].getAttribute('href');
+			}
+			</script>
+		</div>
 
 	{% for entry in craft.entries.section('resources').find() %}
 
