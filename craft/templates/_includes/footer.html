@@ -1,19 +1,21 @@
+{% for entry in craft.entries.section('whywedothis').order('RAND()').limit(1) %}
 <div class="stories">
   <div class="container stories-container row">
     <div class="stories-author">
       <img class='stories-author-img' src='{{ siteUrl }}img/ohka-stories-halie.png'>
-      <strong class='stories-title'>Why We<br>Do This</strong>
+      <strong>Why We<br>Do This</strong>
     </div>
 
     <img class='stories-divider' src='{{ siteUrl }}img/stories-divider.svg'>
-
+    
     <div class="stories-text">
       <strong class='stories-title'>Why We Do This</strong>
-      <p>We went on a visit today and the client said her son has beein in the ICY 3 times (near death) because of his asthma and has had 4 asthma attacks in the past 3 months. We weren't initially going to be able to help his family as the home needed work far beyond our budget but the client's partner decided he would be willing to do a portion of the work. Because of his contribution, Omaha Healthy Kids Alliance feels confident we can make the home healthy enough to have a great impact on their child's asthma. Definately the highlight of our week.</p>
-      <p><strong>- Halie Smith, Health Communication Specialist</strong></p>
+      <p>{{ entry.whywedothisBody }}</p>
+      <p><strong>{{ entry.whywedothisAuthor }}</strong></p>
     </div>
   </div>
 </div>
+{% endfor %}
 
 
 <footer class="footer">

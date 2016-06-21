@@ -46,6 +46,10 @@
 	.stories-text {
 		width: 60%;
 	}
+	
+	.stories-title  {
+		display: none;
+	}
 	}
 
 
