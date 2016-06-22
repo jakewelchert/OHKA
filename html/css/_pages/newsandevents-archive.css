@@ -78,7 +78,7 @@
   margin-bottom: 10px;
 }
 
-.post_preview-index h2 {
+.post_preview-index h2, .post_preview-entry h2 {
   margin-bottom: 25px;
 }
 
@@ -126,7 +126,7 @@
   .post_preview {
     min-height: 220px;
   }
-  .post_preview-index {
+  .post_preview-index, .post_preview-entry {
     min-height: 160px;
   }
   }
