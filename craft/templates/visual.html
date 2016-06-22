@@ -26,8 +26,14 @@
 	<h1 class="v-title">{{ entry.title }}</h1>
 
 	<div class="v-intro-img ten columns offset-by-one">
-		<img src="{{ siteUrl }}img/healthyhome.png">
+		{% for asset in entry.headerImage %}
+		<img src="{{ asset.url }}" alt="{{ asset.title }}">                               
+		{% endfor %}
 	</div>
+
+<!-- 	<div class="v-intro-img ten columns offset-by-one">
+		<img src="{{ siteUrl }}img/healthyhome.png">
+	</div> -->
 
 	<div class='v-row'>
 		<div class="v-intro six columns offset-by-three">
