@@ -62,6 +62,12 @@
 
 
 @media (min-width: 1024px) {
+  .caption-what, .caption-why, .caption-how {
+    background: url("../../img/ohka-pattern.svg");
+    background-position: center center;
+    background-repeat: repeat;
+  }
+  
   .caption-what {
     padding: 75px 75px 75px 250px;
   }

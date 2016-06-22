@@ -78,6 +78,10 @@
   margin-bottom: 10px;
 }
 
+.post_preview-index h2 {
+  margin-bottom: 25px;
+}
+
 .post_preview h2 a { color: #568d9b; }
 .post_preview h2 a:hover { color: #406670; }
 
@@ -121,6 +125,9 @@
   @media screen and (min-width: 1000px) {
   .post_preview {
     min-height: 220px;
+  }
+  .post_preview-index {
+    min-height: 160px;
   }
   }
 
