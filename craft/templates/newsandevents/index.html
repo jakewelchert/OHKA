@@ -16,7 +16,7 @@
 {% block content %}
 	<div class='container'>
 		
-		<h1 class="bp-row bp-title">{{ title }}</h1>
+		<h1 class="bp-row categories-title">{{ title }}</h1>
 
 
 		{% set featuredNews = craft.entries.section('newsandevents').featured('not 0').order('dateUpdated desc').limit(2) %}

@@ -20,10 +20,11 @@
 {% extends "_layout" %}
 
 {% block content %}
+	
+	<h1 class="bp-row categories-title">{{ category.title }}</h1>
+
 	<div class='container'>
 		
-		<h1 class="bp-row bp-title">{{ category.title }}</h1>
-
 		<div class='categories'>
 			<div class='row'>			
 			<select id='my_selection' class='category_filter six columns offset-by-three'>

@@ -1,3 +1,26 @@
+.categories-title {
+  position: relative;
+  padding: 50px;
+  text-align: center;
+  margin-top: 105px;
+  background: url("../../img/ohka-pattern.svg");
+  background-position: center center;
+  background-repeat: repeat;
+}
+
+  @media (min-width: 700px) {
+    .categories-title {
+    margin-top: 0;
+    }
+  }
+
+  @media (min-width: 800px) {
+    .categories-title {
+    padding: 130px 50px;
+    }
+  }
+
+
 .categories {
   text-align: center;
   padding: 20px 0;
@@ -53,7 +76,7 @@
   background-color: #ddd;
   padding: 200px 50px;
   text-align: center;
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 
