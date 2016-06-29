@@ -46,11 +46,26 @@
 	</div>
 
 
+<!-- 	{% for block in entry.visualBlocks %}
+
+		{{ block.basicblockTitle }}
+		{{ block.basicblockSummary }}
+		
+		{% set image = block.basicblockImage.first() %}
+			<img src='{{ image.URL }}' alt='{{ image.title }}'>
+
+	{% endfor %} -->
+
+
+
+
 	{% for block in entry.visualBlocks %}
 
-		{{ block.visualCopy }}
+		{{ block.icons }}
+		{{ block.staggeredCalloutImageRight }}
 
 	{% endfor %}
+
 
 
 
