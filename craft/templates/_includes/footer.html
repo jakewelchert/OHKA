@@ -33,21 +33,21 @@
   <div class="container">  
 
     <div class="row">
-      <h5 class="five columns"><strong>MENU</strong></h5>  
-      <h5 class="three columns"><strong>MORE</strong></h5>  
-      <h5 class="four columns"><strong>NEWSLETTER</strong></h5>  
-    </div>
-
-    <div class="row">
       <div class="five columns">
+  
+        <h5><strong>MENU</strong></h5>  
+
         <ul class="footer-nav">
-          <li><a href="{{ url('whats-a-healthy-home') }}">What's A Healthy Home</a></li>
-          <li><a href="{{ url('why-healthy-homes-matter-in-omaha') }}">Why Healhty Homes Matter In Omaha</a></li>
-          <li><a href="{{ url('how-ohka-makes-a-difference') }}">How OHKA Makes A Difference</a></li>
+          <li><a href="{{ siteUrl }}">Home</a></li>
+          <li><a href="{{ siteUrl('whats-a-healthy-home') }}">What's A Healthy Home</a></li>
+          <li><a href="{{ siteUrl('why-healthy-homes-matter-in-omaha') }}">Why Healhty Homes Matter In Omaha</a></li>
+          <li><a href="{{ siteUrl('how-ohka-makes-a-difference') }}">How OHKA Makes A Difference</a></li>
         </ul>
       </div>
 
       <div class="three columns">
+        <h5><strong>MORE</strong></h5>  
+
         <ul class="footer-nav">
           <li><a href="{{ url('newsandevents') }}">News & Events</a></li>
           <li><a href="{{ url('resources') }}">Resources</a></li>
@@ -68,6 +68,8 @@
       </div>
 
       <div class="four columns">
+        <h5><strong>NEWSLETTER</strong></h5>  
+
         <p>Join our email list,<br>stay in the know.</p>
         <form action="action_page.php">
           <input type="text" name="Email Address" value="Your email">

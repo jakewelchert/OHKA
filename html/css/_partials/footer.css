@@ -1,3 +1,37 @@
+footer {
+	position: relative;
+	padding: 0 0 25px 0;
+	background-color: #fef9dd;
+}
+
+	@media screen and (min-width: 800px) {
+		footer {
+			padding: 0 0 75px 0;
+		}
+	}
+
+footer, footer a {
+	font-weight: 700;
+}
+
+footer h5 {
+	color: #153454;
+}
+
+	@media screen and (max-width: 799px) {
+		footer h5 {
+			margin-bottom: 5px;
+			margin-top: 35px;
+			border-top: 1px solid #153454;
+		}
+	}
+
+footer .row {
+  padding: 15px 0;
+}
+
+
+
 .stories {
 	background: #cee6c5;
 	padding: 130px 0;
@@ -61,28 +95,24 @@
 
 .footer-super-nav {
 	position: relative;
-	text-align: center;
-	padding-bottom: 40px;
-	top: -27px;
+    padding: 35px 0 0 0;
+   	text-align: center;
 }
 
-footer {
-	position: relative;
-	padding: 0 0 75px 0;
-	background-color: #fef9dd;
-}
+	@media screen and (max-width: 799px) {
+		.footer-super-nav button {
+			display: block;
+			margin: 10px auto;
+			width: 75%;
+		}
+	}
 
-footer, footer a {
-	font-weight: 700;
-}
-
-footer h5 {
-	color: #153454;
-}
-
-footer .row {
-  padding: 15px 0;
-}
+	@media screen and (min-width: 800px) {
+		.footer-super-nav {
+    		padding: 0 0 40px 0;
+			top: -27px;
+		}
+	}
 
 .footer-nav {
 	list-style: none;
