@@ -130,15 +130,6 @@ nav a:hover {
   color: #6cb358;
 }
 
-nav a:active {
-  color: #153454;
-}
-
-nav a:focus {
-  color: #153454;
-}
-
-
 @media screen and (max-width: 699px) {
   .super-nav {
   display: none;
