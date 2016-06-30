@@ -50,8 +50,17 @@
 
 		{{ block.basicblockTitle }}
 		{{ block.basicblockSummary }}
-		
 		{% set image = block.basicblockImage.first() %}
+			<img src='{{ image.URL }}' alt='{{ image.title }}'>
+
+
+		{% set image = block.iconLeft.first() %}
+			<img src='{{ image.URL }}' alt='{{ image.title }}'>
+
+		{% set image = block.iconCenter.first() %}
+			<img src='{{ image.URL }}' alt='{{ image.title }}'>
+
+		{% set image = block.iconRight.first() %}
 			<img src='{{ image.URL }}' alt='{{ image.title }}'>
 
 	{% endfor %}
