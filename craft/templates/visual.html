@@ -46,17 +46,17 @@
 	    {% elseif block.type == "icons" %}
 			<div class='v-row'>
 				<div class='eight columns offset-by-two v-tertiary'>
-			        {% set image = block.iconLeft.first() %}
+			      {% set image = block.iconLeft.first() %}
 			        {% if image %}
 			          <img src="{{ image.getUrl }}" alt="{{ image.title }}">
 			        {% endif %}
 					
-					{% set image = block.iconCenter.first() %}
+						{% set image = block.iconCenter.first() %}
 			        {% if image %}
 			          <img src="{{ image.getUrl }}" alt="{{ image.title }}">
 			        {% endif %}
 
-					{% set image = block.iconRight.first() %}
+						{% set image = block.iconRight.first() %}
 			        {% if image %}
 			          <img src="{{ image.getUrl }}" alt="{{ image.title }}">
 			        {% endif %}
@@ -75,9 +75,14 @@
 	    {% elseif block.type == "text" %}
 
 	        {{ block.text|markdown }}
-	        
 
-	    {% elseif block.type == "quote" %}
+
+		<style type="text/css">
+			.borderedimage { background-image: url('{{ image.url }}'); }
+		</style>
+
+
+	    {% elseif block.type == "staggeredCalloutImageRight" %}
 			<div class='v-row'>
 				<div class="staggered-callout">
 					<div class="staggered-callout-image-right borders">
@@ -86,9 +91,9 @@
 
 					<div class="row staggered-callout-container">
 						<div class="five columns staggered_callout-content">
-							<h3>Housing and Health Are Connected</h3>
-							<p>A Healthy Home promotes the growth and development of children by making direct connections between quality housing and health outcomes. A growing body of evidence links housing issues to health problems such as asthma, lead posioning, cancer, and injuries.</p>
-							<a href="#"><strong>Optional Link</strong></a>
+							<h3>{{ block.staggeredCalloutTitle }}</h3>
+							<p>{{ block.staggeredCalloutBody }}</p>
+							<strong>{{ block.staggeredCalloutLink }}</strong>
 						</div>
 					</div>
 				</div>
@@ -96,8 +101,6 @@
 	    {% endif %}
 
 	{% endfor %}
-
-
 
 
 
