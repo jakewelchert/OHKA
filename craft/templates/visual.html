@@ -31,24 +31,16 @@
 		{% endfor %}
 	</div>
 
-	<div class='v-row'>
-		<div class="v-intro six columns offset-by-three">
-			<p>{{ entry.visualIntro }}</p>
-		</div>
-	</div>
-
-
 
 
 	{% for block in entry.visualBlocks %}
 
 	    {% if block.type == "heading" %}
-
-	        <h3>{{ block.heading }}</h3>
-
-	    {% elseif block.type == "text" %}
-
-	        {{ block.text|markdown }}
+			<div class='v-row'>
+				<div class="v-intro six columns offset-by-three">
+	        <p>{{ block.heading }}</p>
+	    	</div>
+			</div>
 
 
 	    {% elseif block.type == "icons" %}
@@ -79,6 +71,11 @@
 	            <img src="{{ image.getUrl }}" alt="{{ image.title }}">
 	        {% endif %}
 
+
+	    {% elseif block.type == "text" %}
+
+	        {{ block.text|markdown }}
+	        
 
 	    {% elseif block.type == "quote" %}
 			<div class='v-row'>
