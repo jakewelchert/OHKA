@@ -5,6 +5,15 @@
 </div>
  -->
 
+
+{% for entry in craft.entries.section('newsandevents').limit(2).find() %}
+
+{% endfor %}
+
+
+
+
+
 <header class="header container">
     <a href="{{ siteUrl }}" class='header-logo'><img src="{{ siteUrl }}img/ohka-logo.svg"></a>
     
