@@ -1,17 +1,10 @@
-<!-- <div class="alert alert-success">
-  <div class='container'>
-    <p>Ten Year Anniversary Is Right Around the Corner! <span class='read-more'><strong><a href='#'>Read More</a></strong></span></p>
+{% for entry in craft.entries.section('newsandevents').alert('1').limit(1) %}
+  <div class="alert alert-success">
+    <div class='container'>
+      <p>{{ entry.title }} <span class='read-more'><strong><a href='{{ entry.url }}'>Read More</a></strong></span></p>
+    </div>
   </div>
-</div>
- -->
-
-
-{% for entry in craft.entries.section('newsandevents').limit(2).find() %}
-
 {% endfor %}
-
-
-
 
 
 <header class="header container">
