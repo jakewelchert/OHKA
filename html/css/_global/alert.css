@@ -1,6 +1,5 @@
 .alert {
 	text-align: left;
-	padding: 3px;
 	font-weight: 600;
 }
 
@@ -8,11 +7,12 @@
 	margin: 0;
 	padding: 0;
 	color: #fff;
+	font-size: 21px;
 }
 
 .alert-success {
-  color: #fff;
-  background-color: #fb9642;
+  	color: #fff;
+  	background-color: #e67728;
 }
 
 .alert .read-more a {
