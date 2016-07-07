@@ -165,8 +165,9 @@
 
 .action-callout {
 	position: relative;
-  background-image: url("../img/image.png");
-  background: url("../../img/image.png") no-repeat center center;
+  /*background-image: url("../../img/image.png");*/
+  background-repeat: no-repeat;
+  background-position: center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;

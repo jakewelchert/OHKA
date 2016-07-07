@@ -31,17 +31,14 @@
 		{% endfor %}
 	</div>
 
-
-
 	{% for block in entry.visualBlocks %}
 
 	    {% if block.type == "heading" %}
 			<div class='v-row'>
 				<div class="v-intro six columns offset-by-three">
-	        <p>{{ block.heading }}</p>
-	    	</div>
+	        		<p>{{ block.heading }}</p>
+	    		</div>
 			</div>
-
 
 	    {% elseif block.type == "icons" %}
 			<div class='v-row'>
@@ -64,29 +61,12 @@
 			</div>
 
 
-	    {% elseif block.type == "image" %}
-
-	        {% set image = block.image.first() %}
-	        {% if image %}
-	            <img src="{{ image.getUrl }}" alt="{{ image.title }}">
-	        {% endif %}
-
-
-	    {% elseif block.type == "text" %}
-
-	        {{ block.text|markdown }}
-
-
-		<style type="text/css">
-			.borderedimage { background-image: url('{{ image.url }}'); }
-		</style>
-
-
 	    {% elseif block.type == "staggeredCalloutImageRight" %}
 			<div class='v-row'>
 				<div class="staggered-callout">
 					<div class="staggered-callout-image-right borders">
-						<div class='borderedimage'></div>
+						{% set image = block.staggeredCalloutImage.first() %}
+						<div class='borderedimage' style="background-image:url({{ image.getURL() }})"></div>
 					</div>
 
 					<div class="row staggered-callout-container">
@@ -98,78 +78,50 @@
 					</div>
 				</div>
 			</div>
+
+
+	    {% elseif block.type == "staggeredCalloutImageLeft" %}
+			<div class='v-row'>
+				<div class="staggered-callout">
+					<div class="staggered-callout-image-left borders">
+						{% set image = block.staggeredCalloutImage.first() %}
+						<div class='borderedimage' style="background-image:url({{ image.getURL() }})"></div>
+					</div>
+
+					<div class="row staggered-callout-container">
+						<div class="five columns offset-by-seven staggered_callout-content">
+							<h3>{{ block.staggeredCalloutTitle }}</h3>
+							<p>{{ block.staggeredCalloutBody }}</p>
+							<strong>{{ block.staggeredCalloutLink }}</strong>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+	    {% elseif block.type == "text" %}
+			<div class='v-row'>
+				<div class="seven columns offset-by-three">
+					<h2 class='sec-title darkblue'>{{ block.textHeading }}</h2>
+					<h3 class='sec-title lightblue'>{{ block.textSubHeading }}</h3>
+	        		
+	        		{{ block.text|markdown }}
+
+				</div>
+			</div>
+
+
+	    {% elseif block.type == "actionCallout" %}		
+			<div class='v-row'>
+				{% set image = block.actionCalloutImage.first() %}
+				<div class='ten columns offset-by-one action-callout' style='background-image:url({{ image.getURL() }})'>
+					<h3>{{ block.actionCalloutTitle }}</h3>
+					<a href='{{ block.actionCalloutLink }}'><button>{{ block.actionCalloutButtonText }}</button></a>
+				</div>
+			</div>
+
 	    {% endif %}
-
 	{% endfor %}
-
-
-
-
-
-
-
-
-
-
-
-
-	<!--   Staggered Callout - Image Right   -->
-	<div class='v-row'>
-		<div class="staggered-callout">
-			<div class="staggered-callout-image-right borders">
-				<div class='borderedimage'></div>
-			</div>
-
-			<div class="row staggered-callout-container">
-				<div class="five columns staggered_callout-content">
-					<h3>Housing and Health Are Connected</h3>
-					<p>A Healthy Home promotes the growth and development of children by making direct connections between quality housing and health outcomes. A growing body of evidence links housing issues to health problems such as asthma, lead posioning, cancer, and injuries.</p>
-					<a href="#"><strong>Optional Link</strong></a>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!--   Staggered Callout - Image Left   -->
-	<div class='v-row'>
-		<div class="staggered-callout">
-			<div class="staggered-callout-image-left borders">
-				<div class='borderedimage'></div>
-			</div>			
-			<div class="row staggered-callout-container">
-				<div class="five columns offset-by-seven staggered_callout-content">
-					<h3>Home is Where the Lead is</h3>
-					<p>A Healthy Home minimizes the risks of poisoning caused by lead-contaiminated paint, water, soil, and other sources. Children exposed to lead can develop learning disabilites and challenges that contribute to behavioral problems.</p>
-					<a href="#"><strong>Optional Link</strong></a>
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class='v-row'>
-		<div class="seven columns offset-by-three">
-			<h2 class='sec-title darkblue'>8 Ways to Make Your Home Healthier</h2>
-			<h3 class='sec-title lightblue'>Learn How You Can Make Your Home Healthier</h3>
-			<ol>
-				<li><p><strong>Keep it Dry:</strong> Excess moisture can contribute to mold growth and trigger asthma, allergy and potential respiratory problems.</p></li>
-				<li><p><strong>Keep it Clean:</strong> Control sources of dust and contaminants by crwating smooth and cleanable surfaces, reducing clutter, and using effective, wet cleaning methods.</p></li>
-				<li><p><strong>Keep it Pest-Free:</strong> Exposure to mice and cockroaches can cause asthma episodes in children. However, chemical remedies for pest infestations can cause health problems, too. The use of non-toxic pest control is best, especially when children are present in the home.</p></li>
-				<li><p><strong>Keep you Home Safe:</strong> Store chemicals where they are not accesible to kids. Make sure smoke and carbon monoxide detectors are installed.</p></li>
-				<li><p><strong>Keep it Toxic Free</strong> These include lead, radon, pesticides, volatile organic compounds, and environmental tobacco smoke. Exposure to asbestos particles, radon gas, carbon monoxide, and second-hand tobacco smoke are far higher indoors than outside.</p></li>
-				<li><p><strong>Keep it Ventilated:</strong> Studies show that increasing the fresh air supply in a home improves respiratory health. Use HEPA furnace filters and change them seasonally.</p></li>
-				<li><p><strong>Keep it Maintained:</strong> Inspect, clean and repair your home routinely.</p></li>
-				<li><p><strong>Keep it Energy Efficient:</strong> An energy efficient home is more comfortable, saves you money, and is 'green'</p></li>
-			</ol>
-		</div>
-	</div>
-
-	<div class='v-row'>
-		<div class="ten columns offset-by-one action-callout">
-			<h3>Why Healthy Homes Matter In Omaha</h3>
-			<a href='{{ entry.url }}'><button>Learn More</button></a>
-		</div>
-	</div>
 
 </div><!--     End Of Container    -->
 
