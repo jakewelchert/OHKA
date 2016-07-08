@@ -22,7 +22,8 @@
 {% block content %}
 <div class="container">
 
-	<div class='homepage-hero'>
+	{% set image = entry.homepageHeaderImage.first() %}
+	<div class='homepage-hero' style='background-image:url({{ image.getURL() }})'>
 		<div class="cta">	
 			{% if entry.ctaButton %}
 			    <a class="button" href='{{ entry.homepageCtaLink }}' title='{{ entry.homepageCtaButtonText }}'>{{ entry.homepageCtaButtonText }}</a>
