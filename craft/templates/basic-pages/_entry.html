@@ -12,98 +12,54 @@
 
 	<h1 class="bp-row bp-title">{{ title }}</h1>
 
-	<div class="bp-row">
-		<div class="six columns offset-by-three">
-			<h3>Subhead headline to lead into the post</h3>
-			
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae ligula sapien. Nunc nec est et velit tincidunt volutpat. Phasellus nec lorem id sapien ultricies semper in venenatis dolor. Aliquam quis nibh ex. Suspendisse nec metus sagittis, posuere ante lacinia, ultrices nibh. Integer eu metus rhoncus, tincidunt justo sed, rhoncus neque. Duis diam nunc, suscipit id imperdiet a, sagittis sed nibh. Cras rutrum sagittis nunc, ac interdum turpis tempor sed.</p>
+	{% for block in entry.basicBlocks %}
 
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae ligula sapien. Nunc nec est et velit tincidunt volutpat. Phasellus nec lorem id sapien ultricies semper in venenatis dolor. Aliquam quis nibh ex. Suspendisse nec metus sagittis, posuere ante lacinia, ultrices nibh. Integer eu metus rhoncus, tincidunt justo sed, rhoncus neque. Duis diam nunc, suscipit id imperdiet a, sagittis sed nibh. Cras rutrum sagittis nunc, ac interdum turpis tempor sed.</p>
+	    {% if block.type == "text" %}
+		<div class="bp-row">
+			<div class="six columns offset-by-three">
+				<h3>{{ block.textSubHeading }}</h3>
+				<p>{{ block.text|markdown }}</p>
+			</div>
 		</div>
-	</div>
 
-	<div class='bp-row'>
-		<div class="bp-subheader six columns offset-by-three">Subhead Header</div>
-	</div>	
+	    {% elseif block.type == "subheadHeader" %}
+		<div class='bp-row'>
+			<div class="bp-subheader six columns offset-by-three">{{ block.subheadHeader }}</div>
+		</div>
 
+	    {% elseif block.type == "imageTextCallout" %}
 		<div class="creator seven columns offset-by-two">
 			<div class="speaker-title">
-				<img src="{{ siteUrl }}img/image.png">
+		      {% set image = block.calloutTertiaryImage.first() %}
+		        {% if image %}
+		          <img src="{{ image.getUrl }}" alt="{{ image.title }}">
+		        {% endif %}
 				<div>
-					<h4>Image + Text Callout</h4>
-					<p>Solid description text. It's the details and payoff to the brand-focused headline that hooks people in. It then leads to either learn more, share, or keep scrolling.</p>
-					<a href='{{ entry.url }}'><button>Read More</button></a>
+					<h4>{{ block.calloutHeader }}</h4>
+					<p>{{ block.calloutBody }}</p>
+					<a href='{{ block.calloutOptionalLink }}'><button>{{ block.calloutOptionalLinkText }}</button></a>
 				</div>
 			</div>
 		</div>
 
-		<div class="creator seven columns offset-by-two">
-			<div class="speaker-title">
-				<img src="{{ siteUrl }}img/image.png">
-				<div>
-					<h4>Image + Text Callout</h4>
-					<p>Solid description text. It's the details and payoff to the brand-focused headline that hooks people in. It then leads to either learn more, share, or keep scrolling.</p>
-					<a href='{{ entry.url }}'><button>Read More</button></a>
+		{% elseif block.type == "tertiaryImage" %}
+			<div class="bp-row twelve columns bp-tertiary-list">
+				{% for image in block.tertiaryImage %}
+				    <a title='Title Goes Here'><img src="{{ image.getUrl() }}" alt="{{ image.title }}"></a>
+				{% endfor %}
+			</div>
+
+	    {% elseif block.type == "actionCallout" %}		
+			<div class='v-row'>
+				{% set image = block.actionCalloutImage.first() %}
+				<div class='ten columns offset-by-one action-callout' style='background-image:url({{ image.getURL() }})'>
+					<h3>{{ block.actionCalloutTitle }}</h3>
+					<a href='{{ block.actionCalloutLink }}'><button>{{ block.actionCalloutButtonText }}</button></a>
 				</div>
 			</div>
-		</div>
 
-		<div class="creator seven columns offset-by-two">
-			<div class="speaker-title">
-				<img src="{{ siteUrl }}img/image.png">
-				<div>
-					<h4>Image + Text Callout</h4>
-					<p>Solid description text. It's the details and payoff to the brand-focused headline that hooks people in. It then leads to either learn more, share, or keep scrolling.</p>
-					<a href='{{ entry.url }}'><button>Read More</button></a>
-				</div>
-			</div>
-		</div>
-
-	<div class="bp-row">
-		<div class="six columns offset-by-three">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae ligula sapien. Nunc nec est et velit tincidunt volutpat. Phasellus nec lorem id sapien ultricies semper in venenatis dolor. Aliquam quis nibh ex. Suspendisse nec metus sagittis, posuere ante lacinia, ultrices nibh. Integer eu metus rhoncus, tincidunt justo sed, rhoncus neque. Duis diam nunc, suscipit id imperdiet a, sagittis sed nibh. Cras rutrum sagittis nunc, ac interdum turpis tempor sed.</p>
-		</div>
-	</div>
-
-	<div class="bp-row">
-		<div class="six columns offset-by-three">
-			<h3>Subhead headline to lead into the post</h3>
-			<img class='bp-img' src="{{ siteUrl }}img/image.png">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae ligula sapien. Nunc nec est et velit tincidunt volutpat. Phasellus nec lorem id sapien ultricies semper in venenatis dolor. Aliquam quis nibh ex. Suspendisse nec metus sagittis, posuere ante lacinia, ultrices nibh. Integer eu metus rhoncus, tincidunt justo sed, rhoncus neque. Duis diam nunc, suscipit id imperdiet a, sagittis sed nibh. Cras rutrum sagittis nunc, ac interdum turpis tempor sed.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae ligula sapien. Nunc nec est et velit tincidunt volutpat. Phasellus nec lorem id sapien ultricies semper in venenatis dolor. Aliquam quis nibh ex. Suspendisse nec metus sagittis, posuere ante lacinia, ultrices nibh. Integer eu metus rhoncus, tincidunt justo sed, rhoncus neque. Duis diam nunc, suscipit id imperdiet a, sagittis sed nibh. Cras rutrum sagittis nunc, ac interdum turpis tempor sed.</p>
-		</div>
-	</div>
-
-	<div class="bp-row">
-		<div class="bp-subheader six columns offset-by-three">Subhead Header</div>	
-	</div>
-
-	<div class="bp-row twelve columns bp-tertiary-list">
-		<a href="#" title="Title Goes Here"><img src="{{ siteUrl }}img/image.png"></a>
-		<a href="#" title="Title Goes Here"><img src="{{ siteUrl }}img/image.png"></a>
-		<a href="#" title="Title Goes Here"><img src="{{ siteUrl }}img/image.png"></a>
-		<a href="#" title="Title Goes Here"><img src="{{ siteUrl }}img/image.png"></a>
-		<a href="#" title="Title Goes Here"><img src="{{ siteUrl }}img/image.png"></a>
-		<a href="#" title="Title Goes Here"><img src="{{ siteUrl }}img/image.png"></a>
-		<a href="#" title="Title Goes Here"><img src="{{ siteUrl }}img/image.png"></a>
-		<a href="#" title="Title Goes Here"><img src="{{ siteUrl }}img/image.png"></a>
-	</div>
-
-
-	<div class="bp-row">
-		<div class="six columns offset-by-three">
-			<h3>Subhead headline to lead into the post</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae ligula sapien. Nunc nec est et velit tincidunt volutpat. Phasellus nec lorem id sapien ultricies semper in venenatis dolor. Aliquam quis nibh ex. Suspendisse nec metus sagittis, posuere ante lacinia, ultrices nibh. Integer eu metus rhoncus, tincidunt justo sed, rhoncus neque. Duis diam nunc, suscipit id imperdiet a, sagittis sed nibh. Cras rutrum sagittis nunc, ac interdum turpis tempor sed.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae ligula sapien. Nunc nec est et velit tincidunt volutpat. Phasellus nec lorem id sapien ultricies semper in venenatis dolor. Aliquam quis nibh ex. Suspendisse nec metus sagittis, posuere ante lacinia, ultrices nibh. Integer eu metus rhoncus, tincidunt justo sed, rhoncus neque. Duis diam nunc, suscipit id imperdiet a, sagittis sed nibh. Cras rutrum sagittis nunc, ac interdum turpis tempor sed.</p>
-		</div>
-	</div>
-
-	<div class='v-row'>
-		<div class="ten columns offset-by-one action-callout">
-			<h3>Why Healthy Homes Matter In Omaha</h3>
-			<a href='{{ entry.url }}'><button>Learn More</button></a>
-		</div>
-	</div>
+    {% endif %}
+{% endfor %}
 
 </div><!--     End Of Container    -->
 {% endblock %}
