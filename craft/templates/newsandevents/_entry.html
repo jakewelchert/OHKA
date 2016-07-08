@@ -17,7 +17,8 @@
 
 {% block content %}
 
-<div class='container post-title' style='background-color: {{ entry.newsintroColor }}'>
+{% set image = entry.newseventsHeaderImage.first() %}
+<div class='container post-title' style='background-color: {{ entry.newsintroColor }}; background-image:url({{ image.getURL() }})'>
 	<div class='ten columns offset-by-one'>
 		<h1>{{ entry.title }}</h1>
 		<ul class='post-title-social'>
@@ -36,7 +37,7 @@
 	</div>
 
 	{% for asset in entry.newseventsThumbnail %}
-		<img class='post-title-thumbnail' src="{{ asset.url }}" alt="{{ asset.title }}">                 
+		<img class='post-title-thumbnail' src="{{ asset.url }}" alt="{{ asset.title }}">     
 	{% endfor %}
 
 </div>
