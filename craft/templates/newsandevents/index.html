@@ -77,7 +77,11 @@
 			<article class="has-image columns">
 				<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
 				<div class="preview_content">
-					<a href="{{ entry.url }}" title="{{ entry.title }}"><img src="img/image.png"></a>
+					<a href="{{ entry.url }}" title="{{ entry.title }}">
+						{% for asset in entry.newseventsThumbnail %}
+							<img src="{{ asset.url }}" alt="{{ asset.title }}">
+						{% endfor %}
+					</a>
 					<p>{{ entry.summary }}</p>
 					<ul class="share_post">
 						<li>Share Now&nbsp;</li>
