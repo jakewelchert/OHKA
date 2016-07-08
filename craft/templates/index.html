@@ -24,9 +24,16 @@
 
 	<div class='homepage-hero'>
 		<div class="cta">	
-			<a class="button" href="#" title="">Optional CTA</a>
+			{% if entry.ctaButton %}
+			    <a class="button" href="#" title="">Optional CTA</a>
+			{% endif %}
 		</div>
+
 	</div>
+
+
+
+
 	
 	<div class='row index_intro'>
 		<h1 class='seven columns'>We improve children's health through Healthy Homes.<span>&nbsp;&nbsp;&nbsp;<a class='learnmore' href='#'>Learn&nbsp;More&nbsp;&#187;</a></span></h1>
