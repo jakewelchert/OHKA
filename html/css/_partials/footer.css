@@ -34,9 +34,15 @@ footer .row {
 
 .stories {
 	background: #cee6c5;
-	padding: 130px 0;
+	padding: 50px 0;
 	color: #29465e;
 }
+
+	@media screen and (min-width: 800px) {
+	.stories {
+	padding: 130px 0;
+	}
+	}
 
 .stories-container {
 	margin: 0 auto;
