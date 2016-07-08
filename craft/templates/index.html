@@ -24,7 +24,7 @@
 
 	{% set image = entry.homepageHeaderImage.first() %}
 	<div class='homepage-hero' style='background-image:url({{ image.getURL() }})'>
-		<div class="cta">	
+		<div class="cta">
 			{% if entry.ctaButton %}
 			    <a class="button" href='{{ entry.homepageCtaLink }}' title='{{ entry.homepageCtaButtonText }}'>{{ entry.homepageCtaButtonText }}</a>
 			{% endif %}
@@ -120,7 +120,9 @@
 	</div>
 
 </div>
-		
-<img class="u-max-full-width" src='img/houses_index.jpg'>
+
+{% for asset in entry.homepageFooterImage %}
+	<img class='u-max-full-width' src="{{ asset.url }}" alt="{{ asset.title }}">                               
+{% endfor %}
 
 {% endblock %}
