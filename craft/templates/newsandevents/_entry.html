@@ -32,7 +32,12 @@
 
 		</ul>
 	</div>
-	<img class='post-title-thumbnail' src='{{ siteUrl }}img/image.png'>
+
+
+	{% for asset in entry.newseventsThumbnail %}
+		<img class='post-title-thumbnail' src="{{ asset.url }}" alt="{{ asset.title }}">                 
+	{% endfor %}
+
 </div>
 
 
@@ -46,9 +51,10 @@
 	<div class='seven columns'>
 		<h4 class='post-date'>{{ entry.postDate.format('F d, Y') }}</h4>
 
-		<p class='post-category'>Posted in:
 		{# Fetch all of the categories related to this entry #}
 		{% set categories = craft.categories.relatedTo(entry) %}
+		<p class='post-category'>Posted in:
+
 
 		{# Output them #}
 		{% for category in categories %}
