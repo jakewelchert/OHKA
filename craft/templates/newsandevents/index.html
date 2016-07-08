@@ -33,7 +33,7 @@
 				{% set categories = craft.categories.relatedTo(entry) %}
 				{# Output them #}
 				{% for category in categories %}
-					<h3><a href="{{ category.url }}">{{ category.title }}&nbsp;</a></h3>
+					<h4><a href="{{ category.url }}">{{ category.title }}&nbsp;</a></h4>
 				{% endfor %}
 
 				<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>

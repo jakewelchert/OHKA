@@ -73,12 +73,19 @@
 
 .post_featured {
   position: relative;
-  background-color: #ddd;
   padding: 200px 50px;
   text-align: center;
   margin-top: 20px;
 }
 
+.post_featured h2 {
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.post_featured h2 a, .post_featured h4 {
+  color: #fff;
+}
 
 /*    !!!!    POST PREVIEW    !!!!    */
 .post_preview {
