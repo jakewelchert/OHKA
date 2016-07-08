@@ -124,10 +124,10 @@
   @media (min-width: 1024px) {
   .whatkid {
   position: absolute;
-  width: 227px;
-  right: -40px;
-  top: -476px;
-  }
+  width: 386px;
+  right: -70px;
+  top: -240px;
+}
     
   .whatword {
   margin-top: 50px;
@@ -145,10 +145,6 @@
 
 
   h6 { font-size: 24.0rem;
-  }
-
-  .whatkid {
-  right: 20px;
   }
 
   .whatword {
@@ -197,9 +193,9 @@
   @media (min-width: 1024px) {
   .whykid {
   position: absolute;
-  width: 220px;
-  left: 40px;
-  top: -145px;
+  width: 306px;
+  left: -10px;
+  top: -167px;
   }
 
   .whatword-title {
@@ -241,17 +237,14 @@
   }
 
   .howkid {
-    position: absolute;
-    width: 238px;
-    right: -50px;
-    top: 195px;
+  position: absolute;
+  width: 398px;
+  right: -50px;
+  top: 145px;
   }
   }
 
   @media (min-width: 1350px) {  
-  .howkid {
-    right: 50px;
-  } 
   }
 
 
