@@ -18,36 +18,29 @@
 		
 		<h1 class="bp-row categories-title">{{ title }}</h1>
 
+		<div class='featured-header'>
+			<h4>FEATURED</h4>
+		</div>
 
 		{% set featuredNews = craft.entries.section('newsandevents').featured('not 0').order('dateUpdated desc').limit(2) %}
 		{% for entry in featuredNews %}
 			<div class='row'>
-			<div class="ten columns offset-by-one post_featured">
-				<h3>Category Name</h3>
+
+			{% set image = entry.newseventsHeaderImage.first() %}
+			<div class='ten columns offset-by-one post_featured' style='background-color: {{ entry.newsintroColor }}; background-image:url({{ image.getURL() }})'>
+
+				{# Fetch all of the categories related to this entry #}
+				{% set categories = craft.categories.relatedTo(entry) %}
+				{# Output them #}
+				{% for category in categories %}
+					<h3><a href="{{ category.url }}">{{ category.title }}&nbsp;</a></h3>
+				{% endfor %}
+
 				<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
-				<a href='{{ entry.url }} title='{{ entry.title }}''><button>CTA BUTTON</button></a>
+				<a href='{{ entry.url }}' title='{{ entry.title }}'><button>Read More</button></a>
 			</div>
 			</div>
 		{% endfor %}
-
-
-
-<!-- 		{% set featuredNews = craft.entries.section('newsandevents').featured('not 0').order('dateUpdated desc').limit(2) %}
-		{% for entry in featuredNews %}
-		<div class='container'>
-			<div class="row post_preview ten columns offset-by-one">
-				<article class="has-image columns">
-					<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
-					<div class="preview_content">
-						<p class="readmore_link">
-							<a href="{{ entry.url }}" title='{{ entry.title }}'>READ MORE &#187;</a>
-						</p>
-					</div>
-				</article>
-			</div>
-		</div>
-		{% endfor %}
- -->
 
 
 		<div class='categories'>
