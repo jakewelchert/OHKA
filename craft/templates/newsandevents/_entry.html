@@ -26,9 +26,11 @@
 			<li><a href="#" target="_blank"><i class='share share-post share-light fa fa-facebook fa-lg'></i></a></li>
 			<li><a href="#" target="_blank"><i class='share share-post share-light fa fa-twitter fa-lg'></i></a></li>
 
-<!-- 			<li><a href="#" target="_blank"><i>{{ jSocialButtons('email', options) }}</i></a></li>
+			<!-- 		
+			<li><a href="#" target="_blank"><i>{{ jSocialButtons('email', options) }}</i></a></li>
 			<li><a href="#" target="_blank"><i>{{ jSocialButtons('facebook', options) }}</i></a></li>
-			<li><a href="#" target="_blank"><i>{{ jSocialButtons('twitter', options) }}</i></a></li> -->
+			<li><a href="#" target="_blank"><i>{{ jSocialButtons('twitter', options) }}</i></a></li> 
+			-->
 
 		</ul>
 	</div>
@@ -42,9 +44,12 @@
 
 <div class='container'>
 	<div class='three columns offset-by-one post-author'>
-		<img src='{{ siteUrl }}img/nancy.png'>
-		<p>By Nancy Gaarder</p>
-		<p>World-Herald staff writer</p>
+		{% for asset in entry.newseventsAuthorImage %}
+			<img src="{{ asset.url }}" alt="{{ asset.title }}">
+		{% endfor %}
+
+		<p>{{ entry.newseventsAuthorName }}</p>
+		<p>{{ entry.newseventsAuthorJob }}</p>
 	</div>
 
 	<div class='seven columns'>
