@@ -26,6 +26,24 @@
     }
   }
 
+
+.featured-header {
+  padding: 30px 0 0;
+  text-align: center;
+}
+
+  @media (min-width: 800px) {
+  .featured-header {
+    padding: 60px 0 20px;
+  }
+  }
+
+  @media (max-height: 800px) {
+  .featured-header {
+  padding: 30px 0 0;
+  }
+  }
+
 .categories {
   text-align: center;
   padding: 20px 0;
@@ -205,17 +223,6 @@
   height: 60px;
   border: 2px solid #6cb358;
 }
-
-.featured-header {
-  padding: 60px 0 30px;
-  text-align: center;
-}
-
-  @media (max-height: 800px) {
-  .featured-header {
-    padding: 35px 0 0px;
-  }
-  }
 
   .module_overlay {
     position: absolute;
