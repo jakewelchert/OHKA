@@ -29,12 +29,14 @@
 			{% set image = entry.newseventsHeaderImage.first() %}
 			<div class='ten columns offset-by-one post_featured' style='background-color: {{ entry.newsintroColor }}; background-image:url({{ image.getURL() }})'>
 
-				{# Fetch all of the categories related to this entry #}
-				{% set categories = craft.categories.relatedTo(entry) %}
-				{# Output them #}
-				{% for category in categories %}
-					<h4><a href="{{ category.url }}">{{ category.title }}&nbsp;</a></h4>
-				{% endfor %}
+				<h4>
+					{# Fetch all of the categories related to this entry #}
+					{% set categories = craft.categories.relatedTo(entry) %}
+					{# Output them #}
+					{% for category in categories %}
+						<a href="{{ category.url }}">{{ category.title }}&nbsp;</a>
+					{% endfor %}
+				</h4>
 
 				<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
 				<a href='{{ entry.url }}' title='{{ entry.title }}'><button>Read More</button></a>
