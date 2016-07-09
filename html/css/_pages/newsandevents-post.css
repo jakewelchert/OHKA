@@ -66,12 +66,17 @@
 }
 
 .post-title h1 {
-	font-size: 68px;
 	line-height: 1.1;
 	padding-bottom: 25px;
  	color: #fff;
 	font-family: "Source Serif Pro";
 }
+
+  @media (min-width: 800px) {
+  .post-title h1 {
+    font-size: 6.0rem;
+  }
+  }
 
 .post-title-social {
   display: inline-block;
