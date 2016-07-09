@@ -1,8 +1,8 @@
 .post-title {
   position: relative;
-  padding: 280px 0 40px 40px;
+  padding: 180px 0 40px 40px;
   margin-top: 110px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   background-position: center center;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -11,28 +11,46 @@
 }
 
   @media (min-width: 700px) {
-    .post-title {
-      margin-top: 0px;
-      padding: 350px 0 40px 40px;
-      margin-bottom: 75px;
-    }
+  .post-title {
+    margin-top: 0px;
+    padding: 350px 0 40px 40px;
+    margin-bottom: 75px;
+  }
   }
 
   @media (min-width: 800px) {
-    .post-title {
-      padding: 350px 0 40px 0px;
-    }
+  .post-title {
+    padding: 350px 0 7% 0px;
+  }
+  }
+
+  @media (min-width: 1200px) {
+  .post-title {
+    padding: 350px 0 60px 0px;
+  }
   }
 
 .post-friends {
   color: #fff;
 }
 
+.post-authorinfo {
+  float: left;
+  padding: 13px 0 0 20px;
+}
+
+  @media (min-width: 800px) {
+  .post-authorinfo {
+  padding: 0;
+  }
+  }
+
+
 .post-date {
   font-family: "Source Serif Pro";
   text-transform: uppercase;
   color: #508c9e;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .post-category, .post-author p {
@@ -43,16 +61,27 @@
 .post-author img {
   display: inline-block;
   border-radius: 100px;
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
+  float: left;
 }
 
-.post-category, .post-author {
-  padding-bottom: 20px;
-}
+  @media (min-width: 800px) {
+  .post-author img {
+    border-radius: 100px;
+    width: 120px;
+    height: 120px;
+  }
+  }
 
-.post-author {
-  padding-bottom: 0;
+.post-title-thumbnail {
+  position: absolute;
+  display: inline-block;
+  border-radius: 100px;
+  width: 180px;
+  height: 180px;
+  top: 40px;
+  right: 40px;
 }
 
 .post-title-thumbnail {
@@ -65,7 +94,14 @@
   right: 40px;
 }
 
+  @media (max-width: 799px) {
+  .post-title-thumbnail {
+  display: none;
+  }
+  }
+
 .post-title h1 {
+  font-size: 3.0rem;
 	line-height: 1.1;
 	padding-bottom: 25px;
  	color: #fff;
@@ -74,7 +110,7 @@
 
   @media (min-width: 800px) {
   .post-title h1 {
-    font-size: 6.0rem;
+  font-size: 6.0rem;
   }
   }
 
@@ -97,6 +133,12 @@
 
 .post-end {
   border-top: 2px solid #153454;
-  margin-top: 100px;
-  padding-top: 30px;
+  margin-top: 30px;
+  padding-top: 20px;
 }
+
+  @media (min-width: 800px) {
+  .post-end {
+    margin-top: 100px;
+  }
+  }
