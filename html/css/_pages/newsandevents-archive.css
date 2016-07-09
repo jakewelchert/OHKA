@@ -14,7 +14,7 @@
     }
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
     .categories-title {
     padding: 130px 50px;
     }
@@ -73,10 +73,16 @@
 
 .post_featured {
   position: relative;
-  padding: 200px 50px;
+  padding: 75px;
   text-align: center;
   margin-top: 20px;
 }
+
+  @media screen and (min-width: 1200px) {
+  .post_featured {
+    padding: 200px 75px;
+  } 
+  }
 
 .post_featured h2 {
   margin-bottom: 30px;
