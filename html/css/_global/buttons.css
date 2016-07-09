@@ -17,6 +17,7 @@
   line-height: 50px;
   padding: 0px 40px 3px;
   border-radius: 60px;
+  outline: none;
 }
 
 @media (max-width: 1023px) {
@@ -38,6 +39,7 @@
 
 .button:active, button:active {
   background: #406735;
+  outline: none;
 }
 
 button.btm-right {
