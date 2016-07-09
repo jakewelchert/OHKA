@@ -25,6 +25,7 @@
   @media (max-height: 800px) {
     .bp-title  {
     padding: 50px;
+    margin-bottom: 20px;
     }
   }
   
