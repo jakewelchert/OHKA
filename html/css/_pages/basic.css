@@ -165,13 +165,12 @@
 
 .action-callout {
 	position: relative;
-  /*background-image: url("../../img/image.png");*/
   background-repeat: no-repeat;
   background-position: center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
-	padding: 200px 50px;
+	padding: 100px 50px;
 	text-align: center;
 }
 
@@ -179,3 +178,13 @@
   color: #fff;
   padding-bottom: 40px;
 }
+
+  @media (min-width: 800px) {
+  .action-callout {
+    padding: 200px 50px;
+  }
+
+  .action-callout h3 {
+    font-size: 4.0rem;
+  }
+  }

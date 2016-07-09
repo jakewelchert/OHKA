@@ -113,8 +113,11 @@
 			<div class='v-row'>
 				{% set image = block.actionCalloutImage.first() %}
 				<div class='ten columns offset-by-one action-callout' style='background-image:url({{ image.getURL() }})'>
-					<h3>{{ block.actionCalloutTitle }}</h3>
-					<a href='{{ block.actionCalloutLink }}'><button>{{ block.actionCalloutButtonText }}</button></a>
+					<div class='module_content'>
+						<h3>{{ block.actionCalloutTitle }}</h3>
+						<a href='{{ block.actionCalloutLink }}'><button>{{ block.actionCalloutButtonText }}</button></a>
+					</div>
+					<div class='module_overlay'></div>
 				</div>
 			</div>
 
