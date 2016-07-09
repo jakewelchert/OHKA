@@ -3,11 +3,14 @@
 	background: #f4f3f3;
 	padding: 50px;
   text-align: center;
-  font-size: 45px;
   margin-top: 105px;
   background: url("../../img/ohka-pattern.svg");
   background-position: center center;
   background-repeat: repeat;
+}
+
+.v-title h1 {
+  font-size: 65px;
 }
 
 .v-intro-img {
@@ -17,9 +20,8 @@
 
   @media (min-width: 700px) {
   .v-title {
-  padding: 100px 50px 375px 50px;
+  padding: 65px 50px 380px 50px;
   margin-top: 0;
-  font-size: 65px;
   }
 
   .v-intro-img {
