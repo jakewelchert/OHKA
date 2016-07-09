@@ -17,7 +17,7 @@
 	    {% if block.type == "text" %}
 		<div class="bp-row">
 			<div class="six columns offset-by-three">
-				<p>{{ block.text|markdown }}</p>
+				{{ block.text|markdown }}
 			</div>
 		</div>
 
@@ -26,22 +26,24 @@
 			<div class="bp-subheader six columns offset-by-three">{{ block.subheadHeader }}</div>
 		</div>
 
+		{% elseif block.type == "imageTextCallout" %}
 		<div class='bp-row'>
-		    {% elseif block.type == "imageTextCallout" %}
 			<div class="creator seven columns offset-by-two">
 				<div class="speaker-title">
-			      {% set image = block.calloutTertiaryImage.first() %}
+				    {% set image = block.calloutTertiaryImage.first() %}
 			        {% if image %}
-			          <img src="{{ image.getUrl }}" alt="{{ image.title }}">
+			        <img src="{{ image.getUrl }}" alt="{{ image.title }}">
 			        {% endif %}
-					<div>
-						<h4>{{ block.calloutHeader }}</h4>
-						<p>{{ block.calloutBody }}</p>
-						<a href='{{ block.calloutOptionalLink }}'><button>{{ block.calloutOptionalLinkText }}</button></a>
-					</div>
-				</div>
+				<div>
+				
+				<h4>{{ block.calloutHeader }}</h4>
+				<p>{{ block.calloutBody }}</p>
+				<a href='{{ block.calloutOptionalLink }}'><button>{{ block.calloutOptionalLinkText }}</button></a>
 			</div>
 		</div>
+		</div>
+		</div>
+
 
 		{% elseif block.type == "tertiaryImage" %}
 			<div class="bp-row twelve columns bp-tertiary-list">

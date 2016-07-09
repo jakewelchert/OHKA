@@ -15,12 +15,19 @@
     }
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
     .bp-title {
     padding: 130px 50px;
     margin-bottom: 100px;
     }
   }
+
+  @media (max-height: 800px) {
+    .bp-title  {
+    padding: 50px;
+    }
+  }
+  
 
 .bp-row h3 {
   padding-bottom: 15px;
@@ -40,7 +47,6 @@
 .creator {
   position: relative;
   display: inline-block;
-  margin-bottom: 75px;
   text-align: left;
 }
 
@@ -64,9 +70,6 @@
 }
 
   @media (min-width: 600px) {
-    .creator {
-      margin-bottom: 100px;
-    }
 
     .speaker-title {
       height: 120px;
