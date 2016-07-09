@@ -41,7 +41,7 @@
 
   @media (min-width: 800px) {
   .post-authorinfo {
-  padding: 0;
+  padding: 10px 0 0 0;
   }
   }
 
