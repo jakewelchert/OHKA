@@ -24,6 +24,10 @@
     }
   }
 
+.post-friends {
+  color: #fff;
+}
+
 .post-date {
   font-family: "Source Serif Pro";
   text-transform: uppercase;
