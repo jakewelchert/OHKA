@@ -20,6 +20,11 @@
     }
   }
 
+  @media (max-height: 800px) {
+    .categories-title {
+    padding: 50px;
+    }
+  }
 
 .categories {
   text-align: center;
@@ -82,6 +87,12 @@
   .post_featured {
     padding: 200px 75px;
   } 
+  }
+
+  @media (max-height: 800px) {
+  .post_featured {
+    padding: 75px;
+  }
   }
 
 .post_featured h2 {
@@ -199,3 +210,9 @@
   padding: 60px 0 30px;
   text-align: center;
 }
+
+  @media (max-height: 800px) {
+  .featured-header {
+    padding: 35px 0 0px;
+  }
+  }
