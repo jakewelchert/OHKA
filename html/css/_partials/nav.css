@@ -352,7 +352,7 @@ nav a:hover {
 }
 
 .wrap ul li a:hover {
-  color: #fb9642;
+  opacity: .7;
 }
 
 .social-hidden {
@@ -373,12 +373,6 @@ nav a:hover {
 }
 
 .wrap ul li a.button {
-  color: #fff;
-  background-color: #fb9642;
-}
-
-
-.wrap ul li a:hover.button {
-  color: #fff;
-  background-color: #d07f3c;
+  color: #6cb358;
+  background-color: #fff;
 }
