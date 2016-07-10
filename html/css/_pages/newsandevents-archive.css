@@ -54,11 +54,6 @@
   padding: 10px 0 20px 0;
 }
 
-.categories {
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 20px;
-}
-
 .categories ul {
 	margin: 0;
 	padding: 0;
@@ -73,10 +68,8 @@
   @media screen and (min-width: 800px) {
   .categories {
   padding: 55px 0;
-  margin-bottom: 40px;
   }
   }
-
 
   @media screen and (min-width: 1024px) {
   .categories {
@@ -92,7 +85,6 @@
     margin-bottom: 0;
   }
   }
-
 
 .post_featured {
   position: relative;
@@ -131,7 +123,7 @@
   position: relative;
   background-color: #f4ece3;
   padding: 40px 40px 25px 40px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .post_preview img {
