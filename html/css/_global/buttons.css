@@ -49,6 +49,16 @@ button.btm-right {
   display: block;
 }
 
+button.featured {
+  background-color: #fff;
+  color: #6cb358;
+}
+
+button.featured:hover {
+  background-color: #6cb358;
+  color: #fff;
+}
+
 .super-nav button {
   line-height: 35px;
   padding: 0 30px;

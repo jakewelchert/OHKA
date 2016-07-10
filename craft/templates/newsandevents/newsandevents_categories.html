@@ -28,8 +28,8 @@
 		<div class='categories'>
 			<div class='row'>			
 			<select id='my_selection' class='category_filter six columns offset-by-three'>
-			    <option value=''>Select A Category</option>
-			    <option value='All' href='{{ url('newsandevents') }}'>All</option>
+			   <option value=''>Select A Category</option>
+			   <option value='All' href='{{ url('newsandevents') }}'>All</option>
 				{% nav category in craft.categories.group('newsandevents') %}  
 				<option value='{{ category.title }}' href='{{ category.url }}'>{{ category.title }}</option>
 				{% endnav %}
@@ -44,8 +44,7 @@
 		</div>
 	</div>
 
-    {% paginate craft.entries.section('newsandevents').limit(5) as pageInfo, pageEntries %}
-	
+   {% paginate craft.entries.section('newsandevents').limit(5) as pageInfo, pageEntries %}
 	<div class='container'>
 		{% for entry in pageEntries %}
 		<div class="row post_preview ten columns offset-by-one">
