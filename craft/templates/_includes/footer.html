@@ -21,13 +21,12 @@
 </div>
 {% endfor %}
 
-
 <footer class="footer">
 
   <div class="footer-super-nav">
-    <button>Contact</button>
-    <button>Training</button>
-    <button>Donate</button>
+    <a href="{{ url('contact') }}"><button>Contact</button></a>
+    <a href="{{ url('training') }}"><button>Training</button></a>
+    <a href="{{ url('donate') }}"><button>Donate</button></a>
   </div>  
 
   <div class="container">  
@@ -38,10 +37,10 @@
         <h5><strong>MENU</strong></h5>  
 
         <ul class="footer-nav">
-          <li><a href="{{ siteUrl }}">Home</a></li>
-          <li><a href="{{ siteUrl('whats-a-healthy-home') }}">What's A Healthy Home</a></li>
-          <li><a href="{{ siteUrl('why-healthy-homes-matter-in-omaha') }}">Why Healhty Homes Matter In Omaha</a></li>
-          <li><a href="{{ siteUrl('how-ohka-makes-a-difference') }}">How OHKA Makes A Difference</a></li>
+          <li><a href='{{ siteUrl }}'>Home</a></li>
+          <li><a href='{{ siteUrl('whats-a-healthy-home') }}'>What's A Healthy Home</a></li>
+          <li><a href='{{ siteUrl('why-healthy-homes-matter-in-omaha') }}'>Why Healhty Homes Matter In Omaha</a></li>
+          <li><a href='{{ siteUrl('how-ohka-makes-a-difference') }}'>How OHKA Makes A Difference</a></li>
         </ul>
       </div>
 
@@ -50,7 +49,7 @@
 
         <ul class="footer-nav">
           <li><a href='{{ url('newsandevents') }}'>News & Events</a></li>
-          <li><a href="{{ url('resources') }}">Resources</a></li>
+          <li><a href='{{ url('resources') }}'>Resources</a></li>
         </ul>        
         {% set entries = craft.entries.section('basicpages') %}
         <ul class="footer-nav" id="nav">
