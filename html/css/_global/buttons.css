@@ -67,6 +67,10 @@ button.featured:hover {
   text-transform: none;
 }
 
+.btn-cntr {
+  text-align: center;
+}
+
 
 
 .share {
