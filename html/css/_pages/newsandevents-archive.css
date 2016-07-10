@@ -122,6 +122,10 @@
   color: #fff;
 }
 
+.post_featured h2 a:hover, .post_featured h4 a:hover {
+  opacity: .6;
+}
+
 /*    !!!!    POST PREVIEW    !!!!    */
 .post_preview {
   position: relative;

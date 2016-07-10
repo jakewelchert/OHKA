@@ -13,6 +13,10 @@
   padding: 35px 0 60px;
 }
 
+.index_intro h1 {
+  font-size: 50px;
+}
+
   @media screen and (max-width: 1023px) {
   .index_intro .seven {
     width: 100%;

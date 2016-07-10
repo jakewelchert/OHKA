@@ -5,30 +5,28 @@
 }
 
 .alert {
+	color: #fff;
+	background-color: #e67728;
 	text-align: left;
 	font-weight: 600;
 }
 
 .alert p {
 	margin: 0;
-	padding: 0;
+	padding: 0 0 3px 0;
 	color: #fff;
-	font-size: 21px;
-}
-
-.alert-success {
-	color: #fff;
-	background-color: #e67728;
+	font-size: 18px;
 }
 
 .alert .read-more a {
-	font-size: 14px;
+	font-size: 13px;
 	text-transform: uppercase;
 	letter-spacing: .75px;
 	color: #fff;
 	padding-left: 5px;
+	cursor: pointer;
 }
 
 .alert .read-more a:hover {
-	color: #d07f3c;
+	color: #ac581d;
 }

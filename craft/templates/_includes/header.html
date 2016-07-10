@@ -1,5 +1,5 @@
 {% for entry in craft.entries.section('newsandevents').alert('1').limit(1) %}
-  <div class="alert alert-success">
+  <div class="alert">
     <div class='container'>
       <p>{{ entry.title }} <span class='read-more'><strong><a href='{{ entry.url }}'>Read More</a></strong></span></p>
     </div>
@@ -41,7 +41,8 @@
       <li><a href='{{ url('whats-a-healthy-home') }}'>What's A<br>Healthy Home</a></li>
       <li><a href='{{ url('why-healthy-homes-matter-in-omaha') }}'>Why Healthy Homes<br>Matter In Omaha</a></li>
       <li><a href='{{ url('how-ohka-makes-a-difference') }}'>How OHKA Makes<br>A Difference</a></li>
-    
+      <li><a href='{{ url('newsandevents') }}'>News & Events</a></li>
+
       <li><a class='button nav-action' href="{{ url('contact') }}" target="_blank">Contact</a></li>
       <li><a class='button nav-action' href="{{ url('training') }}" target="_blank">Training</a></li>
       <li><a class='button nav-action' href="{{ url('http://www.omahahealthykids.org/get-involved/donate/') }}" target="_blank">Donate</a></li>

@@ -9,20 +9,12 @@
   background-repeat: repeat;
 }
 
-.v-title h1 {
-  font-size: 35px;
-}
-
 .v-intro-img {
   margin-top: 0px;
   padding-bottom: 50px;
 }
 
   @media (min-width: 700px) {
-  .v-title h1 {
-    font-size: 65px;
-  }
-  
   .v-title {
   padding: 65px 50px 375px 50px;
   margin-top: 0;

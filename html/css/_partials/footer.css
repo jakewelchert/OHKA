@@ -1,12 +1,23 @@
 footer {
 	position: relative;
+	background: url("../../img/ohka-skyline.svg");
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	background-size: 100%;
 	padding: 0 0 25px 0;
 	background-color: #fef9dd;
+	text-align: center;
 }
 
 	@media screen and (min-width: 800px) {
 		footer {
-			padding: 0 0 75px 0;
+			background-position: top center;
+			background-repeat: no-repeat;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			background-size: cover;
+			padding: 0 0 50px 0;
+			text-align: left;
 		}
 	}
 
@@ -29,8 +40,6 @@ footer h5 {
 footer .row {
   padding: 15px 0;
 }
-
-
 
 .stories {
 	background: #cee6c5;
