@@ -22,6 +22,12 @@
   box-sizing: border-box; 
 }
 
+.container-fullwidth {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box; 
+}
 
 .bp-row, .v-row { padding: 0 0 60px 0; }
 
@@ -52,7 +58,7 @@
 
 /* For devices larger than 550px */
 @media (min-width: 800px) {
-  .container {
+  .container, .container-fullwidth {
     max-width: 1300px; }
 
 
@@ -139,6 +145,7 @@
 
 /* Self Clearing Goodness */
 .container:after,
+.container-fullwidth:after,
 .row:after,
 .v-row:after,
 .bp-row:after,
