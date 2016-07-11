@@ -224,7 +224,7 @@
 
   @media screen and (min-width: 1000px) {
   .post_preview {
-    min-height: 220px;
+    min-height: 310px;
   }
   .post_preview-index, .post_preview-entry {
     min-height: 160px;
