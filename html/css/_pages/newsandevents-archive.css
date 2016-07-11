@@ -126,13 +126,19 @@
 .post_preview {
   position: relative;
   background-color: #f4ece3;
-  padding: 40px;
+  padding: 10px 25px 25px 25px;
   margin-bottom: 40px;
 }
 
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 800px) {
   .post_preview {
-    padding: 40px 40px 25px 64px;
+    padding: 25px 40px 40px 40px;
+  }
+  }
+
+  @media screen and (min-width: 1024px) {
+  .post_preview {
+    padding: 40px 40px 40px 64px;
   }
   }
 
@@ -150,8 +156,14 @@
 }
 
 .post_preview h2 {
-  margin-bottom: 10px;
+  margin: 5px 0;
 }
+
+  @media screen and (min-width: 800px) {
+  .post_preview h2 {
+    margin: 10px 0;
+  }
+  }
 
 .post_preview-index h2, .post_preview-entry h2 {
   margin-bottom: 25px;
@@ -163,6 +175,12 @@
 .readmore_link {
   font-weight: bold;
   padding-left: 10px;
+}
+
+@media screen and (max-width: 799px) {
+  .sharenow {
+    display: none;
+  }
 }
 
 .share_post {
@@ -190,7 +208,7 @@
 
 
   @media screen and (max-width: 1023px) {
-  .post_preview img {
+  .post_preview img, .post_preview-index img {
     display: none;
   }
   }
@@ -222,8 +240,15 @@
     display: inline-block;
   }
 
+  .post_preview-index img {
+    border-radius: 100px;
+    width: 160px;
+    height: 160px;
+    display: inline-block;
+  }
+
 	.has-image p, .has-image h2 {
-	  padding-right: 190px;
+	  padding-right: 32%;
 	}
   }
 

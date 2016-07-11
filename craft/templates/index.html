@@ -24,12 +24,37 @@
 
 	{% set image = entry.homepageHeaderImage.first() %}
 	<div class='homepage-hero' style='background-image:url({{ image.getURL() }})'>
+		<video class="covervid-video" autoplay="" loop="" poster="/uploads/header/_1280x720_crop_center-center_75/Blatt-Broll-Video-Frame-1280x720_40.jpg">
+		<source src="http://blattbeer.com/uploads/header/Blatt-Broll-Video-Table_40_160329_111748.webm" type="video/webm">
+		<source src="http://blattbeer.com/uploads/header/Blatt-Broll-Video-Table_40_160329_111858.mp4" type="video/mp4">
+		</video>
+
 		<div class="cta">
 			{% if entry.ctaButton %}
 			    <a class="button" href='{{ entry.homepageCtaLink }}' title='{{ entry.homepageCtaButtonText }}'>{{ entry.homepageCtaButtonText }}</a>
 			{% endif %}
 		</div>
 	</div>
+
+<!-- 	
+	<div class='homepage-hero' style='background-image:url({{ image.getURL() }})'>
+		<div class="homevid-wrapper" style="overflow: hidden;">
+			<video class="covervid-video" autoplay="" loop="" poster="/uploads/header/_1280x720_crop_center-center_75/Blatt-Broll-Video-Frame-1280x720_40.jpg" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); height: 1292px; width: auto; opacity: 1;">
+			<source src="http://blattbeer.com/uploads/header/Blatt-Broll-Video-Table_40_160329_111748.webm" type="video/webm">
+			<source src="http://blattbeer.com/uploads/header/Blatt-Broll-Video-Table_40_160329_111858.mp4" type="video/mp4">
+			</video>
+		</div>
+	</div> -->
+
+<!-- 
+	{% set image = entry.homepageHeaderImage.first() %}
+	<div class='homepage-hero' style='background-image:url({{ image.getURL() }})'>
+		<div class="cta">
+			{% if entry.ctaButton %}
+			    <a class="button" href='{{ entry.homepageCtaLink }}' title='{{ entry.homepageCtaButtonText }}'>{{ entry.homepageCtaButtonText }}</a>
+			{% endif %}
+		</div>
+	</div> -->
 	
 	<div class='row index_intro'>
 		<h1 class='seven columns'>We improve children&rsquo;s health through Healthy Homes.<span>&nbsp;&nbsp;&nbsp;<a class='learnmore' href='#'>Learn&nbsp;More&nbsp;&#187;</a></span></h1>
@@ -44,30 +69,33 @@
 	</div>
 
 
+
+
+
 	{% for entry in craft.entries.section('newsandevents').limit(2).find() %}
-	<div class="row post_preview-index post_preview">
-		<article class="has-image columns">
+	<div class='row post_preview-index post_preview'>
+		<article class='has-image columns'>
+			<a href="{{ entry.url }}" title="{{ entry.title }}">
+				{% for asset in entry.newseventsThumbnail %}
+					<img src="{{ asset.url }}" alt="{{ asset.title }}">
+				{% endfor %}
+			</a>
+
 			<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
-			<div class="preview_content">
-					<a href="{{ entry.url }}" title="{{ entry.title }}">
-						{% for asset in entry.newseventsThumbnail %}
-							<img src="{{ asset.url }}" alt="{{ asset.title }}">
-						{% endfor %}
-					</a>
-					<ul class="share_post">
-					<li>Share Now&nbsp;</li>
-					<!-- <li><a href="#" target="_blank"><i class='share share-light share-post-preview fa fa-facebook fa-lg'></i></a></li> -->
-					<!-- <li><a href="#" target="_blank"><i class='share share-light share-post-preview fa fa-twitter fa-lg'></i></a></li> -->
-					<li><a href="#" target="_blank"><i>{{ jSocialButtons('facebook', options) }}</i></a></li>
-					<li><a href="#" target="_blank"><i>{{ jSocialButtons('twitter', options) }}</i></a></li>
-				</ul>
-				<p class="readmore_link">
-					<a href="{{ entry.url }}" title="{{ entry.title }}">READ MORE &#187;</a>
-				</p>
-			</div>
+			<ul class="share_post">
+				<li>
+					<span class='sharenow'>Share Now</span>
+					<a href="#" target='_blank'><i class='share share-light share-post-preview fa fa-facebook fa-lg'></i></a>
+					<a href="#" target='_blank'><i class='share share-light share-post-preview fa fa-twitter fa-lg'></i></a>
+					<a href="{{ entry.url }}" class='readmore_link' title="{{ entry.title }}">READ MORE &#187;</a>
+				</li>
+			</ul>
 		</article>
 	</div>
 	{% endfor %}
+
+
+
 
 
 	<div class='row'>

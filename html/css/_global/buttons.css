@@ -92,9 +92,14 @@ button.featured:hover {
 .share-post-preview {
   line-height: 24px;
   padding: 5px;
-  margin-left: 5px;
-  margin-top: -5px;
+  margin: -5px 5px 0 0;
 }
+
+  @media (min-width: 800px) {
+  .share-post-preview {
+  margin: -5px 0 0 5px;
+  }
+  }
 
 .share-page {
   width: 100px;

@@ -70,7 +70,6 @@
 	</div>
 
     {% paginate craft.entries.section('newsandevents').limit(5) as pageInfo, pageEntries %}
-	
 	<div class='container-fullwidth'>
 		{% for entry in pageEntries %}
 		<div class="row post_preview ten columns offset-by-one">
@@ -79,7 +78,7 @@
 					{% set categories = craft.categories.relatedTo(entry) %}
 					{# Output them #}
 					{% for category in categories %}
-						<a class='post_preview-category' href='{{ category.url }}'>{{ category.title }}</a>
+						<a class='post_preview-category' href='{{ category.url }}'>{{ category.title }}&nbsp;&nbsp;</a>
 					{% endfor %}	
 					<a href="{{ entry.url }}" title="{{ entry.title }}">
 						{% for asset in entry.newseventsThumbnail %}
@@ -87,29 +86,15 @@
 						{% endfor %}
 					</a>
 				<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
-				
 				<p>{{ entry.summary }}</p>
-
 				<ul class="share_post">
-<!-- 					<li>
-						{# Fetch all of the categories related to this entry #}
-						{% set categories = craft.categories.relatedTo(entry) %}
-						{# Output them #}
-						{% for category in categories %}
-							<a href="{{ category.url }}">{{ category.title }}</a>
-						{% endfor %}							
-					</li> -->
-
 					<li>
-						Share Now&nbsp;
+						<span class='sharenow'>Share Now</span>
 						<a href="#" target='_blank'><i class='share share-light share-post-preview fa fa-facebook fa-lg'></i></a>
 						<a href="#" target='_blank'><i class='share share-light share-post-preview fa fa-twitter fa-lg'></i></a>
 						<a href="{{ entry.url }}" class='readmore_link' title="{{ entry.title }}">READ MORE &#187;</a>
 					</li>
-					
-
 				</ul>
-
 			</article>
 		</div>
 		{% endfor %}
