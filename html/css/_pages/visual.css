@@ -202,7 +202,6 @@
 
 .borders {
   z-index: 1;
-  background: url("../../img/bordertest.svg");
   background-position: center center;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -250,4 +249,14 @@
   .borderedimage {
     right: 0px;
   }
+  }
+
+
+
+
+
+
+
+  .callouts {
+    position: relative;
   }
