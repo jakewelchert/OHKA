@@ -91,27 +91,29 @@
 
 		{% paginate craft.entries.section('newsandevents').limit(2) as pageInfo, pageEntries %}
 		{% for entry in pageEntries %}
-		<div class="row post_preview-entry post_preview">
-			<article class="has-image columns">
-				<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
-				<div class="preview_content">
-					<a href="{{ entry.url }}" title="{{ entry.title }}">
-						{% for asset in entry.newseventsThumbnail %}
-							<img src="{{ asset.url }}" alt="{{ asset.title }}">
-						{% endfor %}
-					</a>					
-					<ul class="share_post">
-						<li>Share Now&nbsp;</li>
-						<!-- <li><a href="#" target="_blank"><i class='share share-light share-post-preview fa fa-facebook fa-lg'></i></a></li> -->
-						<!-- <li><a href="#" target="_blank"><i class='share share-light share-post-preview fa fa-twitter fa-lg'></i></a></li> -->
-						<li><a href="#" target="_blank"><i>{{ jSocialButtons('facebook', options) }}</i></a></li>
-						<li><a href="#" target="_blank"><i>{{ jSocialButtons('twitter', options) }}</i></a></li>
+		<div class='row post_preview-entry post_preview'>
+			<article class='has-image columns'>
+				{# Fetch all of the categories related to this entry #}
+				{% set categories = craft.categories.relatedTo(entry) %}
+				{# Output them #}
+				{% for category in categories %}
+					<a class='post_preview-category' href='{{ category.url }}'>{{ category.title }}&nbsp;&nbsp;</a>
+				{% endfor %}	
+				<a href="{{ entry.url }}" title="{{ entry.title }}">
+					{% for asset in entry.newseventsThumbnail %}
+						<img src="{{ asset.url }}" alt="{{ asset.title }}">
+					{% endfor %}
+				</a>
 
-					</ul>
-					<p class="readmore_link">
-						<a href="{{ entry.url }}" title="{{ entry.title }}">READ MORE &#187;</a>
-					</p>
-				</div>
+				<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
+				<ul class="share_post">
+					<li>
+						<span class='sharenow'>Share Now</span>
+						<a href="#" target='_blank'><i class='share share-light share-post-preview fa fa-facebook fa-lg'></i></a>
+						<a href="#" target='_blank'><i class='share share-light share-post-preview fa fa-twitter fa-lg'></i></a>
+						<a href="{{ entry.url }}" class='readmore_link' title="{{ entry.title }}">READ MORE &#187;</a>
+					</li>
+				</ul>
 			</article>
 		</div>
 		{% endfor %}

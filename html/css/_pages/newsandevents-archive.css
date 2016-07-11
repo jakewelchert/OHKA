@@ -249,7 +249,7 @@
     display: inline-block;
   }
 
-  .post_preview-index img {
+  .post_preview-index img, .post_preview-entry img {
     border-radius: 100px;
     width: 160px;
     height: 160px;
