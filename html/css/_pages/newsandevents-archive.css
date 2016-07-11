@@ -152,16 +152,25 @@
 	left: auto;
 	top: 0px;
 	right: 0px;
-	max-width: 220px;
 }
 
 .post_preview h2 {
   margin: 5px 0;
+  font-size: 3.0rem;
+}
+
+.post_preview p {
+  font-size: 1.5rem;
 }
 
   @media screen and (min-width: 800px) {
   .post_preview h2 {
     margin: 10px 0;
+    font-size: 4.0rem;
+  }
+
+  .post_preview p {
+    font-size: 2.0rem;
   }
   }
 
@@ -234,9 +243,9 @@
   }
 
   .post_preview img {
-    border-radius: 100px;
-    width: 180px;
-    height: 180px;
+    border-radius: 200px;
+    width: 220px;
+    height: 220px;
     display: inline-block;
   }
 

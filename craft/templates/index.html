@@ -75,6 +75,12 @@
 	{% for entry in craft.entries.section('newsandevents').limit(2).find() %}
 	<div class='row post_preview-index post_preview'>
 		<article class='has-image columns'>
+			{# Fetch all of the categories related to this entry #}
+			{% set categories = craft.categories.relatedTo(entry) %}
+			{# Output them #}
+			{% for category in categories %}
+				<a class='post_preview-category' href='{{ category.url }}'>{{ category.title }}&nbsp;&nbsp;</a>
+			{% endfor %}	
 			<a href="{{ entry.url }}" title="{{ entry.title }}">
 				{% for asset in entry.newseventsThumbnail %}
 					<img src="{{ asset.url }}" alt="{{ asset.title }}">
