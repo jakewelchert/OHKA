@@ -21,18 +21,20 @@
 
 {% block content %}
 
-<div class="container">
-
-	<div class="v-title">{{ entry.pageTitle }}</div>
-
-	<div class="v-intro-img ten columns offset-by-one">
-		{% for asset in entry.headerImage %}
-		<img src="{{ asset.url }}" alt="{{ asset.title }}">
-		{% endfor %}
+	<div class='container-fullwidth'>
+		<div class="v-title">{{ entry.pageTitle }}</div>
 	</div>
 
-	{% for block in entry.visualBlocks %}
+	<div class='container-fullwidth'>
+		<div class="v-intro-img ten columns offset-by-one">
+			{% for asset in entry.headerImage %}
+			<img src="{{ asset.url }}" alt="{{ asset.title }}">
+			{% endfor %}
+		</div>
+	</div>
 
+	<div class='container'>
+		{% for block in entry.visualBlocks %}
 	    {% if block.type == "heading" %}
 			<div class='v-row v-row-intro'>
 				<div class="v-intro eight columns offset-by-two">

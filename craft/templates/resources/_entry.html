@@ -17,95 +17,108 @@
 
 {% block content %}
 
-<div class='post-title'>
-	<div class='container'>
+{% set image = entry.newseventsHeaderImage.first() %}
+<div class='container-fullwidth post-title' style='background-color: {{ entry.newsintroColor }}; background-image:url({{ image.getURL() }})'>
+
+	<div class='module_overlay'></div>
+
+	<div class='ten columns offset-by-one'>
 		<h1>{{ entry.title }}</h1>
-		<p>Tell Your Friends:&nbsp;</p>
-		<a href='#'>Email</a>
-		<a href='#'>Facebook</a>
-		<a href='#'>Twitter</a>
+		<ul class='post-title-social'>
+			<li><p class='post-friends'>Tell Your Friends:&nbsp;</p></li>
+			<li><a href="#" target="_blank"><i class='share share-post share-light fa fa-envelope-o fa-lg'></i></a></li>
+			<li><a href="#" target="_blank"><i class='share share-post share-light fa fa-facebook fa-lg'></i></a></li>
+			<li><a href="#" target="_blank"><i class='share share-post share-light fa fa-twitter fa-lg'></i></a></li>
+
+			<!-- 		
+			<li><a href="#" target="_blank"><i>{{ jSocialButtons('email', options) }}</i></a></li>
+			<li><a href="#" target="_blank"><i>{{ jSocialButtons('facebook', options) }}</i></a></li>
+			<li><a href="#" target="_blank"><i>{{ jSocialButtons('twitter', options) }}</i></a></li> 
+			-->
+
+		</ul>
 	</div>
+
+	{% for asset in entry.newseventsThumbnail %}
+		<img class='post-title-thumbnail' src="{{ asset.url }}" alt="{{ asset.title }}">     
+	{% endfor %}
+
 </div>
 
+
 <div class='container'>
-	
-	<div class='four columns'>
-		<img src='{{ siteUrl }}img/image.png'>
-		<p>By Nancy Gaarder</p>
-		<p>World-Herald staff writer</p>
+	<div class='three columns offset-by-one post-author'>
+		{% for asset in entry.newseventsAuthorImage %}
+			<img src="{{ asset.url }}" alt="{{ asset.title }}">
+		{% endfor %}
+		<div class='post-authorinfo'>
+			<p><strong>{{ entry.newseventsAuthorName }}</strong>
+			<br>{{ entry.newseventsAuthorJob }}</p>
+		</div>
 	</div>
 
-	<div class='eight columns'>
-		<article>
-			<h4>{{ entry.postDate.format('F d, Y') }}</h4>
+	<div class='seven columns'>
+		<h4 class='post-date'>{{ entry.postDate.format('F d, Y') }}</h4>
 
-			<p>Posted in:
-			{# Fetch all of the categories related to this entry #}
-			{% set categories = craft.categories.relatedTo(entry) %}
+		{# Fetch all of the categories related to this entry #}
+		{% set categories = craft.categories.relatedTo(entry) %}
+		<p class='post-category'>Posted in:
 
-			{# Output them #}
-			{% for category in categories %}
-			<a href="{{ category.url }}">{{ category.title }}&nbsp;</a>
-			{% endfor %}
-			</p>
 
-			{{ entry.body }}
-
-			<p><strong>Thanks for reading.
-			<br>Remember to help us spread the word!</strong></p>
-		</article>
-
-		<a class="button" href="#">Facebook</a>
-		<a class="button" href="#">Twitter</a>
-
-<!-- 		{% set options = 
-
-					{
-		      'title': 'foo',
-		      'url': 'http://google.com',
-		      'content': {
-		        'facebook': {
-		          'class': 'fa fa-facebook fa-lg',
-		          'size': {
-		          'width': '40px',
-		          'height': '40px'
-		          }
-		        },
-
-		        'twitter': {
-		          'item-type': 'text',
-		          'value': 'Twitter',
-		          'class': 'tw fa-twitter fa-lg',
-		          'id': 'twitter'
-		        },
-		      }
-		    }
-		  %}
-
-		{{ jSocialButtons('facebook|twitter', options) }} -->
-
-		<p><strong>What's Next:</strong></p>
-
-		{% paginate craft.entries.section('newsandevents').limit(2) as pageInfo, pageEntries %}
-		{% for entry in pageEntries %}
-		<article class="post_preview has-image">
-			<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
-			<div class="preview_content">
-				<a href="{{ entry.url }}" title="{{ entry.title }}"><img src="{{ siteUrl }}img/image.png"></a>
-				<p class="readmore_link">
-					<a href="{{ entry.url }}" title="{{ entry.title }}">READ MORE &#187;</a>
-				</p>
-
-				<ul class="share_post">
-					<li>Share Now&nbsp;</li>
-					<li><a href="#" target="_blank"><i class='fa fa-facebook fa-lg'></i></a></li>
-					<li><a href="#" target="_blank"><i class='fa fa-twitter fa-lg'></i></a></li>
-				</ul>
-			</div>
-		</article>
+		{# Output them #}
+		{% for category in categories %}
+		<a href="{{ category.url }}">{{ category.title }}&nbsp;</a>
 		{% endfor %}
-		{% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}">Previous Page</a>{% endif %}
-		{% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}">Next Page</a>{% endif %}
+		</p>
+
+		{{ entry.newseventsBody }}
+	</div>
+		
+	<div class='ten columns offset-by-one'>
+		{% for asset in entry.newseventsfullwidthImage %}
+			<img src="{{ asset.url }}" alt="{{ asset.title }}">                  
+		{% endfor %}
+	</div>
+
+	<div class='v-row post-end seven columns offset-by-four'>
+		<p>Thanks for reading.
+		<br>Remember to help us spread the word!</p>
+
+		<a href="#" target="_blank"><i class='share share-dark share-page fa fa-facebook fa-lg'></i></a>
+		<a href="#" target="_blank"><i class='share share-dark share-page fa fa-twitter fa-lg'></i></a>
+
+		<p>What's Next:</p>
+
+		{% paginate craft.entries.section('resources').limit(2) as pageInfo, pageEntries %}
+		{% for entry in pageEntries %}
+		<div class='row post_preview-entry post_preview'>
+			<article class='has-image columns'>
+				{# Fetch all of the categories related to this entry #}
+				{% set categories = craft.categories.relatedTo(entry) %}
+				{# Output them #}
+				{% for category in categories %}
+					<a class='post_preview-category' href='{{ category.url }}'>{{ category.title }}&nbsp;&nbsp;</a>
+				{% endfor %}	
+				<a href="{{ entry.url }}" title="{{ entry.title }}">
+					{% for asset in entry.newseventsThumbnail %}
+						<img src="{{ asset.url }}" alt="{{ asset.title }}">
+					{% endfor %}
+				</a>
+
+				<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
+				<ul class="share_post">
+					<li>
+						<span class='sharenow'>Share Now</span>
+						<a href="#" target='_blank'><i class='share share-light share-post-preview fa fa-facebook fa-lg'></i></a>
+						<a href="#" target='_blank'><i class='share share-light share-post-preview fa fa-twitter fa-lg'></i></a>
+						<a href="{{ entry.url }}" class='readmore_link' title="{{ entry.title }}">READ MORE &#187;</a>
+					</li>
+				</ul>
+			</article>
+		</div>
+		{% endfor %}
+		
+		<a class="button" href='{{ url('newsandevents') }}'>More News & Events</a>
 
 	</div>
 

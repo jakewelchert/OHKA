@@ -30,6 +30,11 @@
   }
 
   @media (min-width: 800px) {
+  .v-title {
+  padding: 65px 50px 375px 50px;
+  margin-top: 0;
+  }
+
   .v-intro-img { 
   padding-bottom: 120px;
   }

@@ -20,7 +20,7 @@
 {% extends '_layout' %}
 
 {% block content %}
-<div class="container">
+<div class='container-fullwidth'>
 
 	{% set image = entry.homepageHeaderImage.first() %}
 	<div class='homepage-hero' style='background-image:url({{ image.getURL() }})'>
@@ -35,6 +35,7 @@
 			{% endif %}
 		</div>
 	</div>
+</div>
 
 <!-- 	
 	<div class='homepage-hero' style='background-image:url({{ image.getURL() }})'>
@@ -56,96 +57,102 @@
 		</div>
 	</div> -->
 	
-	<div class='row index_intro'>
-		<h1 class='seven columns'>We improve children&rsquo;s health through Healthy Homes.<span>&nbsp;&nbsp;&nbsp;<a class='learnmore' href='#'>Learn&nbsp;More&nbsp;&#187;</a></span></h1>
+	<div class='container'>
+		<div class='row index_intro'>
+			<h1 class='seven columns'>We improve children&rsquo;s health through Healthy Homes.<span>&nbsp;&nbsp;&nbsp;<a class='learnmore' href='#'>Learn&nbsp;More&nbsp;&#187;</a></span></h1>
+		</div>
+
+		<div class='row'>
+			<p class="six columns">What&rsquo;s New:</p>
+			<p class="follow">FOLLOW US!&nbsp;&nbsp;
+		    <a href='https://www.facebook.com/Omahahealthykids' title='Omaha Healthy Kids Alliance - Facebook' target="_blank"><i class='share share-dark fa fa-facebook'></i></a>&nbsp;&nbsp;
+		    <a href='https://twitter.com/ohka1' title='Omaha Healthy Kids Alliance - Twitter' target="_blank"><i class='share share-dark fa fa-twitter'></i></a>
+			</p>
+		</div>
 	</div>
 
-	<div class='row'>
-		<p class="six columns">What&rsquo;s New:</p>
-		<p class="follow">FOLLOW US!&nbsp;&nbsp;
-	    <a href='https://www.facebook.com/Omahahealthykids' title='Omaha Healthy Kids Alliance - Facebook' target="_blank"><i class='share share-dark fa fa-facebook'></i></a>&nbsp;&nbsp;
-	    <a href='https://twitter.com/ohka1' title='Omaha Healthy Kids Alliance - Twitter' target="_blank"><i class='share share-dark fa fa-twitter'></i></a>
-		</p>
+	<div class="container-fullwidth">
+		{% for entry in craft.entries.section('newsandevents').limit(2).find() %}
+		<div class='row post_preview-index post_preview'>
+			<article class='has-image columns'>
+				{# Fetch all of the categories related to this entry #}
+				{% set categories = craft.categories.relatedTo(entry) %}
+				{# Output them #}
+				{% for category in categories %}
+					<a class='post_preview-category' href='{{ category.url }}'>{{ category.title }}&nbsp;&nbsp;</a>
+				{% endfor %}	
+				<a href="{{ entry.url }}" title="{{ entry.title }}">
+					{% for asset in entry.newseventsThumbnail %}
+						<img src="{{ asset.url }}" alt="{{ asset.title }}">
+					{% endfor %}
+				</a>
+
+				<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
+				<ul class="share_post">
+					<li>
+						<span class='sharenow'>Share Now</span>
+						<a href="#" target='_blank'><i class='share share-light share-post-preview fa fa-facebook fa-lg'></i></a>
+						<a href="#" target='_blank'><i class='share share-light share-post-preview fa fa-twitter fa-lg'></i></a>
+						<a href="{{ entry.url }}" class='readmore_link' title="{{ entry.title }}">READ MORE &#187;</a>
+					</li>
+				</ul>
+			</article>
+		</div>
+		{% endfor %}
 	</div>
 
-	{% for entry in craft.entries.section('newsandevents').limit(2).find() %}
-	<div class='row post_preview-index post_preview'>
-		<article class='has-image columns'>
-			{# Fetch all of the categories related to this entry #}
-			{% set categories = craft.categories.relatedTo(entry) %}
-			{# Output them #}
-			{% for category in categories %}
-				<a class='post_preview-category' href='{{ category.url }}'>{{ category.title }}&nbsp;&nbsp;</a>
-			{% endfor %}	
-			<a href="{{ entry.url }}" title="{{ entry.title }}">
-				{% for asset in entry.newseventsThumbnail %}
-					<img src="{{ asset.url }}" alt="{{ asset.title }}">
-				{% endfor %}
+	<div class="container">
+		<div class='row'>
+			<a class="button button-news" href='{{ url('newsandevents') }}' title="More News & Events">More News & Events</a>
+		</div>
+
+		<div class="row animate what actionblock">
+			<div class="action-label">
+				<a href='{{ siteUrl('whats-a-healthy-home') }}'><h6 class='whatword'>What</h6></a>
+			</div>
+			<div class="offset-by-three action">
+				<div class="caption-what">
+					<img class='whatkid' src="img/OHKA-KidImage-Camilla.png">
+					<h6 class='whatword-title'>What</h6>
+					<h3>A Healthy Home prevents many serious children's health problems.</h3>
+					<h4><a href='{{ siteUrl('whats-a-healthy-home') }}'>Learn More</a></h4>
+				</div>
+			</div>
+		</div>
+
+		<div class="row animate why actionblock">
+			<div class="action-label whyword">
+				<a href='{{ siteUrl('why-healthy-homes-matter-in-omaha') }}'><h6>Why</h6></a>
+			</div>
+			<div class="action">
+				<div class="caption-why">
+					<img class="whykid" src="img/OHKA-KidImage-ZhyAire.png">  
+					<h6 class='whatword-title'>Why</h6>      			        
+					<h3>A Healthy Home increases quality of life for children and parents.</h3>
+					<h4><a href='{{ siteUrl('why-healthy-homes-matter-in-omaha') }}'>Learn More</a></h4>
+				</div>
+			</div>
+		</div>
+
+		<div class="row animate how actionblock">
+			<div class="action-label howword">
+				<a href='{{ siteUrl('how-ohka-makes-a-difference') }}'><h6>How</h6></a>
+			</div>
+			<div class="action">
+				<div class="caption-how">
+					<img class="howkid" src="img/OHKA-KidImage-Brighton.png">
+					<h6 class='whatword-title'>How</h6>      			        
+					<h3>We help families make connections between health and housing issues.</h3>
+					<h4><a href='{{ siteUrl('how-ohka-makes-a-difference') }}'>Learn More</a></h4>
+				</div>
+			</div>
+		</div>
+
+		<div class='row donate'>
+			<a href='http://www.omahahealthykids.org/get-involved/donate/'>
+				<img class='seven columns offset-by-one' src="img/donate.svg">
 			</a>
-
-			<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
-			<ul class="share_post">
-				<li>
-					<span class='sharenow'>Share Now</span>
-					<a href="#" target='_blank'><i class='share share-light share-post-preview fa fa-facebook fa-lg'></i></a>
-					<a href="#" target='_blank'><i class='share share-light share-post-preview fa fa-twitter fa-lg'></i></a>
-					<a href="{{ entry.url }}" class='readmore_link' title="{{ entry.title }}">READ MORE &#187;</a>
-				</li>
-			</ul>
-		</article>
-	</div>
-	{% endfor %}
-
-	<div class='row'>
-		<a class="button button-news" href='{{ url('newsandevents') }}' title="More News & Events">More News & Events</a>
-	</div>
-
-	<div class="row animate what actionblock">
-		<div class="action-label">
-			<a href='{{ siteUrl('whats-a-healthy-home') }}'><h6 class='whatword'>What</h6></a>
 		</div>
-		<div class="offset-by-three action">
-			<div class="caption-what">
-				<img class='whatkid' src="img/OHKA-KidImage-Camilla.png">
-				<h6 class='whatword-title'>What</h6>
-				<h3>A Healthy Home prevents many serious children's health problems.</h3>
-				<h4><a href='{{ siteUrl('whats-a-healthy-home') }}'>Learn More</a></h4>
-			</div>
-		</div>
-	</div>
-
-	<div class="row animate why actionblock">
-		<div class="action-label whyword">
-			<a href='{{ siteUrl('why-healthy-homes-matter-in-omaha') }}'><h6>Why</h6></a>
-		</div>
-		<div class="action">
-			<div class="caption-why">
-				<img class="whykid" src="img/OHKA-KidImage-ZhyAire.png">  
-				<h6 class='whatword-title'>Why</h6>      			        
-				<h3>A Healthy Home increases quality of life for children and parents.</h3>
-				<h4><a href='{{ siteUrl('why-healthy-homes-matter-in-omaha') }}'>Learn More</a></h4>
-			</div>
-		</div>
-	</div>
-
-	<div class="row animate how actionblock">
-		<div class="action-label howword">
-			<a href='{{ siteUrl('how-ohka-makes-a-difference') }}'><h6>How</h6></a>
-		</div>
-		<div class="action">
-			<div class="caption-how">
-				<img class="howkid" src="img/OHKA-KidImage-Brighton.png">
-				<h6 class='whatword-title'>How</h6>      			        
-				<h3>We help families make connections between health and housing issues.</h3>
-				<h4><a href='{{ siteUrl('how-ohka-makes-a-difference') }}'>Learn More</a></h4>
-			</div>
-		</div>
-	</div>
-
-	<div class='row donate'>
-		<a href='http://www.omahahealthykids.org/get-involved/donate/'>
-			<img class='seven columns offset-by-one' src="img/donate.svg">
-		</a>
 	</div>
 
 </div>
