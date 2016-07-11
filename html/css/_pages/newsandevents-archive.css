@@ -126,9 +126,15 @@
 .post_preview {
   position: relative;
   background-color: #f4ece3;
-  padding: 40px 40px 25px 40px;
+  padding: 40px;
   margin-bottom: 40px;
 }
+
+  @media screen and (min-width: 1000px) {
+  .post_preview {
+    padding: 64px 40px 25px 64px;
+  }
+  }
 
 .post_preview img {
 	position: absolute;
@@ -150,19 +156,11 @@
 .post_preview h2 a:hover { color: #406670; }
 
 .readmore_link {
-  margin: 0;
-  padding: 0;
-  display: inline-block;
   font-weight: bold;
-  vertical-align: top;
-  font-size: 14px;
-  margin-left: 180px;
+  padding-left: 10px;
 }
 
 .share_post {
-  position: absolute;
-  display: inline-block;
-  padding-top: 1px;
   vertical-align: top;
   text-align: center;
   list-style: none;
@@ -171,18 +169,24 @@
 
 .share_post li {
   float: left;
+  margin-right: 30px;
 }
+
+.share_post li {
+  float: left;
+  margin-right: 15px;
+}
+
+  @media screen and (min-width: 800px) {
+  .share_post li {
+  margin-right: 30px;
+  } 
+  }
 
 
   @media screen and (max-width: 1023px) {
   .post_preview img {
     display: none;
-  }
-
-  .readmore_link {
-    padding-top: 45px;
-    padding-bottom: 10px;
-    margin-left: 0px;
   }
   }
 
@@ -208,9 +212,10 @@
 
   .post_preview img {
     border-radius: 100px;
-    width: 140px;
-    height: 140px;
+    width: 180px;
+    height: 180px;
     display: inline-block;
+    margin-top: -20px;
   }
 
 	.has-image p, .has-image h2 {
