@@ -186,6 +186,10 @@
   padding-left: 10px;
 }
 
+.post_preview-entry ul li {
+  padding-bottom: 0;
+}
+
 @media screen and (max-width: 799px) {
   .sharenow {
     display: none;
