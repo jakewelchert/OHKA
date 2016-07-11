@@ -75,6 +75,12 @@
 		{% for entry in pageEntries %}
 		<div class="row post_preview ten columns offset-by-one">
 			<article class="has-image columns">
+					{# Fetch all of the categories related to this entry #}
+					{% set categories = craft.categories.relatedTo(entry) %}
+					{# Output them #}
+					{% for category in categories %}
+						<a class='post_preview-category' href='{{ category.url }}'>{{ category.title }}</a>
+					{% endfor %}	
 					<a href="{{ entry.url }}" title="{{ entry.title }}">
 						{% for asset in entry.newseventsThumbnail %}
 							<img src="{{ asset.url }}" alt="{{ asset.title }}">
@@ -85,14 +91,14 @@
 				<p>{{ entry.summary }}</p>
 
 				<ul class="share_post">
-					<li>
+<!-- 					<li>
 						{# Fetch all of the categories related to this entry #}
 						{% set categories = craft.categories.relatedTo(entry) %}
 						{# Output them #}
 						{% for category in categories %}
 							<a href="{{ category.url }}">{{ category.title }}</a>
 						{% endfor %}							
-					</li>
+					</li> -->
 
 					<li>
 						Share Now&nbsp;
