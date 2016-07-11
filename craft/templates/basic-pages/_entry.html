@@ -8,10 +8,11 @@
 {% set title = entry.title %}
 
 {% block content %}
-<div class="container">
-
+<div class="container-fullwidth">
 	<h1 class="bp-row bp-title">{{ title }}</h1>
+</div>
 
+<div class="container">
 	{% for block in entry.basicBlocks %}
 
 	    {% if block.type == "text" %}
