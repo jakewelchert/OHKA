@@ -17,6 +17,10 @@ select {
   color: #ddd;
   box-shadow: none;
   box-sizing: border-box;
+  width: 100%;
+}
+
+form input.newsletter {
   width: 75%;
 }
 

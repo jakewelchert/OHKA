@@ -1,0 +1,64 @@
+{#
+ # What's A Healthy Home template
+ # ---------------
+ #
+ # When this template gets loaded, it will be because someone has accessed
+ # http://yoursite.com/ (without any URI). Craft checks to see if you have
+ # a Single section set to be the Homepage (as you do, by default), and
+ # loads the section’s Template (this file). A special ‘entry’ variable
+ # will already be set for you, assigned to the Homepage entry.
+ #
+ # It's worth noting that even if you didn't have a Homepage Single section,
+ # as long as this template remains at craft/templates/index.html, it
+ # would still be the one to get loaded when accessing http://yoursite.com/,
+ # albeit without an ‘entry’ variable already set for you.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+{% extends "_layout" %}
+
+{% block content %}
+
+<div class="container">
+
+	<div class="bp-title">{{ entry.pageTitle }}</div>
+
+		<div class='v-row v-row-intro'>
+			<div class="v-intro six columns offset-by-three">
+				<h3>Send OHKA a message!</h3>
+    		</div>
+		</div>
+
+		<div class='v-row six columns offset-by-three'>
+			<form action="action_page.php">
+			  <input type="text" name="firstname" value="Name (required)"><br>
+			  <input type="text" name="lastname" value="Email (required)"><br>
+				<textarea name="message" rows="10" cols="30">
+				Message
+				</textarea>
+			  <input class='button' type="submit" value="Submit">
+			</form>
+		</div>
+
+		<div class='v-row six columns offset-by-three'>
+			<h3>Give us a call!</h3>
+			<h3>4029349700</h3>
+		</div>
+
+		<div class='v-row six columns offset-by-three'>
+			<h3>Or visit us in real life!</h3>
+			<p>
+				Omaha Healthy Kids Alliance<br>
+				5006 Underwood Ave<br>
+				Omaha, NE 68132
+			</p>
+		</div>
+
+		<div class='v-row six columns offset-by-three'>
+			<h3>MAP</h3>
+		</div>
+</div><!--     End Of Container    -->
+
+{% endblock %}
