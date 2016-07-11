@@ -251,7 +251,6 @@ nav a:hover {
 }
 }
 
-
 .btn-open:after {
   position: absolute;
   right: 50px;
@@ -268,7 +267,6 @@ nav a:hover {
   color:#6cb358;
 }
 
-
 .btn-close:after {
   position: fixed;
   right: 50px;
@@ -283,7 +281,7 @@ nav a:hover {
   -o-transition:all .2s linear 0s;
 }
 .btn-close:hover:after {
-  color: #fb9642;
+  opacity: .7;
 }
 
 
