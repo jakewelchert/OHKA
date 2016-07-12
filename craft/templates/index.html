@@ -22,13 +22,13 @@
 {% block content %}
 <div class='container-fullwidth'>
 
+
 	{% set image = entry.homepageHeaderImage.first() %}
 	<div class='homepage-hero' style='background-image:url({{ image.getURL() }})'>
-		<video class="covervid-video" autoplay="" loop="" poster="/uploads/header/_1280x720_crop_center-center_75/Blatt-Broll-Video-Frame-1280x720_40.jpg">
-		<source src="http://blattbeer.com/uploads/header/Blatt-Broll-Video-Table_40_160329_111748.webm" type="video/webm">
-		<source src="http://blattbeer.com/uploads/header/Blatt-Broll-Video-Table_40_160329_111858.mp4" type="video/mp4">
+		<video autoplay='' loop='' poster='background-image:url({{ image.getURL() }})'>
+		<source src="{{ entry.homepageVideoWebm }}" type="video/webm">
+		<source src="{{ entry.homepageVideoWebm }}" type="video/mp4">
 		</video>
-
 		<div class="cta">
 			{% if entry.ctaButton %}
 			    <a class="button" href='{{ entry.homepageCtaLink }}' title='{{ entry.homepageCtaButtonText }}'>{{ entry.homepageCtaButtonText }}</a>
@@ -37,16 +37,7 @@
 	</div>
 </div>
 
-<!-- 
-	{% set image = entry.homepageHeaderImage.first() %}
-	<div class='homepage-hero' style='background-image:url({{ image.getURL() }})'>
-		<div class="cta">
-			{% if entry.ctaButton %}
-			    <a class="button" href='{{ entry.homepageCtaLink }}' title='{{ entry.homepageCtaButtonText }}'>{{ entry.homepageCtaButtonText }}</a>
-			{% endif %}
-		</div>
-	</div> -->
-	
+
 	<div class='container'>
 		<div class='row index_intro'>
 			<h1 class='seven columns'>We improve children&rsquo;s health through Healthy Homes.<span>&nbsp;&nbsp;&nbsp;<a class='learnmore' href='#'>Learn&nbsp;More&nbsp;&#187;</a></span></h1>
