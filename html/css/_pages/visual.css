@@ -300,14 +300,10 @@
   }
 
   @media (min-width: 1200px) {
-    .staggered_callout-content20-right {
+    .staggered_callout-content2-right {
       padding: 90px 8.8% 60px 57%;
     }
   }
-
-
-
-
 
 
 
@@ -333,7 +329,7 @@
     }
   }
 
-.staggered_callout-content2 h3 {
+.staggered_callout-content2 h3, .staggered_callout-content2-right h3 {
     padding-bottom: 15px;
 }
 
