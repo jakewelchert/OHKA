@@ -50,8 +50,9 @@
         <ul class="footer-nav">
           <li><a href='{{ url('newsandevents') }}'>News & Events</a></li>
           <li><a href='{{ url('resources') }}'>Resources</a></li>
-        </ul>        
-        {% set entries = craft.entries.section('basicpages') %}
+        </ul>
+
+        {% set entries = craft.entries.section('basicpages').showinfooternav(1) %}
         <ul class="footer-nav" id="nav">
           {% nav entry in entries %}
             <li>
@@ -63,6 +64,7 @@
               {% endifchildren %}
             </li>
           {% endnav %}
+
         </ul>
       </div>
 
