@@ -37,13 +37,13 @@ header {
 
 @media screen and (min-width: 800px) {
   .homepage-hero {
-  min-height: 500px;
+  min-height: 450px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .homepage-hero {
-  min-height: 700px;
+  min-height: 680px;
   }
 }
 
