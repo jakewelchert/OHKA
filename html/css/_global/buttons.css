@@ -33,7 +33,7 @@
 }
 
 .button:hover, button:hover {
-  background: #558b46;
+  background: #60a84c;
   color: #fff;
 }
 
@@ -61,10 +61,11 @@ button.featured:hover {
 
 .super-nav button {
   line-height: 35px;
-  padding: 0 30px;
+  padding: 0 25px 2px;
   text-align: center;
   margin-top: 15px;
-  text-transform: none;
+  font-size: 13px;
+  letter-spacing: 1px;
 }
 
 .btn-cntr {
