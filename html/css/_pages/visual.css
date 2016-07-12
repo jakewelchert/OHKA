@@ -257,6 +257,149 @@
 
 
 
-  .callouts {
-    position: relative;
+
+.staggered_callout-content2 {
+  padding: 40px 5% 20px 5%;
+}
+
+  @media (min-width: 800px) {
+    .staggered_callout-content2 {
+      padding: 60px 65% 20px 5%;
+    }
   }
+
+  @media (min-width: 1100px) {
+    .staggered_callout-content2 {
+      padding: 100px 60% 20px 5%;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .staggered_callout-content2 {
+      padding: 120px 57% 20px 5%;
+    }
+  }
+
+
+
+
+
+
+
+
+.staggered_callout-2 {
+  position: relative;
+  background-color: #eee;
+  margin-top: 350px;
+}
+
+  @media (min-width: 800px) {
+    .staggered_callout-2 {
+      margin-top: 60px;
+      margin-bottom: 75px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .staggered_callout-2 {
+      margin-top: 120px;
+    }
+  }
+
+
+
+
+
+
+/*
+.callouts2 {
+  position: relative;
+  max-width: 300px;
+  z-index: 101;
+  margin-top: -300px;
+  margin: 0 auto;
+  margin-top: -300px;
+  border: 0;
+  display: block;
+}
+
+  @media (min-width: 800px) {
+  .callouts2 {
+    position: relative;
+    max-width: 400px;
+    z-index: 101;
+    margin-top: -300px;
+    margin: 0 auto;
+    margin-top: -70px;
+    margin-bottom: -70px;
+    margin-right: 5%;
+    float: right;
+  }
+  }
+
+  @media (min-width: 1024px) {
+  .callouts2 {
+    max-width: 530px;
+  }
+  }
+
+
+.imagebottom {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+}
+
+.imagetop {
+  position: absolute;
+  max-width: calc(100% - 50px);
+  z-index: 101;
+  top: 25px;
+  left: 25px;
+}*/
+
+
+
+
+.imagetop-only {
+  position: relative;
+  max-width: 300px;
+  z-index: 101;
+  margin-top: -300px;
+  margin: 0 auto;
+  margin-top: -300px;
+}
+
+  @media (min-width: 800px) {
+  .imagetop-only {
+    position: relative;
+    max-width: 400px;
+    z-index: 101;
+    margin-top: -300px;
+    margin: 0 auto;
+    margin-top: -20px;
+    margin-bottom: -70px;
+    margin-right: 5%;
+    padding-left: 75px;
+    float: right;
+  }
+  }
+
+  @media (min-width: 1024px) {
+  .imagetop-only {
+    max-width: 530px;
+    margin-top: -70px;
+  }
+  }
+
+
+.border {
+  padding: .4em;
+  border: .4em double;
+  background-clip: padding-box;
+  border-image: url("../../img/bordertest.svg") 40% repeat;
+  border-image-width: 2;
+  border-image-slice: 200;
+  border-image-width: 200;
+  border-image-outset: 1;
+}

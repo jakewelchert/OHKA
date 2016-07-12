@@ -43,43 +43,43 @@
 			</div>
 
 	    {% elseif block.type == "icons" %}
-			<div class='v-row'>
-				<div class='twelve columns v-tertiary'>
-			      {% set image = block.iconLeft.first() %}
-			        {% if image %}
-			          <img src="{{ image.getUrl }}" alt="{{ image.title }}">
-			        {% endif %}
-					
-						{% set image = block.iconCenter.first() %}
-			        {% if image %}
-			          <img src="{{ image.getUrl }}" alt="{{ image.title }}">
-			        {% endif %}
+		<div class='v-row'>
+			<div class='twelve columns v-tertiary'>
+		      {% set image = block.iconLeft.first() %}
+		        {% if image %}
+		          <img src="{{ image.getUrl }}" alt="{{ image.title }}">
+		        {% endif %}
+				
+					{% set image = block.iconCenter.first() %}
+		        {% if image %}
+		          <img src="{{ image.getUrl }}" alt="{{ image.title }}">
+		        {% endif %}
 
-						{% set image = block.iconRight.first() %}
-			        {% if image %}
-			          <img src="{{ image.getUrl }}" alt="{{ image.title }}">
-			        {% endif %}
-				</div>
+					{% set image = block.iconRight.first() %}
+		        {% if image %}
+		          <img src="{{ image.getUrl }}" alt="{{ image.title }}">
+		        {% endif %}
 			</div>
+		</div>
 
 
 	    {% elseif block.type == "staggeredCalloutImageRight" %}
-			<div class='v-row'>
-				<div class="staggered-callout">
-					<div class="staggered-callout-image-right borders">
-						{% set image = block.staggeredCalloutImage.first() %}
-						<div class='borderedimage' style="background-image:url({{ image.getURL() }})"></div>
-					</div>
+		<div class='v-row'>
+			<div class="staggered-callout">
+				<div class="staggered-callout-image-right borders">
+					{% set image = block.staggeredCalloutImage.first() %}
+					<div class='borderedimage' style="background-image:url({{ image.getURL() }})"></div>
+				</div>
 
-					<div class="row staggered-callout-container">
-						<div class="five columns staggered_callout-content">
-							<h3>{{ block.staggeredCalloutTitle }}</h3>
-							<p>{{ block.staggeredCalloutBody }}</p>
-							<strong>{{ block.staggeredCalloutLink }}</strong>
-						</div>
+				<div class="row staggered-callout-container">
+					<div class="five columns staggered_callout-content">
+						<h3>{{ block.staggeredCalloutTitle }}</h3>
+						<p>{{ block.staggeredCalloutBody }}</p>
+						<strong>{{ block.staggeredCalloutLink }}</strong>
 					</div>
 				</div>
 			</div>
+		</div>
 
 </div>
 
@@ -89,38 +89,18 @@
 
 
 
-<div class='container-fullwidth'>
-<div class='v-row'>
-	<div class="staggered-callout">
-		<div class="staggered-callout-image-right">
-			{% set image = block.staggeredCalloutImage.first() %}
+<!-- NEW STAGGERED -->
+	<div class='container-fullwidth v-row'>
+		<div class='row columns staggered_callout-2'>
 
-			<div class='callouts'>
-				<img src='{{ siteUrl }}img/bordertest.svg'>			
-				<img src='http://localhost:8888/omahahealthykidsalliance/html/img/hand.png'>
-			</div>
-		
-		</div>
-
-		<div class="row staggered-callout-container">
-			<div class="five columns staggered_callout-content">
+			<img class='imagetop-only border' src='{{ siteUrl }}img/OHKA_How_Policy.jpg'>
+			<div class='staggered_callout-content2'>
 				<h3>{{ block.staggeredCalloutTitle }}</h3>
 				<p>{{ block.staggeredCalloutBody }}</p>
 				<strong>{{ block.staggeredCalloutLink }}</strong>
 			</div>
 		</div>
 	</div>
-</div>
-</div>
-
-
-
-
-
-
-
-
-
 
 
 
