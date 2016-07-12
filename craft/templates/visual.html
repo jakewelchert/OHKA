@@ -141,7 +141,7 @@
 	    {% elseif block.type == "actionCallout" %}		
 			<div class='v-row'>
 				{% set image = block.actionCalloutImage.first() %}
-				<div class='twelve columns action-callout' style='background-image:url({{ image.getURL() }})'>
+				<div class='ten columns action-callout offset-by-one' style='background-image:url({{ image.getURL() }})'>
 					<div class='module_content'>
 						<h3>{{ block.actionCalloutTitle }}</h3>
 						<a href='{{ block.actionCalloutLink }}'><button>{{ block.actionCalloutButtonText }}</button></a>
