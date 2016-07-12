@@ -37,10 +37,10 @@
   color: #fff;
 }
 
-.button:active, button:active {
+/*.button:active, button:active {
   background: #406735;
   outline: none;
-}
+}*/
 
 button.btm-right {
   position: absolute;
@@ -71,8 +71,6 @@ button.featured:hover {
 .btn-cntr {
   text-align: center;
 }
-
-
 
 .share {
   width: 23px;
@@ -120,14 +118,12 @@ button.featured:hover {
   } 
   }
 
-
 .share-footer {
   width: 35px;
   height: 35px;
   line-height: 36px;
   padding: 12px;
 }
-
 
 .share-dark                      { color: #fff; }
 .share-dark.fa-envelope-o:hover  { background-color: #fb9642; }
@@ -145,6 +141,6 @@ button.featured:hover {
 .share-light.fa-twitter:hover    { background-color: #12c1fd; }
 .share-light:hover               { color: #fff; }
 
-.share.fa-facebook:active        { background-color: #003c63; }
+/*.share.fa-facebook:active        { background-color: #003c63; }
 .share.fa-twitter:active         { background-color: #0c6584; }
-.share.fa-envelope-o:active      { background-color: #d07f3c; }
+.share.fa-envelope-o:active      { background-color: #d07f3c; }*/
