@@ -21,35 +21,33 @@
 
 {% block content %}
 
-<div class="container">
+<div class='container contact'>
 
 	<div class="bp-title">{{ entry.pageTitle }}</div>
 
-		<div class='v-row v-row-intro'>
+		<div class='v-row v-row-intro v-row-contact-intro'>
 			<div class="v-intro six columns offset-by-three">
 				<h3>Send OHKA a message!</h3>
     		</div>
 		</div>
 
-		<div class='v-row six columns offset-by-three'>
+		<div class='v-row v-row-contact six columns offset-by-three'>
 			<form action="action_page.php">
-			  <input type="text" name="firstname" value="Name (required)"><br>
-			  <input type="text" name="lastname" value="Email (required)"><br>
-				<textarea name="message" rows="10" cols="30">
-				Message
-				</textarea>
-			  <input class='button' type="submit" value="Submit">
+				<input type="text" name="firstname" onfocus="if(this.value == 'Name (required)') { this.value = ''; }" value="Name (required)"><br>
+				<input type="text" name="lastname" onfocus="if(this.value == 'Email (required)') { this.value = ''; }" value="Email (required)"><br>
+				<textarea rows="4" cols="50" name="comment" form="usrform" onfocus="if(this.value == 'Message') { this.value = ''; }" value="Message">Message</textarea>			  
+				<button type="submit" value="Submit">SUBMIT MESSAGE</button>
 			</form>
 		</div>
 
-		<div class='v-row six columns offset-by-three'>
+		<div class='v-row v-row-contact six columns offset-by-three'>
 			<h3>Give us a call!</h3>
-			<h3>4029349700</h3>
+			<h3 class='orange'>402 934 9700</h3>
 		</div>
 
-		<div class='v-row six columns offset-by-three'>
+		<div class='v-row v-row-contact six columns offset-by-three'>
 			<h3>Or visit us in real life!</h3>
-			<p>
+			<p class='orange'>
 				Omaha Healthy Kids Alliance<br>
 				5006 Underwood Ave<br>
 				Omaha, NE 68132
@@ -57,7 +55,21 @@
 		</div>
 
 		<div class='v-row six columns offset-by-three'>
-			<h3>MAP</h3>
+
+		    <div id="map"></div>
+		    <script>
+		      function initMap() {
+		        var mapDiv = document.getElementById('map');
+		        var map = new google.maps.Map(mapDiv, {
+		            center: {lat: 44.540, lng: -78.546},
+		            zoom: 8
+		        });
+		      }
+		    </script>
+		    <script async defer
+		        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByomLbzSEVO27CP9Fkd6nL9bzjqBvZL28&callback=initMap">
+		    </script>
+
 		</div>
 </div><!--     End Of Container    -->
 

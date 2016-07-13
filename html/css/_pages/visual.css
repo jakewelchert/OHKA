@@ -324,59 +324,8 @@
   }
 
 .staggered_callout-content2 h3, .staggered_callout-content2-right h3 {
-    padding-bottom: 15px;
+  padding-bottom: 15px;
 }
-
-
-
-
-/*
-.callouts2 {
-  position: relative;
-  max-width: 300px;
-  z-index: 101;
-  margin-top: -300px;
-  margin: 0 auto;
-  margin-top: -300px;
-  border: 0;
-  display: block;
-}
-
-  @media (min-width: 800px) {
-  .callouts2 {
-    position: relative;
-    max-width: 400px;
-    z-index: 101;
-    margin-top: -300px;
-    margin: 0 auto;
-    margin-top: -70px;
-    margin-bottom: -70px;
-    margin-right: 5%;
-    float: right;
-  }
-  }
-
-  @media (min-width: 1024px) {
-  .callouts2 {
-    max-width: 530px;
-  }
-  }
-
-
-.imagebottom {
-  position: absolute;
-  width: 100%;
-  z-index: 100;
-}
-
-.imagetop {
-  position: absolute;
-  max-width: calc(100% - 50px);
-  z-index: 101;
-  top: 25px;
-  left: 25px;
-}*/
-
 
 
 
@@ -443,10 +392,6 @@
     margin-top: -45px;
   }
   }
-
-
-
-
 
 
 .border {
