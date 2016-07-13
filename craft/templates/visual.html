@@ -43,24 +43,24 @@
 			</div>
 
 	    {% elseif block.type == "icons" %}
-		<div class='v-row'>
-			<div class='twelve columns v-tertiary'>
-		      {% set image = block.iconLeft.first() %}
-		        {% if image %}
-		          <img src="{{ image.getUrl }}" alt="{{ image.title }}">
-		        {% endif %}
-				
-					{% set image = block.iconCenter.first() %}
-		        {% if image %}
-		          <img src="{{ image.getUrl }}" alt="{{ image.title }}">
-		        {% endif %}
+			<div class='v-row'>
+				<div class='twelve columns v-tertiary'>
+			      {% set image = block.iconLeft.first() %}
+			        {% if image %}
+			          <img src="{{ image.getUrl }}" alt="{{ image.title }}">
+			        {% endif %}
+					
+						{% set image = block.iconCenter.first() %}
+			        {% if image %}
+			          <img src="{{ image.getUrl }}" alt="{{ image.title }}">
+			        {% endif %}
 
-					{% set image = block.iconRight.first() %}
-		        {% if image %}
-		          <img src="{{ image.getUrl }}" alt="{{ image.title }}">
-		        {% endif %}
+						{% set image = block.iconRight.first() %}
+			        {% if image %}
+			          <img src="{{ image.getUrl }}" alt="{{ image.title }}">
+			        {% endif %}
+				</div>
 			</div>
-		</div>
 	</div>
 
 	<div class='container-fullwidth'>
@@ -77,10 +77,8 @@
 				</div>
 			</div>
 		</div>
-	</div>
 
 
-	<div class='container-fullwidth'>
 	    {% elseif block.type == "staggeredCalloutImageLeft" %}
 		<div class='v-row'>
 			<div class='row columns staggered_callout-2'>
@@ -106,9 +104,7 @@
 	        		{{ block.text|markdown }}
 				</div>
 			</div>
-	</div>
 
-	<div class='container'>
 	    {% elseif block.type == "actionCallout" %}		
 			<div class='v-row'>
 				{% set image = block.actionCalloutImage.first() %}
