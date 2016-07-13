@@ -23,7 +23,7 @@
 			<h4>FEATURED</h4>
 		</div>
 
-		{% set featuredNews = craft.entries.section('newsandevents').featured('not 0').order('dateUpdated desc').limit(2) %}
+		{% set featuredNews = craft.entries.section('newsandevents').featured('not 0').order('descendants').limit(2) %}
 		{% for entry in featuredNews %}
 			<div class='row'>
 
