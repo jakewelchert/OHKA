@@ -185,6 +185,7 @@
 
   @media (min-width: 800px) {
   .action-callout {
+    margin-top: 60px;
     padding: 200px 50px;
   }
 
