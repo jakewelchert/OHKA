@@ -55,21 +55,12 @@
 		</div>
 
 		<div class='v-row four columns offset-by-four'>
-
-		    <div id="map"></div>
-		    <script>
-		      function initMap() {
-		        var mapDiv = document.getElementById('map');
-		        var map = new google.maps.Map(mapDiv, {
-		            center: {lat: 44.540, lng: -78.546},
-		            zoom: 8
-		        });
-		      }
-		    </script>
-		    <script async defer
-		        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByomLbzSEVO27CP9Fkd6nL9bzjqBvZL28&callback=initMap">
-		    </script>
-
+			<div class='map' style='max-width:100%; overflow:hidden;'>
+				<div id="google-maps-canvas" style="height:100%; width:100%;max-width:100%;">
+					<iframe style="height:400px;width:400px;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Omaha+Healthy+Kids+Alliance,+Underwood+Avenue,+Omaha,+NE,+United+States&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe>
+				</div>
+				<style>#google-maps-canvas img{max-width:none!important;background:none!important;font-size: inherit;}</style>
+			</div>
 		</div>
 </div><!--     End Of Container    -->
 
