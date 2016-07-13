@@ -106,8 +106,9 @@
 	        		{{ block.text|markdown }}
 				</div>
 			</div>
+	</div>
 
-
+	<div class='container'>
 	    {% elseif block.type == "actionCallout" %}		
 			<div class='v-row'>
 				{% set image = block.actionCalloutImage.first() %}
