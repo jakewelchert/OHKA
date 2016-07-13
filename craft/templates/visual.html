@@ -21,50 +21,55 @@
 
 {% block content %}
 
-	<div class='container-fullwidth'>
-		<div class="v-title">{{ entry.pageTitle }}</div>
-	</div>
+		<div class='container-fullwidth'>
+			<div class="v-title">{{ entry.pageTitle }}</div>
+		</div>
 
-	<div class='container-fullwidth'>
+		<div class='container-fullwidth'>
 		<div class="v-intro-img ten columns offset-by-one">
 			{% for asset in entry.headerImage %}
 			<img src="{{ asset.url }}" alt="{{ asset.title }}">
 			{% endfor %}
 		</div>
-	</div>
+		</div>
 
-	<div class='container'>
+
 		{% for block in entry.visualBlocks %}
 	    {% if block.type == "heading" %}
-			<div class='v-row v-row-intro'>
-				<div class="v-intro eight columns offset-by-two">
-	        		<p>{{ block.heading }}</p>
-	    		</div>
-			</div>
+    	<div class='container'>
+		<div class='v-row v-row-intro'>
+			<div class="v-intro eight columns offset-by-two">
+        		<p>{{ block.heading }}</p>
+    		</div>
+		</div>
+		</div>
+
 
 	    {% elseif block.type == "icons" %}
-			<div class='v-row'>
-				<div class='twelve columns v-tertiary'>
-			      {% set image = block.iconLeft.first() %}
-			        {% if image %}
-			          <img src="{{ image.getUrl }}" alt="{{ image.title }}">
-			        {% endif %}
-					
-						{% set image = block.iconCenter.first() %}
-			        {% if image %}
-			          <img src="{{ image.getUrl }}" alt="{{ image.title }}">
-			        {% endif %}
+    	<div class='container'>
+		<div class='v-row'>
+			<div class='twelve columns v-tertiary'>
+		      {% set image = block.iconLeft.first() %}
+		        {% if image %}
+		          <img src="{{ image.getUrl }}" alt="{{ image.title }}">
+		        {% endif %}
+				
+					{% set image = block.iconCenter.first() %}
+		        {% if image %}
+		          <img src="{{ image.getUrl }}" alt="{{ image.title }}">
+		        {% endif %}
 
-						{% set image = block.iconRight.first() %}
-			        {% if image %}
-			          <img src="{{ image.getUrl }}" alt="{{ image.title }}">
-			        {% endif %}
-				</div>
+					{% set image = block.iconRight.first() %}
+		        {% if image %}
+		          <img src="{{ image.getUrl }}" alt="{{ image.title }}">
+		        {% endif %}
 			</div>
-	</div>
+		</div>
+		</div>
 
-	<div class='container-fullwidth'>
+
 	    {% elseif block.type == "staggeredCalloutImageRight" %}
+		<div class='container-fullwidth'>
 		<div class='v-row'>
 			<div class='row columns staggered_callout-2'>
 				{% for asset in block.staggeredCalloutImage %}
@@ -77,9 +82,11 @@
 				</div>
 			</div>
 		</div>
+		</div>
 
 
 	    {% elseif block.type == "staggeredCalloutImageLeft" %}
+	    <div class='container-fullwidth'>
 		<div class='v-row'>
 			<div class='row columns staggered_callout-2'>
 				{% for asset in block.staggeredCalloutImage %}
@@ -92,34 +99,34 @@
 				</div>
 			</div>
 		</div>
-	</div>
+		</div>
 
 
-	<div class='container'>
 	    {% elseif block.type == "text" %}
-			<div class='v-row'>
-				<div class="seven columns offset-by-three">
-					<h2 class='sec-title darkblue'>{{ block.textHeading }}</h2>
-					<h3 class='sec-title lightblue'>{{ block.textSubHeading }}</h3>
-	        		{{ block.text|markdown }}
-				</div>
+    	<div class='container'>
+		<div class='v-row'>
+			<div class="seven columns offset-by-three">
+				<h2 class='sec-title darkblue'>{{ block.textHeading }}</h2>
+				<h3 class='sec-title lightblue'>{{ block.textSubHeading }}</h3>
+        		{{ block.text|markdown }}
 			</div>
+		</div>
+		</div>
 
 	    {% elseif block.type == "actionCallout" %}		
-			<div class='v-row'>
-				{% set image = block.actionCalloutImage.first() %}
-				<div class='ten columns action-callout offset-by-one' style='background-image:url({{ image.getURL() }})'>
-					<div class='module_content'>
-						<h3>{{ block.actionCalloutTitle }}</h3>
-						<a href='{{ block.actionCalloutLink }}'><button>{{ block.actionCalloutButtonText }}</button></a>
-					</div>
-					<div class='module_overlay'></div>
+    	<div class='container'>
+		<div class='v-row'>
+			{% set image = block.actionCalloutImage.first() %}
+			<div class='ten columns action-callout offset-by-one' style='background-image:url({{ image.getURL() }})'>
+				<div class='module_content'>
+					<h3>{{ block.actionCalloutTitle }}</h3>
+					<a href='{{ block.actionCalloutLink }}'><button>{{ block.actionCalloutButtonText }}</button></a>
 				</div>
+				<div class='module_overlay'></div>
 			</div>
+		</div>
+		</div>
 
 	    {% endif %}
 	{% endfor %}
-
-</div><!--     End Of Container    -->
-
 {% endblock %}
