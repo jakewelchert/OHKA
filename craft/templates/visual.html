@@ -65,7 +65,7 @@
 
 	<div class='container-fullwidth'>
 	    {% elseif block.type == "staggeredCalloutImageRight" %}
-		<div class='container-fullwidth v-row'>
+		<div class='v-row'>
 			<div class='row columns staggered_callout-2'>
 				{% for asset in block.staggeredCalloutImage %}
 				<img class='imagetop-only border' src='{{ asset.url }}'>
@@ -80,44 +80,9 @@
 	</div>
 
 
-
-<!-- NEW STAGGERED -->
-<!-- 	<div class='container-fullwidth v-row'>
-		<div class='row columns staggered_callout-2'>
-
-			<img class='imagetop-only border' src='{{ siteUrl }}img/OHKA_How_Policy.jpg'>
-
-			<div class='staggered_callout-content2'>
-				<h3>{{ block.staggeredCalloutTitle }}</h3>
-				<p>{{ block.staggeredCalloutBody }}</p>
-				<strong>{{ block.staggeredCalloutLink }}</strong>
-			</div>
-		</div>
-	</div> -->
-
-
-
-
-<!-- NEW STAGGERED -->
-<!-- 	<div class='container-fullwidth v-row'>
-		<div class='row columns staggered_callout-2'>
-			<img class='imagetop-only-left border' src='{{ siteUrl }}img/OHKA_How_Policy.jpg'>
-
-			<div class='staggered_callout-content2-right'>
-				<h3>{{ block.staggeredCalloutTitle }}</h3>
-				<p>{{ block.staggeredCalloutBody }}</p>
-				<strong>{{ block.staggeredCalloutLink }}</strong>
-			</div>
-		</div>
-	</div> -->
-
-
-
-
-
 	<div class='container-fullwidth'>
 	    {% elseif block.type == "staggeredCalloutImageLeft" %}
-		<div class='container-fullwidth v-row'>
+		<div class='v-row'>
 			<div class='row columns staggered_callout-2'>
 				{% for asset in block.staggeredCalloutImage %}
 				<img class='imagetop-only-left border' src='{{ asset.url }}'>
