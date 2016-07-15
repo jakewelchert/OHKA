@@ -20,30 +20,30 @@
 {% extends '_layout' %}
 
 {% block content %}
-<div class='container-fullwidth'>
-
-
-	{% set image = entry.homepageHeaderImage.first() %}
-	<a href='{{ entry.homepageCtaLink }}'>
-		<div class='homepage-hero' style='background-image:url({{ image.getURL() }})'>
-			<video autoplay='' loop='' poster='background-image:url({{ image.getURL() }})'>
-			<source src="{{ entry.homepageVideoWebm }}" type="video/webm">
-			<source src="{{ entry.homepageVideoWebm }}" type="video/mp4">
-			</video>
-			<div class="cta">
-				{% if entry.ctaButton %}
-				    <a class="button" href='{{ entry.homepageCtaLink }}' title='{{ entry.homepageCtaButtonText }}'>{{ entry.homepageCtaButtonText }}</a>
-				{% endif %}
+	<div class='container-fullwidth'>
+		{% set image = entry.homepageHeaderImage.first() %}
+		<a href='{{ entry.homepageCtaLink }}'>
+			<div class='homepage-hero' style='background-image:url({{ image.getURL() }})'>
+				<video autoplay='' loop='' poster='background-image:url({{ image.getURL() }})'>
+				<source src="{{ entry.homepageVideoWebm }}" type="video/webm">
+				<source src="{{ entry.homepageVideoWebm }}" type="video/mp4">
+				</video>
+				<div class="cta">
+					{% if entry.ctaButton %}
+					    <a class="button" href='{{ entry.homepageCtaLink }}' title='{{ entry.homepageCtaButtonText }}'>{{ entry.homepageCtaButtonText }}</a>
+					{% endif %}
+				</div>
 			</div>
-		</div>
-	</a>
-</div>
+		</a>
+	</div>
 
 
 	<div class='container'>
+
 		<div class='row index_intro'>
-			<h1 class='seven columns'>We improve children&rsquo;s health through Healthy Homes.<span>&nbsp;&nbsp;&nbsp;<a class='learnmore' href='#'>Learn&nbsp;More&nbsp;&#187;</a></span></h1>
+			<h1 class='seven columns'>{{ entry.missionStatement }}<span>&nbsp;&nbsp;&nbsp;<a class='learnmore' href='{{ entry.missionLink }}'>Learn&nbsp;More&nbsp;&#187;</a></span></h1>
 		</div>
+
 
 		<div class='row'>
 			<p class="six columns">What&rsquo;s New:</p>
@@ -54,6 +54,7 @@
 			</p>
 		</div>
 	</div>
+
 
 	<div class="container-fullwidth">
 		{% for entry in craft.entries.section('newsandevents').limit(2).find() %}
