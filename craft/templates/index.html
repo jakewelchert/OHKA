@@ -24,17 +24,19 @@
 
 
 	{% set image = entry.homepageHeaderImage.first() %}
-	<div class='homepage-hero' style='background-image:url({{ image.getURL() }})'>
-		<video autoplay='' loop='' poster='background-image:url({{ image.getURL() }})'>
-		<source src="{{ entry.homepageVideoWebm }}" type="video/webm">
-		<source src="{{ entry.homepageVideoWebm }}" type="video/mp4">
-		</video>
-		<div class="cta">
-			{% if entry.ctaButton %}
-			    <a class="button" href='{{ entry.homepageCtaLink }}' title='{{ entry.homepageCtaButtonText }}'>{{ entry.homepageCtaButtonText }}</a>
-			{% endif %}
+	<a href='{{ entry.homepageCtaLink }}'>
+		<div class='homepage-hero' style='background-image:url({{ image.getURL() }})'>
+			<video autoplay='' loop='' poster='background-image:url({{ image.getURL() }})'>
+			<source src="{{ entry.homepageVideoWebm }}" type="video/webm">
+			<source src="{{ entry.homepageVideoWebm }}" type="video/mp4">
+			</video>
+			<div class="cta">
+				{% if entry.ctaButton %}
+				    <a class="button" href='{{ entry.homepageCtaLink }}' title='{{ entry.homepageCtaButtonText }}'>{{ entry.homepageCtaButtonText }}</a>
+				{% endif %}
+			</div>
 		</div>
-	</div>
+	</a>
 </div>
 
 
