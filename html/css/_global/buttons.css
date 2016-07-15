@@ -131,6 +131,8 @@ button.featured:hover {
 .share-dark.fa-facebook:hover    { background-color: #005790; } 
 .share-dark.fa-twitter           { background-color: #12c1fd; }
 .share-dark.fa-twitter:hover     { background-color: #1296c4; }
+.share-dark.fa-instagram         { background-color: #2c5c81; }
+.share-dark.fa-instagram:hover   { background-color: #1d3c54; }
 
 .share-light                     { background-color: #fff;    }
 .share-light.fa-envelope-o       { color: #fb9642; }
@@ -140,6 +142,8 @@ button.featured:hover {
 .share-light.fa-twitter          { color: #12c1fd; }
 .share-light.fa-twitter:hover    { background-color: #12c1fd; }
 .share-light:hover               { color: #fff; }
+.share-light.fa-instagram        { color: #fff; }
+.share-light.fa-instagram:hover  { background-color: #1d3c54; }
 
 /*.share.fa-facebook:active        { background-color: #003c63; }
 .share.fa-twitter:active         { background-color: #0c6584; }
