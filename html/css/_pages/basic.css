@@ -39,7 +39,9 @@
 }
 
 .bp-subheader {
-	background: #ddd;
+	background: #f4ece3;
+  color: #558d9c;
+  letter-spacing: 1px;
 	padding: 50px;
   text-align: center;
   text-transform: uppercase;
