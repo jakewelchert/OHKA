@@ -68,6 +68,12 @@
   vertical-align: middle;
 }
 
+.speaker-title h4 {
+  font-size: 2.1rem;
+  margin-top: 10px;
+  color: #153454;
+}
+
 .speaker-title div p {
 	font-size: 18px;
 }
@@ -75,7 +81,7 @@
   @media (min-width: 600px) {
 
     .speaker-title {
-      height: 120px;
+      height: 170px;
       padding: 0 25px 0 135px;
       width: 100%;
       display: table;
