@@ -17,10 +17,12 @@
 
 {% block content %}
 
-{% set image = entry.newseventsHeaderImage.first() %}
-<div class='container-fullwidth post-title' style='background-color: {{ entry.newsintroColor }}; background-image:url({{ image.getURL() }})'>
+<div class='container-fullwidth post-title row' style='background-color: {{ entry.newsintroColor }}'>
 
-	<div class='module_overlay'></div>
+	{% set image = entry.newseventsHeaderImage.first() %}
+		{% if image %}
+			<div class='post-title-img' style='background-image:url({{ image.getURL() }})'></div>
+		{% endif %}
 
 	<div class='ten columns offset-by-one'>
 		<h1>{{ entry.title }}</h1>
@@ -42,6 +44,8 @@
 	{% for asset in entry.newseventsThumbnail %}
 		<img class='post-title-thumbnail' src="{{ asset.url }}" alt="{{ asset.title }}">     
 	{% endfor %}
+
+	</div>
 
 </div>
 

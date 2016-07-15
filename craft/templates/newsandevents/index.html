@@ -27,8 +27,12 @@
 		{% for entry in featuredNews %}
 			<div class='row'>
 
+			<div class='ten columns offset-by-one post_featured' style='background-color: {{ entry.newsintroColor }}'>
+
 			{% set image = entry.newseventsHeaderImage.first() %}
-			<div class='ten columns offset-by-one post_featured' style='background-color: {{ entry.newsintroColor }}; background-image:url({{ image.getURL() }})'>
+				{% if image %}
+					<div class='post-title-img' style='background-image:url({{ image.getURL() }})'></div>
+				{% endif %}
 
 				<div class='module_content'>
 					<h4>
@@ -43,7 +47,6 @@
 					<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
 					<a href='{{ entry.url }}' title='{{ entry.title }}'><button class='featured'>Read More</button></a>
 				</div>
-				<div class='module_overlay'></div>
 			</div>
 			</div>
 		{% endfor %}
