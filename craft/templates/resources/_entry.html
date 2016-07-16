@@ -17,10 +17,12 @@
 
 {% block content %}
 
-{% set image = entry.resourcesHeaderImage.first() %}
-<div class='container-fullwidth post-title' style='background-color: {{ entry.resourcesintroColor }}; background-image:url({{ image.getURL() }})'>
+<div class='container-fullwidth post-title' style='background-color: {{ entry.resourcesintroColor }}'>
 
-	<div class='module_overlay'></div>
+	{% set image = entry.resourcesHeaderImage.first() %}
+		{% if image %}
+			<div class='post-title-img' style='background-image:url({{ image.getURL() }})'></div>
+		{% endif %}
 
 	<div class='ten columns offset-by-one'>
 		<h1>{{ entry.title }}</h1>
@@ -58,12 +60,9 @@
 	</div>
 
 	<div class='seven columns'>
-		<h4 class='post-date'>{{ entry.postDate.format('F d, Y') }}</h4>
-
 		{# Fetch all of the categories related to this entry #}
 		{% set categories = craft.categories.relatedTo(entry) %}
 		<p class='post-category'>Posted in:
-
 
 		{# Output them #}
 		{% for category in categories %}
