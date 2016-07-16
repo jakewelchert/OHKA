@@ -51,7 +51,7 @@
 						<a class='post_preview-category' href='{{ category.url }}'>{{ category.title }}&nbsp;&nbsp;</a>
 					{% endfor %}	
 					<a href="{{ entry.url }}" title="{{ entry.title }}">
-						{% for asset in entry.newseventsThumbnail %}
+						{% for asset in entry.resourcesThumbnail %}
 							<img src="{{ asset.url }}" alt="{{ asset.title }}">
 						{% endfor %}
 					</a>

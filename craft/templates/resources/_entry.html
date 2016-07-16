@@ -1,13 +1,13 @@
 {#
- # News entry template
+ # Resources entry template
  # -------------------
  #
- # This template gets loaded whenever a News entry’s URL is
- # requested. That’s because the News section’s Template setting is
- # set to “news/_entry”, the path to this template.
+ # This template gets loaded whenever a Resources entry’s URL is
+ # requested. That’s because the Resources section’s Template setting is
+ # set to “resources/_entry”, the path to this template.
  #
  # When this template is loaded, it will already have an ‘entry’
- # variable, set to the requested News entry.
+ # variable, set to the requested Resources entry.
  #
  # See this page for more details on how Craft routes requests:
  # http://craftcms.com/docs/routing
@@ -17,8 +17,8 @@
 
 {% block content %}
 
-{% set image = entry.newseventsHeaderImage.first() %}
-<div class='container-fullwidth post-title' style='background-color: {{ entry.newsintroColor }}; background-image:url({{ image.getURL() }})'>
+{% set image = entry.resourcesHeaderImage.first() %}
+<div class='container-fullwidth post-title' style='background-color: {{ entry.resourcesintroColor }}; background-image:url({{ image.getURL() }})'>
 
 	<div class='module_overlay'></div>
 
@@ -39,7 +39,7 @@
 		</ul>
 	</div>
 
-	{% for asset in entry.newseventsThumbnail %}
+	{% for asset in entry.resourcesThumbnail %}
 		<img class='post-title-thumbnail' src="{{ asset.url }}" alt="{{ asset.title }}">     
 	{% endfor %}
 
@@ -48,12 +48,12 @@
 
 <div class='container'>
 	<div class='three columns offset-by-one post-author'>
-		{% for asset in entry.newseventsAuthorImage %}
+		{% for asset in entry.resourcesAuthorImage %}
 			<img src="{{ asset.url }}" alt="{{ asset.title }}">
 		{% endfor %}
 		<div class='post-authorinfo'>
-			<p><strong>{{ entry.newseventsAuthorName }}</strong>
-			<br>{{ entry.newseventsAuthorJob }}</p>
+			<p><strong>{{ entry.resourcesAuthorName }}</strong>
+			<br>{{ entry.resourcesAuthorJob }}</p>
 		</div>
 	</div>
 
@@ -71,11 +71,11 @@
 		{% endfor %}
 		</p>
 
-		{{ entry.newseventsBody }}
+		{{ entry.resourcesBody }}
 	</div>
 		
 	<div class='ten columns offset-by-one'>
-		{% for asset in entry.newseventsfullwidthImage %}
+		{% for asset in entry.resourcesfullwidthImage %}
 			<img src="{{ asset.url }}" alt="{{ asset.title }}">                  
 		{% endfor %}
 	</div>
@@ -100,7 +100,7 @@
 					<a class='post_preview-category' href='{{ category.url }}'>{{ category.title }}&nbsp;&nbsp;</a>
 				{% endfor %}	
 				<a href="{{ entry.url }}" title="{{ entry.title }}">
-					{% for asset in entry.newseventsThumbnail %}
+					{% for asset in entry.resourcesThumbnail %}
 						<img src="{{ asset.url }}" alt="{{ asset.title }}">
 					{% endfor %}
 				</a>
@@ -118,7 +118,7 @@
 		</div>
 		{% endfor %}
 		
-		<a class="button" href='{{ url('newsandevents') }}'>More News & Events</a>
+		<a class="button" href='{{ url('resources') }}'>More Resources</a>
 
 	</div>
 
