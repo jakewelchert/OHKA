@@ -70,24 +70,25 @@
 			        var map = new google.maps.Map(mapDiv, {
 	            		center: {lat: 41.26507, lng: -95.99094},
 			            zoom: 17,
+			            disableDefaultUI: true,
 						styles: [
-	  					{
+	  						{
 							featureType: 'all',
 						    elementType: 'all',
 						    stylers: [
 						      { saturation: '-100' },
 						    ]
-						}
-					]
-			    });
+							}
+						]
+			    	});
 				
-				var iconBase = 'http://104.131.188.200/img';
-				var marker = new google.maps.Marker({
-				    position: myLatLng,
-				    map: map,
-				    icon: iconBase + 'ohka_mapicon.svg'
-				});
-			}
+					var image = 'http://104.131.188.200/img/ohka_mapicon.svg';
+					var beachMarker = new google.maps.Marker({
+						position: {lat: 41.26507, lng: -95.99094},
+						map: map,
+						icon: image
+					});
+				}
 		    </script>
 
 		</div>

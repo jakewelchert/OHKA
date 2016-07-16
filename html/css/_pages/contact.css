@@ -31,3 +31,10 @@
 	border-radius: 200px;
 	margin-top: 0 auto !important;
 }
+
+.gmnoprint a, .gmnoprint span {
+    display:none;
+}
+.gmnoprint div {
+    background:none !important;
+}
