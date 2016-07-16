@@ -93,7 +93,7 @@
 
 		<p>What's Next:</p>
 
-		{% paginate craft.entries.section('newsandevents').limit(2) as pageInfo, pageEntries %}
+		{% paginate craft.entries.section('newsandevents').id('not ' ~ entry.id).limit(2) as pageInfo, pageEntries %}
 		{% for entry in pageEntries %}
 		<div class='row post_preview-entry post_preview'>
 			<article class='has-image columns'>
