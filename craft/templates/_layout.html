@@ -29,10 +29,31 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   {% include "_includes/analytics" %}
 
+
+
+{% set options = {
+      'content': {
+        'facebook': {
+          'item-type': 'icon',
+          'value': 'share share-post share-light fa fa-facebook fa-lg',
+        },
+        'twitter': {
+          'item-type': 'icon',
+          'value': 'share share-post share-light fa fa-twitter fa-lg',
+        },
+        'email': {
+          'item-type': 'icon',
+          'value': 'share share-post share-light fa fa-envelope-o fa-lg',
+        }
+      }
+    }
+  %}
+
+
   <!-- META -->
   <meta property="og:title" content="{{ entry.title }} | {% if title is defined %}{{ title }} - {% endif %}{% if tagline is defined %}{{ tagline }}{% endif %}" />
   <meta property="og:image" content="" />
-  <meta property="og:site_name" content="Hey!"/>
+  <meta property="og:site_name" content="{{ title }}"/>
   <meta property="og:description" content="{{ entry.description }}"/>
   
   <meta name="google-site-verification" content="n4xSxeteFJVdhSSjbADe26M0gKhKYalyg53sSUeaUMg" />
@@ -50,25 +71,6 @@
     })(document);
   </script>
   <link href='https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700' rel='stylesheet' type='text/css'>
-
-{% set options = {
-      'title': '{{ entry.title }}',
-      'content': {
-        'facebook': {
-          'item-type': 'icon',
-          'value': 'share share-post share-light fa fa-facebook fa-lg',
-        },
-        'twitter': {
-          'item-type': 'icon',
-          'value': 'share share-post share-light fa fa-twitter fa-lg',
-        },
-        'email': {
-          'item-type': 'icon',
-          'value': 'share share-post share-light fa fa-envelope-o fa-lg',
-        }
-      }
-    }
-  %}
 </head>
 
 <body class="page-{{ craft.request.getSegment(1) ?: 'home' }}">
