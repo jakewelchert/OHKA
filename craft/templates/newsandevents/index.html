@@ -17,39 +17,22 @@
 	<div class='container-fullwidth'>
 		<h1 class="bp-row categories-title">{{ title }}</h1>
 	</div>
+		{# Get the featured entries #}
+		{% set featuredPost = craft.entries.section('newsandevents').featuredPost('not 0').first() %}
 
+		{# Get all other entries #}
+		{% set idParam = 'not ' ~ featuredPost.id %}
+		{% set entries = craft.entries.section('newsandevents').id(idParam) %}
+
+		{% paginate entries.limit(8) as pageInfo, pageEntries %}
+	
 	<div class='container-fullwidth'>
-		<div class='featured-header'>
-			<h4>FEATURED</h4>
-		</div>
-
-		{% set featuredNews = craft.entries.section('newsandevents').featuredPost('not 0').limit(2) %}
-		{% for entry in featuredNews %}
-			<div class='row'>
-
-			<div class='ten columns offset-by-one post_featured' style='background-color: {{ entry.newsintroColor }}'>
-
-			{% set image = entry.newseventsHeaderImage.first() %}
-				{% if image %}
-					<div class='post-title-img' style='background-image:url({{ image.getURL() }})'></div>
-				{% endif %}
-
-				<div class='module_content'>
-					<h4>
-					{# Fetch all of the categories related to this entry #}
-					{% set categories = craft.categories.relatedTo(entry) %}
-					{# Output them #}
-					{% for category in categories %}
-						<a href="{{ category.url }}">{{ category.title }}&nbsp;&nbsp;</a>
-					{% endfor %}
-					</h4>
-
-					<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
-					<a href='{{ entry.url }}' title='{{ entry.title }}'><button class='featured'>Read More</button></a>
-				</div>
-			</div>
-			</div>
-		{% endfor %}
+		{# Render the featured entries for the first page only #}
+		{% if pageInfo.currentPage == 1 %}
+		    {% include '/partials/_featuredPostTemplate' with {
+		        entry: featuredPost
+		    } %}
+		{% endif %}
 	</div>
 
 	<div class='container'>
@@ -72,40 +55,38 @@
 		</div>
 	</div>
 
-
-    {% paginate craft.entries.section('newsandevents').limit(8) as pageInfo, pageEntries %}
 	<div class='container-fullwidth'>
+		{# Render all the other entries #}
 		{% for entry in pageEntries %}
-		<div class="row post_preview ten columns offset-by-one">
-			<article class="has-image columns">
-					{# Fetch all of the categories related to this entry #}
-					{% set categories = craft.categories.relatedTo(entry) %}
-					{# Output them #}
-					{% for category in categories %}
-						<a class='post_preview-category' href='{{ category.url }}'>{{ category.title }}&nbsp;&nbsp;</a>
-					{% endfor %}	
-					<a href="{{ entry.url }}" title="{{ entry.title }}">
-						{% for asset in entry.newseventsThumbnail %}
-							<img src="{{ asset.url }}" alt="{{ asset.title }}">
-						{% endfor %}
-					</a>
-				<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
-				<p>{{ entry.summary }}</p>
-				<ul class="share_post">
-					<li>
-						<span class='sharenow'>Share Now</span>
-						<a href="#" target='_blank'><i class='share share-light share-post-preview fa fa-facebook fa-lg'></i></a>
-						<a href="#" target='_blank'><i class='share share-light share-post-preview fa fa-twitter fa-lg'></i></a>
-						<a href="{{ entry.url }}" class='readmore_link' title="{{ entry.title }}">READ MORE &#187;</a>
-					</li>
-				</ul>
-			</article>
-		</div>
+			<div class="row post_preview ten columns offset-by-one">
+				<article class="has-image columns">
+						{# Fetch all of the categories related to this entry #}
+						{% set categories = craft.categories.relatedTo(entry) %}
+						{# Output them #}
+						{% for category in categories %}
+							<a class='post_preview-category' href='{{ category.url }}'>{{ category.title }}&nbsp;&nbsp;</a>
+						{% endfor %}	
+						<a href="{{ entry.url }}" title="{{ entry.title }}">
+							{% for asset in entry.newseventsThumbnail %}
+								<img src="{{ asset.url }}" alt="{{ asset.title }}">
+							{% endfor %}
+						</a>
+					<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
+					<p>{{ entry.summary }}</p>
+					<ul class="share_post">
+						<li>
+							<span class='sharenow'>Share Now</span>
+							<a href="#" target='_blank'><i class='share share-light share-post-preview fa fa-facebook fa-lg'></i></a>
+							<a href="#" target='_blank'><i class='share share-light share-post-preview fa fa-twitter fa-lg'></i></a>
+							<a href="{{ entry.url }}" class='readmore_link' title="{{ entry.title }}">READ MORE &#187;</a>
+						</li>
+					</ul>
+				</article>
+			</div>
 		{% endfor %}
 	</div><!--     End Of Container    -->
 
 	<div class='container pagination'>
 		{% include "_includes/pagination" %}
 	</div>
-
 {% endblock %}
