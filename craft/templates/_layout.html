@@ -29,7 +29,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   {% include "_includes/analytics" %}
 
-
+  <!-- META -->
+  <meta property="og:title" content="Yo!" />
+  <meta property="og:image" content="http://i.stack.imgur.com/JjSrW.png" />
+  <meta property="og:site_name" content="Site Name"/>
+  <meta property="og:description" content="Description"/>
+  
   {% set options = {
         'content': {
           'facebook': {
@@ -48,12 +53,7 @@
       }
     %}
 
-  <!-- META -->
-  <meta property="og:title" content="Yo!" />
-  <meta property="og:image" content="http://i.stack.imgur.com/JjSrW.png" />
-  <meta property="og:site_name" content="{{ entry.title }}"/>
-  <meta property="og:description" content="{{ entry.description }}"/>
-  
+
   <meta name="google-site-verification" content="n4xSxeteFJVdhSSjbADe26M0gKhKYalyg53sSUeaUMg" />
   <link rel="icon" type="image/gif" href="{{ siteUrl }}img/ohka_fav.gif">
 
