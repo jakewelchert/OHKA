@@ -30,8 +30,8 @@
   {% include "_includes/analytics" %}
 
   <!-- META -->
-  <meta property="og:title" content="{{ entry.title }} | {% if title is defined %}{{ title }} - {% endif %}{% if tagline is defined %}{{ tagline }}{% endif %}"/>
-  <meta property="og:image" content="{% for asset in entry.shareGraphic %}<img src="{{ asset.url }}" alt="{{ asset.title }}">{% endfor %}/>"
+  <meta property="og:title" content="{{ entry.title }} | {% if title is defined %}{{ title }} - {% endif %}{% if tagline is defined %}{{ tagline }}{% endif %}" />
+  <meta property="og:image" content="" />
   <meta property="og:site_name" content="{{ entry.title }}"/>
   <meta property="og:description" content="{{ metaDescription }}"/>
   
