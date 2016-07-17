@@ -52,26 +52,23 @@
   <link href='https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700' rel='stylesheet' type='text/css'>  
 
 
-<!--   {% set options = {
-      'title': '{{ entry.title }}',
+{% set options = {
       'content': {
         'facebook': {
           'item-type': 'icon',
-          'value': 'share share-light share-post-preview fa fa-facebook fa-lg',
-          'class': 'fb',
+          'value': 'share share-post share-light fa fa-facebook fa-lg',
         },
         'twitter': {
           'item-type': 'icon',
-          'value': 'share share-light share-post-preview fa fa-twitter fa-lg',
+          'value': 'share share-post share-light fa fa-twitter fa-lg',
         },
         'email': {
           'item-type': 'icon',
-          'value': 'share share-light fa fa-envelope-o',
-          'class': 'email'
+          'value': 'share share-post share-light fa fa-envelope-o fa-lg',
         }
       }
     }
-  %} -->
+  %}
 </head>
 
 <body class="page-{{ craft.request.getSegment(1) ?: 'home' }}">
