@@ -31,7 +31,7 @@
 
   <!-- META -->
   <meta property="og:title" content="{{ entry.title }} | {% if title is defined %}{{ title }} - {% endif %}{% if tagline is defined %}{{ tagline }}{% endif %}"/>
-  <meta property="og:image" content="{{ shareGraphic }}"/>
+  <meta property="og:image" content="{% for asset in entry.shareGraphic %}<img src="{{ asset.url }}" alt="{{ asset.title }}">{% endfor %}"/>
   <meta property="og:site_name" content="{{ siteName }}"/>
   <meta property="og:description" content="{{ metaDescription }}"/>
   
