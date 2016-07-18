@@ -18,7 +18,8 @@ ul ul, ul ol, ol ol, ol ul {
   font-size: 90%; }
 
 li {
-  margin-bottom: 0rem; }
+  margin-bottom: 0rem;
+  margin-left: 22px; }
 
 ol li {
   padding-bottom: 1rem; }
