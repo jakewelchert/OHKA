@@ -56,7 +56,7 @@
   {% endif %}
   {% if entry.shareGraphic is defined %}
       {% if entry.shareGraphic is not empty %}
-          <meta property="og:image" content="{% for image in entry.shareGraphic %}{{ image.getUrl('shareGraphic') }}{% endfor %}">
+          <meta property="og:image" content="{% for image in entry.shareGraphic %}{{ image.getUrl }}{% endfor %}">
       {% endif %}
   {% endif %}
   <meta property="og:type" content="website">
