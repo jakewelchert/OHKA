@@ -61,7 +61,6 @@
   border-radius: 100px;
   width: 100px;
   height: 100px;
-  margin-bottom: 10px;
 }
 
 .speaker-title div {
@@ -84,7 +83,7 @@
 
     .speaker-title {
       height: 170px;
-      padding: 0 25px 0 135px;
+      padding: 0 25px 0 205px;
       width: 100%;
       margin-bottom: 10px;
       display: table;
@@ -92,8 +91,9 @@
 
     .speaker-title img {
       position: absolute;
-      width: 180px;
-      height: 180px;
+      width: 250px;
+      height: 250px;
+      margin-bottom: 10px;
     }
     
     .speaker-title div {
