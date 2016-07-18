@@ -75,7 +75,7 @@ $window.trigger('scroll');
     strResize = (blnResize ? 'yes' : 'no');
 
     // Set title and open popup with focus on it
-    var strTitle = ((typeof this.attr('') !== 'undefined') ? this.attr('title') : 'Social Share'),
+    var strTitle = ((typeof this.attr('title') !== 'undefined') ? this.attr('title') : 'Social Share'),
         strParam = 'width=' + intWidth + ',height=' + intHeight + ',resizable=' + strResize,            
         objWindow = window.open(this.attr('href'), strTitle, strParam).focus();
   }
