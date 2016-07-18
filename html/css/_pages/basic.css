@@ -58,13 +58,10 @@
   position: relative;
   top: 0;
   left: 0;
-  border-radius: 200px;
-  width: 200px;
-  height: 200px;
-}
-
-.speaker-title {
-  margin-bottom: 20px;
+  border-radius: 100px;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
 }
 
 .speaker-title div {
@@ -84,49 +81,25 @@
 }
 
   @media (min-width: 600px) {
+
     .speaker-title {
       height: 170px;
-      padding: 0 25px 0 205px;
-      width: 100%;      
+      padding: 0 25px 0 135px;
+      width: 100%;
+      margin-bottom: 10px;
       display: table;
     }
 
     .speaker-title img {
       position: absolute;
-      width: 200px;
-      height: 200px;
-      margin-left: 0%;
-      margin-top: 0px;
+      width: 180px;
+      height: 180px;
     }
     
     .speaker-title div {
-    padding: 0px 220px 0 30px;
+    padding: 0 120px 0 80px;
     }
   }
-
-
-  @media (min-width: 800px) {
-    .speaker-title {
-      height: 170px;
-      padding: 0 25px 0 205px;
-      width: 100%;      
-      display: table;
-    }
-
-    .speaker-title img {
-      position: absolute;
-      width: 250px;
-      height: 250px;
-      margin-left: -12%;
-      margin-top: -15px;
-    }
-    
-    .speaker-title div {
-    padding: 0px 120px 0 0;
-    }
-  }
-
-
 
 
 
