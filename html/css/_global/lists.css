@@ -1,7 +1,7 @@
 /* Lists
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 ul {
-  list-style: disc inside;
+  list-style: disc;
   color: #153454; }
 
 ol {
