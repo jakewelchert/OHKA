@@ -34,7 +34,7 @@
 
 
 
-  <meta property="og:title" content="{{ siteName }} | {% if title is defined %}{{ title }} - {% endif %}{% if tagline is defined %}{{ tagline }}{% endif %}"/>
+  <meta property="og:title" content="{{ siteName }} | {% if title is defined %}{{ entry.title }} - {% endif %}{% if tagline is defined %}{{ tagline }}{% endif %}"/>
   <meta property="og:image" content="{{ siteUrl }}share.png"/>
   <meta property="og:site_name" content="{{ siteName }}"/>
   <meta property="og:description" content='{{ entry.description }}'/>
