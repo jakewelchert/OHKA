@@ -104,6 +104,15 @@
   margin-left: 22px;
 }
 
+.v-row ul.share_post li, .bp-row ul.share_post li, .entry ul.share_post li {
+  margin-left: 0px;
+}
+
+.v-row ul.share_post li, .bp-row ul.share_post li, .entry ul.share_post li {
+  font-size: 14px;
+}
+
+
 .staggered-callout {
   position: relative;
   background-color: #fff;
