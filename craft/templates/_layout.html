@@ -33,16 +33,6 @@
   {% include "_includes/analytics" %}
 
 
-<!--   <meta property="og:title" content="{{ siteName }} | {% if title is defined %}{{ entry.title }} - {% endif %}{% if tagline is defined %}{{ tagline }}{% endif %}"/>
-  <meta property="og:image" content="{{ siteUrl }}share.jpg"/>
-  <meta property="og:site_name" content="{{ siteName }}"/>
-  <meta property="og:description" content='{{ page.description }}'/> -->
-
-
-
-
-
-
   <!-- Facebook Meta Tags -->
   {% if entry.title is defined %}
       <meta property="og:title" content="{{ entry.title }}">
@@ -56,17 +46,10 @@
   {% endif %}
   {% if entry.shareGraphic is defined %}
       {% if entry.shareGraphic is not empty %}
-          <meta property="og:image" content="{% for image in entry.shareGraphic %}{{ image.getUrl }}{% endfor %}">
+          <meta property="og:image" content="{% for asset in entry.shareGraphic %}{{ asset.url }}{% endfor %}">
       {% endif %}
   {% endif %}
   <meta property="og:type" content="website">
-
-
-
-
-
-
-
 
 
 
