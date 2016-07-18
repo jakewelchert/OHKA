@@ -84,9 +84,10 @@
     .speaker-title {
       height: 170px;
       padding: 0 25px 0 205px;
-      width: 100%;
-      margin-bottom: 10px;
+      width: 100%;      
       display: table;
+      margin-left: -10px;
+      margin-top: -35px;
     }
 
     .speaker-title img {
@@ -97,7 +98,7 @@
     }
     
     .speaker-title div {
-    padding: 0 120px 0 80px;
+    padding: 40px 120px 0 10px;
     }
   }
 
