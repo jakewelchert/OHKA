@@ -1,10 +1,12 @@
 /* Lists
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 ul {
-  list-style: circle inside; }
+  list-style: disc inside;
+  color: #153454; }
 
 ol {
-  list-style: decimal inside; }
+  list-style: decimal inside;
+  color: #153454; }
 
 ol, ul {
   padding: 0;
