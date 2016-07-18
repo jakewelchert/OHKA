@@ -91,7 +91,14 @@
   line-height: 1.6;
   letter-spacing: 0;
   color: #153454;
+  font-size: 1.8rem
 }
+
+  @media (min-width: 800px) {
+  .v-row ol li, .v-row ul li, .bp-row ol li, .bp-row ul li {
+  font-size: 2.0rem
+  }
+  }
 
 .staggered-callout {
   position: relative;
