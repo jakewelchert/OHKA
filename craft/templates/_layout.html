@@ -32,10 +32,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   {% include "_includes/analytics" %}
 
-  <!-- META -->
-  <meta property="og:title" content='Yo!' />
-  <meta property="og:image" content='http://i.stack.imgur.com/JjSrW.png' />
-  <meta property="og:description" content='{{ entry.description }}' />
+
+
+  <meta property="og:title" content="{{ siteName }} | {% if title is defined %}{{ title }} - {% endif %}{% if tagline is defined %}{{ tagline }}{% endif %}"/>
+  <meta property="og:image" content="{{ siteUrl }}share.png"/>
+  <meta property="og:site_name" content="{{ siteName }}"/>
+  <meta property="og:description" content='{{ entry.description }}'/>
+
 
   <meta name="google-site-verification" content="n4xSxeteFJVdhSSjbADe26M0gKhKYalyg53sSUeaUMg" />
   <link rel="icon" type="image/gif" href="{{ siteUrl }}img/ohka_fav.gif">
