@@ -66,8 +66,8 @@
 				<ul class="share_post">
 					<li>
 						<span class='sharenow'>Share Now</span>
-						<a href="#" target='_blank'><i class='share share-light share-post-preview fa fa-facebook fa-lg'></i></a>
-						<a href="#" target='_blank'><i class='share share-light share-post-preview fa fa-twitter fa-lg'></i></a>
+						<a class='customer share' href='http://www.facebook.com/sharer.php?u={{ entry.url }}' target='_blank'><i class='share share-light share-post-preview fa fa-facebook fa-lg'></i></a>
+						<a class='customer share' href='http://twitter.com/share?url={{ entry.url }}&amp;text={{ entry.title }}' target='_blank'><i class='share share-light share-post-preview fa fa-twitter fa-lg'></i></a>
 						<a href="{{ entry.url }}" class='readmore_link' title="{{ entry.title }}">READ MORE &#187;</a>
 					</li>
 				</ul>

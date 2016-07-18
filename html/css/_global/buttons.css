@@ -37,11 +37,6 @@
   color: #fff;
 }
 
-/*.button:active, button:active {
-  background: #406735;
-  outline: none;
-}*/
-
 button.btm-right {
   position: absolute;
   bottom: 0;
@@ -78,6 +73,9 @@ button.featured:hover {
   border-radius: 50%;
   text-align: center;
   vertical-align: middle;
+}
+
+.share-index {
   padding: 11px;
 }
 
