@@ -77,6 +77,13 @@
 		{% endfor %}
 	</div>
 
+	<div class='twelve columns'>
+		{% for block in entry.newseventsButton %}
+	    {% if block.type == "button" %}
+		<a href='{{ block.buttonLink }}'><button>{{ block.buttonText }}</button></a>
+		{% endfor %}
+	</div>
+
 	<div class='v-row post-end seven columns offset-by-four'>
 		<p>Thanks for reading.
 		<br>Remember to help us spread the word!</p>
@@ -95,7 +102,7 @@
 				{% set categories = craft.categories.relatedTo(entry) %}
 				{# Output them #}
 				{% for category in categories %}
-					<a class='post_preview-category' href='{{ category.url }}'>{{ category.title }}&nbsp;&nbsp;</a>
+				<a class='post_preview-category' href='{{ category.url }}'>{{ category.title }}&nbsp;&nbsp;</a>
 				{% endfor %}	
 				<a href="{{ entry.url }}" title="{{ entry.title }}">
 					{% for asset in entry.newseventsThumbnail %}
