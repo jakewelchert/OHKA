@@ -28,7 +28,11 @@
     margin-bottom: 50px;
     }
   }
-  
+
+.bp-row h2 {
+  padding-bottom: 15px;
+  color: #153454;
+}
 
 .bp-row h3 {
   padding-bottom: 15px;
