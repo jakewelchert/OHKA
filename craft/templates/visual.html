@@ -33,6 +33,7 @@
 		</div>
 		</div>
 
+
 		{% for block in entry.visualBlocks %}
 	    {% if block.type == "heading" %}
     	<div class='container'>
@@ -65,37 +66,44 @@
 		</div>
 		</div>
 
+
 	    {% elseif block.type == "staggeredCalloutImageRight" %}
 		<div class='container-fullwidth'>
 		<div class='v-row'>
-			<div class='row columns staggered_callout-2'>
+		    <div class='box1 group'>
+		      <div class='imagebottom'>
 				{% for asset in block.staggeredCalloutImage %}
-				<img class='imagetop-only border' src='{{ asset.url }}'>
+		        <img class='imagetop' src='img/test.jpg'>
 				{% endfor %}
-				<div class='staggered_callout-content2'>
-					<h3>{{ block.staggeredCalloutTitle }}</h3>
-					<p>{{ block.staggeredCalloutBody }}</p>
-					<strong>{{ block.staggeredCalloutLink }}</strong>
-				</div>
-			</div>
+		      </div>
+		      <div class='text'>
+				<h3>{{ block.staggeredCalloutTitle }}</h3>
+				<p>{{ block.staggeredCalloutBody }}</p>
+				<strong>{{ block.staggeredCalloutLink }}</strong>
+		      </div>
+		    </div>
 		</div>
 		</div>
 
+
 	    {% elseif block.type == "staggeredCalloutImageLeft" %}
-	    <div class='container-fullwidth'>
+		<div class='container-fullwidth'>
 		<div class='v-row'>
-			<div class='row columns staggered_callout-2'>
+		    <div class='box1 group'>
+		      <div class='imagebottom-left'>
 				{% for asset in block.staggeredCalloutImage %}
-				<img class='imagetop-only-left border' src='{{ asset.url }}'>
+		        <img class='imagetop' src='img/test.jpg'>
 				{% endfor %}
-				<div class='staggered_callout-content2-right'>
-					<h3>{{ block.staggeredCalloutTitle }}</h3>
-					<p>{{ block.staggeredCalloutBody }}</p>
-					<strong>{{ block.staggeredCalloutLink }}</strong>
-				</div>
-			</div>
+		      </div>
+		      <div class='text-right'>
+				<h3>{{ block.staggeredCalloutTitle }}</h3>
+				<p>{{ block.staggeredCalloutBody }}</p>
+				<strong>{{ block.staggeredCalloutLink }}</strong>
+		      </div>
+		    </div>
 		</div>
 		</div>
+
 
 	    {% elseif block.type == "text" %}
     	<div class='container'>
@@ -107,6 +115,7 @@
 			</div>
 		</div>
 		</div>
+		
 
 	    {% elseif block.type == "actionCallout" %}		
     	<div class='container'>
