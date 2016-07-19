@@ -77,7 +77,7 @@
 		{% endfor %}
 	</div>
 
-	<div class='twelve columns'>
+	<div class='seven columns offset-by-one'>
 		{% for block in entry.newseventsButton %}
 		    {% if block.type == "button" %}
 			<a href='{{ block.buttonLink }}'><button>{{ block.buttonText }}</button></a>
