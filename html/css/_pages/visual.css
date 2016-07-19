@@ -186,7 +186,8 @@
       position: relative;
       background-color: #ddd;
       margin: 0 auto;
-      margin-top: 250px;
+      margin-top: 0px;
+      margin-bottom: 150px;
     }
   
     .imagebottom {
