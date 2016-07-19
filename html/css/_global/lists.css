@@ -5,7 +5,7 @@ ul {
   color: #153454; }
 
 ol {
-  list-style: decimal inside;
+  list-style: decimal;
   color: #153454 }
 
 ol, ul {

@@ -40,7 +40,6 @@
   }
   }
 
-
 .v-intro p {
   text-align: center;
   font-size: 25px;
@@ -57,7 +56,6 @@
 .v-tertiary {
   text-align: center
 }
-
 
 .v-tertiary img {
   display: inline-block;
@@ -100,7 +98,7 @@
   }
   }
 
-.v-row ul li, .bp-row ul li, .entry ul li {
+.v-row ul li, .v-row ol li, .bp-row ul li, .bp-row ol li, .entry ul li, .entry ol li {
   margin-left: 22px;
 }
 
