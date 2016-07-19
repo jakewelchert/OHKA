@@ -69,7 +69,7 @@
 	    {% elseif block.type == "staggeredCalloutImageRight" %}
 		<div class='container-fullwidth'>
 		<div class='v-row'>
-		    <div class='row columns box1 group'>
+		    <div class='box1 group'>
 		      <div class='imagebottom'>
 				{% for asset in block.staggeredCalloutImage %}
 		        <img class='imagetop' src='{{ asset.url }}'>
@@ -88,7 +88,7 @@
 	    {% elseif block.type == "staggeredCalloutImageLeft" %}
 		<div class='container-fullwidth'>
 		<div class='v-row'>
-		    <div class='row columns box1 group'>
+		    <div class='box1 group'>
 		      <div class='imagebottom-left'>
 				{% for asset in block.staggeredCalloutImage %}
 		        <img class='imagetop' src='{{ asset.url }}'>
