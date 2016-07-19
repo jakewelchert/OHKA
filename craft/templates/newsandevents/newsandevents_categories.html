@@ -28,15 +28,14 @@
 	<div class='container'>
 		<div class='categories'>
 			<div class='row'>			
-			<select id='my_selection' class='category_filter four columns offset-by-four'>
-			   <option value=''>Select A Category</option>
-			   <option value='All' href='{{ url('newsandevents') }}'>All</option>
-				{% nav category in craft.categories.group('newsandevents') %}  
-				<option value='{{ category.title }}' href='{{ category.url }}'>{{ category.title }}</option>
-				{% endnav %}
-			</select>
+				<select id='my_selection' class='category_filter four columns offset-by-four'>
+				   <option value=''>Select A Category</option>
+				   <option value='All' href='{{ url('newsandevents') }}'>All</option>
+					{% nav category in craft.categories.group('newsandevents') %}  
+					<option value='{{ category.title }}' href='{{ category.url }}'>{{ category.title }}</option>
+					{% endnav %}
+				</select>
 			</div>
-
 			<script>
 			document.getElementById('my_selection').onchange = function() {
 			    window.location.href = this.children[this.selectedIndex].getAttribute('href');
@@ -45,22 +44,19 @@
 		</div>
 	</div>
 
-   {% paginate craft.entries.section('newsandevents').limit(5) as pageInfo, pageEntries %}
 	<div class='container'>
-		{% for entry in pageEntries %}
+		{# Fetch all of the entries related to this category #}
+		{% set entries = craft.entries.relatedTo(category) %}
+		{# Output them #}
+		{% for entry in entries %}
 		<div class="row post_preview ten columns offset-by-one">
 			<article class="has-image columns">
-					{# Fetch all of the categories related to this entry #}
-					{% set categories = craft.categories.relatedTo(entry) %}
-					{# Output them #}
-					{% for category in categories %}
-						<a class='post_preview-category' href='{{ category.url }}'>{{ category.title }}&nbsp;&nbsp;</a>
-					{% endfor %}	
-					<a href="{{ entry.url }}" title="{{ entry.title }}">
-						{% for asset in entry.newseventsThumbnail %}
-							<img src="{{ asset.url }}" alt="{{ asset.title }}">
-						{% endfor %}
-					</a>
+				<a class='post_preview-category' href='{{ category.url }}'>{{ category.title }}&nbsp;&nbsp;</a>
+				<a href="{{ entry.url }}" title="{{ entry.title }}">
+				{% for asset in entry.newseventsThumbnail %}
+					<img src="{{ asset.url }}" alt="{{ asset.title }}">
+				{% endfor %}
+				</a>
 				<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
 				<p>{{ entry.summary }}</p>
 				<ul class="share_post">
@@ -76,8 +72,7 @@
 		{% endfor %}
 	</div><!--     End Of Container    -->
 
-		<div class='container pagination'>
-			{% include "_includes/pagination" %}
-		</div>
-
+	<div class='container pagination'>
+	<!-- {% include "_includes/pagination" %} -->
+	</div>
 {% endblock %}
