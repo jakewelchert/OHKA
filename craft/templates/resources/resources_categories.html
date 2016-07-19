@@ -43,24 +43,20 @@
 			</script>
 		</div>
 	</div>
-
-    {% paginate craft.entries.section('resources').limit(8) as pageInfo, pageEntries %}
 	
 	<div class='container'>
-		{% for entry in pageEntries %}
+		{# Fetch all of the entries related to this category #}
+		{% set entries = craft.entries.relatedTo(category) %}
+		{# Output them #}
+		{% for entry in entries %}
 		<div class="row post_preview ten columns offset-by-one">
 			<article class="has-image columns">
-					{# Fetch all of the categories related to this entry #}
-					{% set categories = craft.categories.relatedTo(entry) %}
-					{# Output them #}
-					{% for category in categories %}
-						<a class='post_preview-category' href='{{ category.url }}'>{{ category.title }}&nbsp;&nbsp;</a>
-					{% endfor %}	
-					<a href="{{ entry.url }}" title="{{ entry.title }}">
-						{% for asset in entry.resourcesThumbnail %}
-							<img src="{{ asset.url }}" alt="{{ asset.title }}">
-						{% endfor %}
-					</a>
+				<a class='post_preview-category' href='{{ category.url }}'>{{ category.title }}&nbsp;&nbsp;</a>
+				<a href="{{ entry.url }}" title="{{ entry.title }}">
+					{% for asset in entry.resourcesThumbnail %}
+						<img src="{{ asset.url }}" alt="{{ asset.title }}">
+					{% endfor %}
+				</a>
 				<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
 				<p>{{ entry.summary }}</p>
 				<ul class="share_post">
