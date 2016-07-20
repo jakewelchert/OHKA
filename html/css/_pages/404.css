@@ -1,0 +1,15 @@
+.fourohfour {
+  text-align: center;
+  margin-top: 105px;
+  margin-bottom: 50px;
+}
+
+.fourohfour h1 {
+  padding-top: 20px;
+}
+
+  @media (min-width: 700px) {
+  .fourohfour {
+  margin-top: 0;
+  }
+  }

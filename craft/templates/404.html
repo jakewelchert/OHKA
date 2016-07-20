@@ -17,10 +17,15 @@
  #}
 
 {% extends "_layout" %}
-{% set title = "404" %}
 
 {% block content %}
-	<h1>Page not found</h1>
-
-	<p>What’s worse, a hilarious 404 page can’t be found either.</p>
+	<div class='container fourohfour'>
+		<div class='bp-row'>
+			<div class='six columns offset-by-three'>
+				<img src='img/404.png'>
+				<h1>Page Not Found</h1>
+				<a href='{{ siteUrl }}'><strong>Return Home</strong></a>
+			</div>		
+		</div>
+	</div>
 {% endblock %}
