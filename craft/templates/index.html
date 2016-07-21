@@ -21,23 +21,27 @@
 
 {% block content %}
 	<div class='container-fullwidth'>
-		{% set image = entry.homepageHeaderImage.first() %}
-		<a href='{{ entry.homepageCtaLink }}'>
-			<div class='homepage-hero' style='background-image:url({{ image.getURL() }})'>
-				<video autoplay loop poster='background-image:url({{ image.getURL() }})'>
-					<source src="{{ entry.homepageVideoWebm }}" type="video/webm">
-					{% for asset in entry.homepageVideoMp4 %}
-					<source src='{{ asset.url }}' type="video/mp4">
-					{% endfor %}
-
-				</video>
-				<div class="cta">
-					{% if entry.ctaButton %}
-					    <a class="button" href='{{ entry.homepageCtaLink }}' title='{{ entry.homepageCtaButtonText }}'>{{ entry.homepageCtaButtonText }}</a>
+		<div class='homepage-hero'>
+			<a href='{{ entry.homepageCtaLink }}'>
+				<video loop="true" autoplay="autoplay" id="vid">
+					{% set asset = entry.homepageVideoWebm.first() %}
+					{% if asset %}
+						<source src="{{ asset.url }}" type="video/webm">
 					{% endif %}
-				</div>
+
+					{% set asset = entry.homepageVideoMp4.first() %}
+					{% if asset %}
+						<source src="{{ asset.url }}" type="video/mp4">
+					{% endif %}	
+				</video>
+			</a>
+
+			<div class="cta">
+				{% if entry.ctaButton %}
+				    <a class="button" href='{{ entry.homepageCtaLink }}' title='{{ entry.homepageCtaButtonText }}'>{{ entry.homepageCtaButtonText }}</a>
+				{% endif %}
 			</div>
-		</a>
+		</div>
 	</div>
 
 	<div class='container'>
