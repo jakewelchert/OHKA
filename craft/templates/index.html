@@ -24,9 +24,12 @@
 		{% set image = entry.homepageHeaderImage.first() %}
 		<a href='{{ entry.homepageCtaLink }}'>
 			<div class='homepage-hero' style='background-image:url({{ image.getURL() }})'>
-				<video autoplay='' loop='' poster='background-image:url({{ image.getURL() }})'>
-				<source src="{{ entry.homepageVideoWebm }}" type="video/webm">
-				<source src="{{ entry.homepageVideoWebm }}" type="video/mp4">
+				<video autoplay loop poster='background-image:url({{ image.getURL() }})'>
+					<source src="{{ entry.homepageVideoWebm }}" type="video/webm">
+					{% for asset in entry.homepageVideoMp4 %}
+					<source src='{{ asset.url }}' type="video/mp4">
+					{% endfor %}
+
 				</video>
 				<div class="cta">
 					{% if entry.ctaButton %}
