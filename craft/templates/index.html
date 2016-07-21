@@ -21,9 +21,13 @@
 
 {% block content %}
 	<div class='container-fullwidth'>
-		<div class='homepage-hero'>
+		{% set image = entry.homepageHeaderImage.first() %}
+		<div class='homepage-hero' style='background-image:url({{ image.getURL() }})'>
 			<a href='{{ entry.homepageCtaLink }}'>
-				<video loop="true" autoplay="autoplay" id="vid">
+
+				{% set image = entry.homepageVideoFallbackImage.first() %}		
+				<video autoplay='autoplay' loop='loop' poster='background-image:url({{ image.getURL() }})'>
+
 					{% set asset = entry.homepageVideoWebm.first() %}
 					{% if asset %}
 						<source src="{{ asset.url }}" type="video/webm">
@@ -34,13 +38,12 @@
 						<source src="{{ asset.url }}" type="video/mp4">
 					{% endif %}	
 				</video>
+				<div class="cta">
+					{% if entry.ctaButton %}
+					    <a class="button" href='{{ entry.homepageCtaLink }}' title='{{ entry.homepageCtaButtonText }}'>{{ entry.homepageCtaButtonText }}</a>
+					{% endif %}
+				</div>
 			</a>
-
-			<div class="cta">
-				{% if entry.ctaButton %}
-				    <a class="button" href='{{ entry.homepageCtaLink }}' title='{{ entry.homepageCtaButtonText }}'>{{ entry.homepageCtaButtonText }}</a>
-				{% endif %}
-			</div>
 		</div>
 	</div>
 
