@@ -37,7 +37,7 @@ header {
 
 @media screen and (min-width: 800px) {
   .homepage-hero {
-  background-image: none;
+  background-image: none !important;
   }
 }
 
