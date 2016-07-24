@@ -29,9 +29,6 @@
 		<div class='categories'>
 			<div class='row'>			
 				<select id='my_selection' class='category_filter four columns offset-by-four'>
-
-
-
 				   	<option value='All' href='{{ url('newsandevents') }}'>All Posts</option>
 					{% nav category in craft.categories.group('newsandevents') %}  
 					<option value='{{ category.title }}' href='{{ category.url }}'>{{ category.title }}</option>
@@ -40,7 +37,7 @@
 			</div>
 			<script>
 			document.getElementById('my_selection').onchange = function() {
-			    window.location.href = this.children[this.selectedIndex].value('_self');
+			    window.location.href = this.children[this.selectedIndex].getAttribute('href');
 			}
 			</script>
 		</div>
