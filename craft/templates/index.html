@@ -117,7 +117,9 @@
 			</div>
 			<div class="action action-left">
 				<div class="caption-why">
-					<img class='whykid' src='img/OHKA-KidImage-ZhyAire.png'>  
+					{% for asset in entry.actioncallouttwoImage %}
+					<img class='whykid' src="{{ asset.url }}" alt="{{ asset.title }}">
+					{% endfor %}  
 					<h6 class='whatword-title'>{{ entry.actioncallouttwoHeadline }}</h6>      			        
 					<h3>{{ entry.actioncallouttwoBody }}</h3>
 					<h4><a href='{{ entry.actioncallouttwoLink }}'>{{ entry.actioncallouttwoLinkText }}</a></h4>
@@ -131,7 +133,9 @@
 			</div>
 			<div class="action action-right">
 				<div class="caption-how">
-					<img class='howkid' src='img/OHKA-KidImage-Brighton.png'>
+					{% for asset in entry.actioncalloutthreeImage %}
+					<img class='howkid' src="{{ asset.url }}" alt="{{ asset.title }}">
+					{% endfor %}
 					<h6 class='whatword-title'>{{ entry.actioncalloutthreeHeadline }}</h6>      			        
 					<h3>{{ entry.actioncalloutthreeBody }}</h3>
 					<h4><a href='{{ siteUrl('how-ohka-makes-a-difference') }}'>Learn More</a></h4>
