@@ -101,7 +101,9 @@
 			</div>
 			<div class="offset-by-three action action-right">
 				<div class="caption-what">
-					<img class='whatkid' src="img/OHKA-KidImage-Camilla.png">
+					{% for asset in entry.homepageFooterImage %}
+					<img class='whatkid' src="{{ asset.url }}" alt="{{ asset.title }}">
+					{% endfor %}
 					<h6 class='whatword-title'>{{ entry.actioncalloutoneHeadline }}</h6>
 					<h3>{{ entry.actioncalloutoneBody }}</h3>
 					<h4><a href='{{ entry.actioncalloutoneLink }}'>{{ entry.actioncalloutoneLinkText }}</a></h4>
@@ -115,7 +117,7 @@
 			</div>
 			<div class="action action-left">
 				<div class="caption-why">
-					<img class="whykid" src="img/OHKA-KidImage-ZhyAire.png">  
+					<img class='whykid' src='img/OHKA-KidImage-ZhyAire.png'>  
 					<h6 class='whatword-title'>{{ entry.actioncallouttwoHeadline }}</h6>      			        
 					<h3>{{ entry.actioncallouttwoBody }}</h3>
 					<h4><a href='{{ entry.actioncallouttwoLink }}'>{{ entry.actioncallouttwoLinkText }}</a></h4>
@@ -129,7 +131,7 @@
 			</div>
 			<div class="action action-right">
 				<div class="caption-how">
-					<img class="howkid" src="img/OHKA-KidImage-Brighton.png">
+					<img class='howkid' src='img/OHKA-KidImage-Brighton.png'>
 					<h6 class='whatword-title'>{{ entry.actioncalloutthreeHeadline }}</h6>      			        
 					<h3>{{ entry.actioncalloutthreeBody }}</h3>
 					<h4><a href='{{ siteUrl('how-ohka-makes-a-difference') }}'>Learn More</a></h4>
@@ -139,7 +141,7 @@
 
 		<div class='row donate'>
 			<a href='{{ siteUrl('donate') }}'>
-				<img class='seven columns offset-by-one' src="img/donate.svg">
+				<img class='seven columns offset-by-one' src='img/donate.svg'>
 			</a>
 		</div>
 	</div>
@@ -147,7 +149,7 @@
 </div>
 
 {% for asset in entry.homepageFooterImage %}
-	<img class='u-max-full-width' src="{{ asset.url }}" alt="{{ asset.title }}">                  
+	<img class='u-max-full-width' src="{{ asset.url }}" alt="{{ asset.title }}">
 {% endfor %}
 
 {% endblock %}
