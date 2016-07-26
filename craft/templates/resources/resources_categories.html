@@ -45,9 +45,10 @@
 	
 	<div class='container'>
 		{# Fetch all of the entries related to this category #}
-		{% set entries = craft.entries.relatedTo(category) %}
+		{% paginate craft.entries.relatedTo(category).limit(8) as pageInfo, pageEntries %}
+
 		{# Output them #}
-		{% for entry in entries %}
+		{% for entry in pageEntries %}
 		<div class="row post_preview ten columns offset-by-one">
 			<article class="has-image columns">
 				<a class='post_preview-category' href='{{ category.url }}'>{{ category.title }}&nbsp;&nbsp;</a>
@@ -71,8 +72,8 @@
 		{% endfor %}
 	</div><!--     End Of Container    -->
 
-		<div class='container pagination'>
-			{% include "_includes/pagination" %}
-		</div>
+	<div class='container pagination'>
+		{% include "_includes/pagination" %}
+	</div>
 
 {% endblock %}

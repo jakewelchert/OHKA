@@ -29,15 +29,10 @@
 		<div class='categories'>
 			<div class='row'>			
 				<select id='my_selection' class='category_filter four columns offset-by-four'>
-				   	<option value='All Posts' href='{{ url('newsandevents') }}'>All Posts</option>
-
+				   <option value='All Posts' href='{{ url('newsandevents') }}'>All Posts</option>
 					{% nav category in craft.categories.group('newsandevents') %}  
 					<option value='{{ category.title }}' href='{{ category.url }}'>{{ category.title }}</option>
 					{% endnav %}
-
-<!-- 					<option value='{{ category.title }}' ? ' selected="selected"'>{{ category.title }}</option>
- -->
-
 				</select>
 			</div>
 
@@ -49,11 +44,14 @@
 		</div>
 	</div>
 
+
+
 	<div class='container'>
 		{# Fetch all of the entries related to this category #}
-		{% set entries = craft.entries.relatedTo(category) %}
+		{% paginate craft.entries.relatedTo(category).limit(8) as pageInfo, pageEntries %}
+
 		{# Output them #}
-		{% for entry in entries %}
+		{% for entry in pageEntries %}
 		<div class="row post_preview ten columns offset-by-one">
 			<article class="has-image columns">
 				<a class='post_preview-category' href='{{ category.url }}'>{{ category.title }}&nbsp;&nbsp;</a>
@@ -78,6 +76,6 @@
 	</div><!--     End Of Container    -->
 
 	<div class='container pagination'>
-	<!-- {% include "_includes/pagination" %} -->
+	{% include "_includes/pagination" %}
 	</div>
 {% endblock %}
