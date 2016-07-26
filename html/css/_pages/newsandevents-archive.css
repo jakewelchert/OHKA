@@ -90,6 +90,13 @@
   }
   }
 
+  @media (max-height: 800px) {
+    .categories {
+      text-align: center;
+      padding: 30px 0;
+    }    
+  }
+
 .post_featured {
   position: relative;
   padding: 75px;
