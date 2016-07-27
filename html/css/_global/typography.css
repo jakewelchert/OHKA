@@ -15,7 +15,6 @@ body {
   color: #000;
 }
 
-
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 h1, h2, h3, h4, h5, h6 {
@@ -24,13 +23,13 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300; }
 
 
-h1 { font-size: 4.0rem; line-height: 1.2;  letter-spacing: -0.05rem;   font-weight: 700; color: #153454;}
-h2 { font-size: 3.5rem; line-height: 1.15; letter-spacing: -0.07rem;   font-weight: 900; font-family: "Source Serif Pro";}
-h3 { font-size: 2.25rem;line-height: 1.3; letter-spacing:  0.00rem;   font-weight: 700; color: #153454;}
-h4 { font-size: 1.8rem; line-height: 1.4;  letter-spacing:  0.00rem;   font-weight: 700; margin-bottom: 1.5rem; }
-h5 { font-size: 1.8rem; line-height: 1.5;  letter-spacing:  0.10rem;   margin-bottom: 2.5rem;}
-h6 { font-size: 6.0rem; line-height: 1.2;  letter-spacing:  0.05rem;   font-weight: 700; color: #538d9d; font-family: "verveine";}
-p  { font-size: 1.8rem; line-height: 1.6;  letter-spacing:  0;                           color: #153454;}
+h1 { font-size: 4.0rem;   line-height: 1.2;   letter-spacing: -0.05rem;   font-weight: 700;   color: #153454;}
+h2 { font-size: 3.5rem;   line-height: 1.15;  letter-spacing: -0.07rem;   font-weight: 900;   font-family: "Source Serif Pro";}
+h3 { font-size: 2.25rem;  line-height: 1.3;   letter-spacing:  0.00rem;   font-weight: 700;   color: #153454;}
+h4 { font-size: 1.8rem;   line-height: 1.4;   letter-spacing:  0.00rem;   font-weight: 700;   margin-bottom: 1.5rem; }
+h5 { font-size: 1.8rem;   line-height: 1.5;   letter-spacing:  0.10rem;                       margin-bottom: 2.5rem;}
+h6 { font-size: 6.0rem;   line-height: 1.2;   letter-spacing:  0.05rem;   font-weight: 700;   color: #538d9d; font-family: "verveine";}
+p  { font-size: 1.8rem;   line-height: 1.6;   letter-spacing:  0;                             color: #153454;}
 
 
 @media (min-width: 800px) {
@@ -50,9 +49,6 @@ p {
 .darkblue   { color: #153454; }
 .lightblue  { color: #538d9d; }
 .orange     { color: #fb9642; }
-
-/*"verveine"*/
-
 
 .wf-loading body {
 font-family: "sofia-pro";

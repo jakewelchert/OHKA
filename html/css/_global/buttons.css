@@ -147,7 +147,3 @@ button.featured:hover {
 .share-light:hover               { color: #fff; }
 .share-light.fa-instagram        { color: #fff; }
 .share-light.fa-instagram:hover  { background-color: #1d3c54; }
-
-/*.share.fa-facebook:active        { background-color: #003c63; }
-.share.fa-twitter:active         { background-color: #0c6584; }
-.share.fa-envelope-o:active      { background-color: #d07f3c; }*/

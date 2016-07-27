@@ -18,18 +18,14 @@
  #}
 
 {% extends "_layout" %}
-
 {% block content %}
-	
 	<div class='container-fullwidth'>
 		<h1 class="bp-row categories-title">{{ category.title }}</h1>
 	</div>
 
 	<div class='container'>
 		<div class='categories'>
-
 			<div class='row'>
-
 				<select id='my_selection' class='category_filter four columns offset-by-four'>
 				   <option value='Select A Category'>Select A Category</option>
 				   <option value='All Posts' href='{{ url('newsandevents') }}'>All Posts</option>
@@ -47,21 +43,18 @@
 		</div>
 	</div>
 
-
-
 	<div class='container'>
 		{# Fetch all of the entries related to this category #}
 		{% paginate craft.entries.relatedTo(category).limit(8) as pageInfo, pageEntries %}
-
 		{# Output them #}
 		{% for entry in pageEntries %}
 		<div class="row post_preview ten columns offset-by-one">
 			<article class="has-image columns">
 				<a class='post_preview-category' href='{{ category.url }}'>{{ category.title }}&nbsp;&nbsp;</a>
 				<a href="{{ entry.url }}" title="{{ entry.title }}">
-				{% for asset in entry.newseventsThumbnail %}
-					<img src="{{ asset.url }}" alt="{{ asset.title }}">
-				{% endfor %}
+					{% for asset in entry.newseventsThumbnail %}
+						<img src="{{ asset.url }}" alt="{{ asset.title }}">
+					{% endfor %}
 				</a>
 				<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
 				<p>{{ entry.summary }}</p>
@@ -79,6 +72,6 @@
 	</div><!--     End Of Container    -->
 
 	<div class='container pagination'>
-	{% include "_includes/pagination" %}
+		{% include "_includes/pagination" %}
 	</div>
 {% endblock %}
