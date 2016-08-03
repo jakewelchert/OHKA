@@ -55,44 +55,6 @@
 		</div>
 	</div>
 
-
-
-
-
-
-<!-- 	<div class='container-fullwidth'>
-		{% set image = entry.homepageHeaderImage.first() %}
-		<div class='homepage-hero' style='background-image:url({{ image.getURL() }})'>
-			
-			<a href='{{ entry.homepageCtaLink }}'>
-				{% set image = entry.homepageVideoFallbackImage.first() %}		
-				<video autoplay='autoplay' loop='loop' poster='background-image:url({{ image.getURL() }})'>
-
-					{% set asset = entry.homepageVideoWebm.first() %}
-					{% if asset %}
-						<source src="{{ asset.url }}" type="video/webm">
-					{% endif %}
-
-					{% set asset = entry.homepageVideoMp4.first() %}
-					{% if asset %}
-						<source src="{{ asset.url }}" type="video/mp4">
-					{% endif %}	
-				</video>
-
-				<div class="cta">
-					{% if entry.ctaButton %}
-					    <a class="button" href='{{ entry.homepageCtaLink }}' title='{{ entry.homepageCtaButtonText }}'>{{ entry.homepageCtaButtonText }}</a>
-					{% endif %}
-				</div>
-			</a>
-		</div>
-	</div> -->
-
-
-
-
-
-
 	<div class='container'>
 		<div class='row index_intro'>
 			<h1 class='seven columns'>{{ entry.missionStatement }}<span>&nbsp;&nbsp;&nbsp;<a class='learnmore' href='{{ entry.missionLink }}'>Learn&nbsp;More&nbsp;&#187;</a></span></h1>
