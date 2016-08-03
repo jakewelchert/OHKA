@@ -30,9 +30,10 @@
 		<div class='homepage-hero' style='background-image:url({{ image.getURL() }})'>
 			<a href='{{ entry.homepageCtaLink }}'>
 
-				{% set image = entry.homepageVideoFallbackImage.first() %}		
-				<video autoplay='autoplay' loop='loop' poster='background-image:url({{ image.getURL() }})'>
-
+				{% set asset = entry.homepageVideoFallbackImage.first() %}		
+				{% if asset %}
+				<video autoplay='autoplay' loop='loop' poster='{{ asset.url }}'>
+				{% endif %}
 					{% set asset = entry.homepageVideoWebm.first() %}
 					{% if asset %}
 						<source src="{{ asset.url }}" type="video/webm">
