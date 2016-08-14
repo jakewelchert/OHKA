@@ -33,10 +33,10 @@
 }
 
 .gmnoprint a, .gmnoprint span {
-    display:none;
+   display:none;
 }
 .gmnoprint div {
-    background:none !important;
+   background:none !important;
 }
 
 .gm-style {
