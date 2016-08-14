@@ -38,3 +38,7 @@
 .gmnoprint div {
     background:none !important;
 }
+
+.gm-style {
+	border-radius: 300px;
+}
