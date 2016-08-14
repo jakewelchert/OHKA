@@ -28,25 +28,21 @@
 		<h1>{{ entry.title }}</h1>
 		<ul class='post-title-social'>
 			<li><p class='post-friends'>Tell Your Friends:&nbsp;</p></li>
-			<li><a href="mailto:?subject={{ entry.title }}&body={{ entry.url }}"><i class='share share-post share-light fa fa-envelope-o fa-lg'></i></a></li>
-			<li><a class="share share-post share-light fa fa-facebook fa-lg customer share" href="http://www.facebook.com/sharer.php?u={{ entry.url }}" title="Facebook share" target="_blank"></a></li>
-			<li><a class="share share-post share-light fa fa-twitter fa-lg customer share" href="http://twitter.com/share?url={{ entry.url }}&amp;text={{ entry.title }}" title="Twitter share" target="_blank"></a></li>
+			<li><a href='mailto:?subject={{ entry.title }}&body={{ entry.url }}'><i class='share share-post share-light fa fa-envelope-o fa-lg'></i></a></li>
+			<li><a class='share share-post share-light fa fa-facebook fa-lg customer share' href='http://www.facebook.com/sharer.php?u={{ entry.url }}' title='Facebook share' target='_blank'></a></li>
+			<li><a class='share share-post share-light fa fa-twitter fa-lg customer share' href='http://twitter.com/share?url={{ entry.url }}&amp;text={{ entry.title }}' title='Twitter share' target='_blank'></a></li>
 		</ul>
 	</div>
-
 	{% for asset in entry.newseventsThumbnail %}
-		<img class='post-title-thumbnail' src="{{ asset.url }}" alt="{{ asset.title }}">     
+		<img class='post-title-thumbnail' src='{{ asset.url }}' alt='{{ asset.title }}'>     
 	{% endfor %}
-
 	</div>
-
 </div>
-
 
 <div class='container entry'>
 	<div class='three columns offset-by-one post-author'>
 		{% for asset in entry.newseventsAuthorImage %}
-			<img src="{{ asset.url }}" alt="{{ asset.title }}">
+			<img src='{{ asset.url }}' alt='{{ asset.title }}'>
 		{% endfor %}
 		<div class='post-authorinfo'>
 			<p><strong>{{ entry.newseventsAuthorName }}</strong>
@@ -64,7 +60,7 @@
 
 		{# Output them #}
 		{% for category in categories %}
-		<a href="{{ category.url }}">{{ category.title }}&nbsp;</a>
+		<a href='{{ category.url }}'>{{ category.title }}&nbsp;</a>
 		{% endfor %}
 		</p>
 
@@ -73,7 +69,7 @@
 		
 	<div class='ten columns offset-by-one'>
 		{% for asset in entry.newseventsfullwidthImage %}
-			<img src="{{ asset.url }}" alt="{{ asset.title }}">                  
+			<img src='{{ asset.url }}' alt='{{ asset.title }}'>                  
 		{% endfor %}
 	</div>
 
@@ -91,7 +87,7 @@
 
 		<a class='customer share' href='http://www.facebook.com/sharer.php?u={{ entry.url }}' title='Share via Facebook' target='_blank'><i class='share share-dark share-page fa fa-facebook fa-lg'></i></a>
 
-		<a class='customer share' href="http://twitter.com/share?url={{ entry.url }}&amp;text={{ entry.title }}" title='Share via Twitter' target='_blank'><i class='share share-dark share-page fa fa-twitter fa-lg'></i></a>
+		<a class='customer share' href='http://twitter.com/share?url={{ entry.url }}&amp;text={{ entry.title }}' title='Share via Twitter' target='_blank'><i class='share share-dark share-page fa fa-twitter fa-lg'></i></a>
 
 		<p>What&rsquo;s Next:</p>
 
@@ -105,13 +101,13 @@
 				{% for category in categories %}
 				<a class='post_preview-category' href='{{ category.url }}'>{{ category.title }}&nbsp;&nbsp;</a>
 				{% endfor %}	
-				<a href="{{ entry.url }}" title="{{ entry.title }}">
+				<a href='{{ entry.url }}' title='{{ entry.title }}'>
 					{% for asset in entry.newseventsThumbnail %}
-						<img src="{{ asset.url }}" alt="{{ asset.title }}">
+						<img src='{{ asset.url }}' alt='{{ asset.title }}'>
 					{% endfor %}
 				</a>
 
-				<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
+				<h2><a href='{{ entry.url }}' title='{{ entry.title }}'>{{ entry.title }}</a></h2>
 				<ul class="share_post">
 					<li>
 						<span class='sharenow'>Share Now</span>
@@ -122,12 +118,8 @@
 				</ul>
 			</article>
 		</div>
-		{% endfor %}
-		
-		<a class="button" href='{{ url('newsandevents') }}'>More News & Events</a>
-
+		{% endfor %}	
+		<a class='button' href='{{ url('newsandevents') }}'>More News & Events</a>
 	</div>
-
 </div>
-
 {% endblock %}

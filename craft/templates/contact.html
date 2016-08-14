@@ -23,7 +23,7 @@
 
 <div class='container contact'>
 
-	<div class="bp-title">{{ entry.pageTitle }}</div>
+	<div class='bp-title'>{{ entry.pageTitle }}</div>
 
 		<div class='v-row v-row-intro v-row-contact-intro'>
 			<div class="v-intro six columns offset-by-three">
@@ -32,11 +32,11 @@
 		</div>
 
 		<div class='v-row v-row-contact six columns offset-by-three'>
-			<form action="action_page.php">
-				<input type="text" name="firstname" onfocus="if(this.value == 'Name (required)') { this.value = ''; }" value="Name (required)"><br>
-				<input type="text" name="lastname" onfocus="if(this.value == 'Email (required)') { this.value = ''; }" value="Email (required)"><br>
-				<textarea rows="4" cols="50" name="comment" form="usrform" onfocus="if(this.value == 'Message') { this.value = ''; }" value="Message">Message</textarea> 
-				<button type="submit" value="Submit">SUBMIT MESSAGE</button>
+			<form action='action_page.php'>
+				<input type='text' name='firstname' onfocus="if(this.value == 'Name (required)') { this.value = ''; }" value='Name (required)'><br>
+				<input type='text' name='lastname' onfocus="if(this.value == 'Email (required)') { this.value = ''; }" value='Email (required)'><br>
+				<textarea rows='4' cols='50' name="comment" form="usrform" onfocus="if(this.value == 'Message') { this.value = ''; }" value='Message'>Message</textarea> 
+				<button type='submit' value='Submit'>SUBMIT MESSAGE</button>
 			</form>
 		</div>
 
@@ -57,36 +57,34 @@
 
 		<div class='v-row six columns offset-by-three'>
 
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXMrq-skoFS0AnbyjZPU4SrbQCmZQXGaQ&callback=initMap" async defer></script>
-		    <a href='https://www.google.com/maps/place/Omaha+Healthy+Kids+Alliance/@41.265116,-95.9909632,15z/data=!4m2!3m1!1s0x0:0xe0a64d268384ff59?sa=X&ved=0ahUKEwiOkt3Muf3NAhVIOyYKHQPcAoMQ_BIIcTAN'><div id="map"></div></a>
-		    <script>
-			    function initMap() {
-			        var mapDiv = document.getElementById('map');
-			        var map = new google.maps.Map(mapDiv, {
-	            		center: {lat: 41.26507, lng: -95.99094},
-			            zoom: 17,
-			            disableDefaultUI: true,
-						styles: [
-	  						{
-							featureType: 'all',
-						    elementType: 'all',
-						    stylers: [
-						      { saturation: '-100' },
-						    ]
-							}
-						]
-			    	});
-				
-					var image = 'http://104.131.188.200/img/ohka_mapicon.svg';
-					var beachMarker = new google.maps.Marker({
-						position: {lat: 41.26507, lng: -95.99094},
-						map: map,
-						icon: image
-					});
-				}
-		    </script>
+		<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDXMrq-skoFS0AnbyjZPU4SrbQCmZQXGaQ&callback=initMap' async defer></script>
+		   <a href='https://www.google.com/maps/place/Omaha+Healthy+Kids+Alliance/@41.265116,-95.9909632,15z/data=!4m2!3m1!1s0x0:0xe0a64d268384ff59?sa=X&ved=0ahUKEwiOkt3Muf3NAhVIOyYKHQPcAoMQ_BIIcTAN'><div id='map'></div></a>
+			<script>
+			 function initMap() {
+			     var mapDiv = document.getElementById('map');
+			     var map = new google.maps.Map(mapDiv, {
+			   		center: {lat: 41.26507, lng: -95.99094},
+			         zoom: 17,
+			         disableDefaultUI: true,
+					styles: [
+							{
+						featureType: 'all',
+					    elementType: 'all',
+					    stylers: [
+					      { saturation: '-100' },
+					    ]
+						}
+					]
+			 	});
 
+				var image = 'http://104.131.188.200/img/ohka_mapicon.svg';
+				var beachMarker = new google.maps.Marker({
+					position: {lat: 41.26507, lng: -95.99094},
+					map: map,
+					icon: image
+				});
+			}
+			</script>
 		</div>
-</div><!--     End Of Container    -->
-
+</div>
 {% endblock %}

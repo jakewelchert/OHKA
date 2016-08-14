@@ -22,50 +22,50 @@
 {% block content %}
 
 		<div class='container-fullwidth'>
-			<div class="v-title">{{ entry.pageTitle }}</div>
+			<div class='v-title'>{{ entry.pageTitle }}</div>
 		</div>
 
 		<div class='container-fullwidth'>
-		<div class="v-intro-img ten columns offset-by-one">
+		<div class='v-intro-img ten columns offset-by-one'>
 			{% for asset in entry.headerImage %}
-			<img src="{{ asset.url }}" alt="{{ asset.title }}">
+			<img src='{{ asset.url }}' alt='{{ asset.title }}'>
 			{% endfor %}
 		</div>
 		</div>
 
 		{% for block in entry.visualBlocks %}
-	    {% if block.type == "heading" %}
+	   {% if block.type == "heading" %}
     	<div class='container'>
 		<div class='v-row v-row-intro'>
-			<div class="v-intro eight columns offset-by-two">
+			<div class='v-intro eight columns offset-by-two'>
         		<p>{{ block.heading }}</p>
     		</div>
 		</div>
 		</div>
 
-	    {% elseif block.type == "icons" %}
+	   {% elseif block.type == "icons" %}
     	<div class='container'>
 		<div class='v-row'>
 			<div class='twelve columns v-tertiary'>
 		      {% set image = block.iconLeft.first() %}
 		        {% if image %}
-		          <img src="{{ image.getUrl }}" alt="{{ image.title }}">
+		          <img src='{{ image.getUrl }}' alt='{{ image.title }}'>
 		        {% endif %}
 				
 					{% set image = block.iconCenter.first() %}
 		        {% if image %}
-		          <img src="{{ image.getUrl }}" alt="{{ image.title }}">
+		          <img src='{{ image.getUrl }}' alt='{{ image.title }}'>
 		        {% endif %}
 
 					{% set image = block.iconRight.first() %}
 		        {% if image %}
-		          <img src="{{ image.getUrl }}" alt="{{ image.title }}">
+		          <img src='{{ image.getUrl }}' alt='{{ image.title }}'>
 		        {% endif %}
 			</div>
 		</div>
 		</div>
 
-	    {% elseif block.type == "staggeredCalloutImageRight" %}
+	   {% elseif block.type == "staggeredCalloutImageRight" %}
 		<div class='container-fullwidth'>
 		<div class='v-row'>
 		    <div class='box1 group'>
@@ -84,7 +84,7 @@
 		</div>
 
 
-	    {% elseif block.type == "staggeredCalloutImageLeft" %}
+	   {% elseif block.type == "staggeredCalloutImageLeft" %}
 		<div class='container-fullwidth'>
 		<div class='v-row'>
 		    <div class='box1 group'>
@@ -103,7 +103,7 @@
 		</div>
 
 
-	    {% elseif block.type == "text" %}
+	   {% elseif block.type == "text" %}
     	<div class='container'>
 		<div class='v-row'>
 			<div class="seven columns offset-by-three">
@@ -114,7 +114,7 @@
 		</div>
 		</div>
 
-	    {% elseif block.type == "actionCallout" %}		
+	   {% elseif block.type == "actionCallout" %}		
     	<div class='container'>
 		<div class='v-row'>
 			{% set image = block.actionCalloutImage.first() %}
@@ -127,7 +127,7 @@
 			</div>
 		</div>
 		</div>
-
-	    {% endif %}
+	   {% endif %}
 	{% endfor %}
+
 {% endblock %}

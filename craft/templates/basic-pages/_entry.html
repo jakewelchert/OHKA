@@ -8,32 +8,32 @@
 {% set title = entry.title %}
 
 {% block content %}
-<div class="container-fullwidth">
-	<h1 class="bp-row bp-title">{{ title }}</h1>
+<div class='container-fullwidth'>
+	<h1 class='bp-row bp-title'>{{ title }}</h1>
 </div>
 
-<div class="container">
+<div class='container'>
 	{% for block in entry.basicBlocks %}
 
 	    {% if block.type == "text" %}
-		<div class="bp-row">
-			<div class="six columns offset-by-three">
+		<div class='bp-row'>
+			<div class='six columns offset-by-three'>
 				{{ block.text|markdown }}
 			</div>
 		</div>
 
 	    {% elseif block.type == "subheadHeader" %}
 		<div class='bp-row'>
-			<div class="bp-subheader six columns offset-by-three">{{ block.subheadHeader }}</div>
+			<div class='bp-subheader six columns offset-by-three'>{{ block.subheadHeader }}</div>
 		</div>
 
 		{% elseif block.type == "imageTextCallout" %}
 		<div class='bp-row'>
-			<div class="creator six columns offset-by-three">
-				<div class="speaker-title">
+			<div class='creator six columns offset-by-three'>
+				<div class='speaker-title'>
 				    {% set image = block.calloutTertiaryImage.first() %}
 			        {% if image %}
-			        <img src="{{ image.getUrl }}" alt="{{ image.title }}">
+			        <img src='{{ image.getUrl }}' alt='{{ image.title }}'>
 			        {% endif %}
 				<div>
 				
@@ -46,9 +46,9 @@
 		</div>
 
 		{% elseif block.type == "tertiaryImage" %}
-			<div class="bp-row twelve columns bp-tertiary-list">
+			<div class='bp-row twelve columns bp-tertiary-list'>
 				{% for image in block.tertiaryImage %}
-				    <a title='Title Goes Here'><img src="{{ image.getUrl() }}" alt="{{ image.title }}"></a>
+				    <a title='Title Goes Here'><img src='{{ image.getUrl() }}' alt='{{ image.title }}'></a>
 				{% endfor %}
 			</div>
 
@@ -74,5 +74,5 @@
     {% endif %}
 {% endfor %}
 
-</div><!--     End Of Container    -->
+</div>
 {% endblock %}

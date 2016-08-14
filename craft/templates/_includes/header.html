@@ -1,49 +1,48 @@
 {% for entry in craft.entries.section('newsandevents').alert('1').limit(1) %}
-  <div class="alert">
+  <div class='alert'>
     <div class='container'>
       <p>{{ entry.title }} <span class='read-more'><strong><a href='{{ entry.url }}'>Read More</a></strong></span></p>
     </div>
   </div>
 {% endfor %}
 
-<header class="header container">
-  <a href="{{ siteUrl }}" class='header-logo'><img src="{{ siteUrl }}img/ohka-logo.svg"></a>
+<header class='header container'>
+  <a href='{{ siteUrl }}' class='header-logo'><img src='{{ siteUrl }}img/ohka-logo.svg'></a>
   
-  <ul class="super-nav">
+  <ul class='super-nav'>
     <li><a href='{{ url('contact') }}'><button>Contact</button></a></li>
     <li><a href='{{ url('training') }}'><button>Training</button></a></li>
     <li><a href='{{ url('donate') }}'><button>Donate</button></a></li>
   </ul>
 
-  <nav class="header-nav">
+  <nav class='header-nav'>
     <ul>
-      <li class='squiggly'><img src="{{ siteUrl }}img/ohka-squiggly.svg"></li>
-      <a class='hvr-underline-reveal' href="{{ url('whats-a-healthy-home') }}" {% if craft.request.firstSegment == 'whats-a-healthy-home' %}class="active"{% endif %}><li>What&rsquo;s A<br>Healthy Home</li></a>
-      <li class='squiggly'><img src="{{ siteUrl }}img/ohka-squiggly.svg"></li>
-      <a class='hvr-underline-reveal' href="{{ url('why-healthy-homes-matter-in-omaha') }}" {% if craft.request.firstSegment == 'why' %}class="active"{% endif %}><li>Why Healthy Homes<br>Matter In Omaha</li></a>
-      <li class='squiggly'><img src="{{ siteUrl }}img/ohka-squiggly.svg"></li>
-      <a class='hvr-underline-reveal' href="{{ url('how-ohka-makes-a-difference') }}" {% if craft.request.firstSegment == 'how' %}class="active"{% endif %}><li>How OHKA Makes<br>A Difference</li></a>
-      <li class='squiggly'><img src="{{ siteUrl }}img/ohka-squiggly.svg"></li>
+      <li class='squiggly'><img src='{{ siteUrl }}img/ohka-squiggly.svg'></li>
+      <a class='hvr-underline-reveal' href='{{ url('whats-a-healthy-home') }}' {% if craft.request.firstSegment == 'whats-a-healthy-home' %}class="active"{% endif %}><li>What&rsquo;s A<br>Healthy Home</li></a>
+      <li class='squiggly'><img src='{{ siteUrl }}img/ohka-squiggly.svg'></li>
+      <a class='hvr-underline-reveal' href='{{ url('why-healthy-homes-matter-in-omaha') }}' {% if craft.request.firstSegment == 'why' %}class="active"{% endif %}><li>Why Healthy Homes<br>Matter In Omaha</li></a>
+      <li class='squiggly'><img src='{{ siteUrl }}img/ohka-squiggly.svg'></li>
+      <a class='hvr-underline-reveal' href='{{ url('how-ohka-makes-a-difference') }}' {% if craft.request.firstSegment == 'how' %}class="active"{% endif %}><li>How OHKA Makes<br>A Difference</li></a>
+      <li class='squiggly'><img src='{{ siteUrl }}img/ohka-squiggly.svg'></li>
     </ul>
   </nav>
 </header>
 
-<div class="navbutton">
-  <a class="btn-open" href="#"></a>
+<div class='navbutton'>
+  <a class='btn-open' href='#'></a>
 </div>
 
-<div class="overlay">
-  <a href="{{ siteUrl }}" class='header-logo-mobile'><img src="{{ siteUrl }}img/ohka-logo-white.svg"></a>
-  <div class="wrap">
+<div class='overlay'>
+  <a href='{{ siteUrl }}' class='header-logo-mobile'><img src='{{ siteUrl }}img/ohka-logo-white.svg'></a>
+  <div class='wrap'>
     <ul>
       <li><a href='{{ url('whats-a-healthy-home') }}'>What's A<br>Healthy Home</a></li>
       <li><a href='{{ url('why-healthy-homes-matter-in-omaha') }}'>Why Healthy Homes<br>Matter In Omaha</a></li>
       <li><a href='{{ url('how-ohka-makes-a-difference') }}'>How OHKA Makes<br>A Difference</a></li>
       <li><a href='{{ url('newsandevents') }}'>News & Events</a></li>
-
-      <li><a class='button featured' href="{{ url('contact') }}" target="_blank">Contact</a></li>
-      <li><a class='button nav-action' href="{{ url('training') }}" target="_blank">Training</a></li>
-      <li><a class='button nav-action' href="{{ url('http://www.omahahealthykids.org/get-involved/donate/') }}" target="_blank">Donate</a></li>
+      <li><a class='button featured' href='{{ url('contact') }}' target='_blank'>Contact</a></li>
+      <li><a class='button nav-action' href='{{ url('training') }}' target='_blank'>Training</a></li>
+      <li><a class='button nav-action' href='{{ url('http://www.omahahealthykids.org/get-involved/donate/') }}' target='_blank'>Donate</a></li>
     </ul>
   </div>
 </div>

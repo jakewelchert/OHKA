@@ -1,10 +1,10 @@
 {% for entry in craft.entries.section('whywedothis').order('RAND()').limit(1) %}
-<div class="stories">
-  <div class="container stories-container row">
-    <div class="stories-author">
+<div class='stories'>
+  <div class='container stories-container row'>
+    <div class='stories-author'>
     
       {% for asset in entry.whywedothisAuthorImage %}
-      <img class='stories-author-img' src="{{ asset.url }}" alt="{{ asset.title }}">                               
+      <img class='stories-author-img' src='{{ asset.url }}' alt='{{ asset.title }}'>                               
       {% endfor %}
 
       <strong>Why We<br>Do This</strong>
@@ -12,7 +12,7 @@
 
     <img class='stories-divider' src='{{ siteUrl }}img/stories-divider.svg'>
     
-    <div class="stories-text">
+    <div class='stories-text'>
       <strong class='stories-title'>Why We Do This</strong>
       <p>{{ entry.whywedothisBody }}</p>
       <p><strong>{{ entry.whywedothisAuthor }}</strong></p>
@@ -21,22 +21,22 @@
 </div>
 {% endfor %}
 
-<footer class="footer">
+<footer class='footer'>
 
-  <div class="footer-super-nav">
-    <a href="{{ url('contact') }}"><button>Contact</button></a>
-    <a href="{{ url('training') }}"><button>Training</button></a>
-    <a href="{{ url('donate') }}"><button>Donate</button></a>
+  <div class='footer-super-nav'>
+    <a href='{{ url('contact') }}'><button>Contact</button></a>
+    <a href='{{ url('training') }}'><button>Training</button></a>
+    <a href='{{ url('donate') }}'><button>Donate</button></a>
   </div>  
 
-  <div class="container">  
+  <div class='container'>  
 
-    <div class="row">
-      <div class="five columns">
+    <div class='row'>
+      <div class='five columns'>
   
         <h5><strong>MENU</strong></h5>  
 
-        <ul class="footer-nav">
+        <ul class='footer-nav'>
           <li><a href='{{ siteUrl }}'>Home</a></li>
           <li><a href='{{ siteUrl('whats-a-healthy-home') }}'>What&rsquo;s A Healthy Home</a></li>
           <li><a href='{{ siteUrl('why-healthy-homes-matter-in-omaha') }}'>Why Healthy Homes Matter In Omaha</a></li>
@@ -44,19 +44,19 @@
         </ul>
       </div>
 
-      <div class="three columns">
+      <div class='three columns'>
         <h5><strong>MORE</strong></h5>  
 
-        <ul class="footer-nav">
+        <ul class='footer-nav'>
           <li><a href='{{ url('newsandevents') }}'>News & Events</a></li>
           <li><a href='{{ url('resources') }}'>Resources</a></li>
         </ul>
 
         {% set entries = craft.entries.section('basicpages').showinfooternav(1) %}
-        <ul class="footer-nav" id="nav">
+        <ul class='footer-nav' id='nav'>
           {% nav entry in entries %}
             <li>
-              <a href="{{ entry.url }}">{{ entry.title }}</a>
+              <a href='{{ entry.url }}'>{{ entry.title }}</a>
               {% ifchildren %}
                 <ul>
                   {% children %}
@@ -68,39 +68,38 @@
         </ul>
       </div>
 
-      <div class="four columns">
+      <div class='four columns'>
         <h5><strong>NEWSLETTER</strong></h5>  
 
         <p>Join our email list,<br>stay in the know.</p>
-        <form action="action_page.php">
+        <form action='action_page.php'>
           <input class='newsletter' type="text" onfocus="if(this.value == 'Your email') { this.value = ''; }" value="Your email"/>
-          <input type="submit" value="&#187;">
+          <input type='submit' value='&#187;'>
         </form>
       </div>
     </div>
 
-    <div class="row footer-bottom">
-      <div class="three columns">
+    <div class='row footer-bottom'>
+      <div class='three columns'>
         <p>Omaha Healthy Kids Alliance
         <br>5006 Underwood Ave.
         <br>Omaha, NE 68132
         <br>
         <br>©2016 Copyright</p></p>
       </div>
-      <div class="five columns">
+      <div class='five columns'>
         <p>p: 402-934-9700
         <br>f: 402-934-9703
         <br><a class='footer-email' href='mailto:'>info@omahahealthkids.org</a>
         <br>
         <br>se habla espanol</p>
       </div>
-      <div class="four columns">
+      <div class='four columns'>
         <p><strong>FOLLOW US!</strong></p>
         <a href='https://www.facebook.com/Omahahealthykids' target="_blank"><i class='share share-footer share-dark fa fa-facebook fa-lg'></i></a>&nbsp;&nbsp;
         <a href='https://twitter.com/ohka1' target="_blank"><i class='share share-footer share-dark fa fa-twitter fa-lg'></i></a>&nbsp;&nbsp;
         <a href='https://instagram.com/omahahealthykids' target="_blank"><i class='share share-footer share-dark fa fa-instagram fa-lg'></i></a>&nbsp;&nbsp;
       </div>
     </div>
-  
   </div>
 </footer>

@@ -32,23 +32,23 @@
 
 			{% set asset = entry.homepageVideoFallbackImage.first() %}		
 				{% if asset %}
-				<video autoplay='autoplay' loop='loop' poster="{{ asset.url }}">
+				<video autoplay='autoplay' loop='loop' poster='{{ asset.url }}'>
 				{% endif %}
 
 					{% set asset = entry.homepageVideoWebm.first() %}
 					{% if asset %}
-						<source src="{{ asset.url }}" type="video/webm">
+						<source src='{{ asset.url }}' type='video/webm'>
 					{% endif %}
 
 					{% set asset = entry.homepageVideoMp4.first() %}
 					{% if asset %}
-						<source src="{{ asset.url }}" type="video/mp4">
+						<source src='{{ asset.url }}' type='video/mp4'>
 					{% endif %}	
 				</video>
 
-				<div class="cta">
+				<div class='cta'>
 					{% if entry.ctaButton %}
-					    <a class="button" href='{{ entry.homepageCtaLink }}' title='{{ entry.homepageCtaButtonText }}'>{{ entry.homepageCtaButtonText }}</a>
+					    <a class='button' href='{{ entry.homepageCtaLink }}' title='{{ entry.homepageCtaButtonText }}'>{{ entry.homepageCtaButtonText }}</a>
 					{% endif %}
 				</div>
 			</a>
@@ -60,8 +60,8 @@
 			<h1 class='seven columns'>{{ entry.missionStatement }}<span>&nbsp;&nbsp;&nbsp;<a class='learnmore' href='{{ entry.missionLink }}'>Learn&nbsp;More&nbsp;&#187;</a></span></h1>
 		</div>
 		<div class='row'>
-			<p class="six columns">What&rsquo;s New:</p>
-			<p class="follow">FOLLOW US!&nbsp;&nbsp;
+			<p class='six columns'>What&rsquo;s New:</p>
+			<p class='follow'>FOLLOW US!&nbsp;&nbsp;
 		    <a href='https://www.facebook.com/Omahahealthykids' title='Omaha Healthy Kids Alliance - Facebook' target="_blank"><i class='share share-index share-dark fa fa-facebook'></i></a>&nbsp;
 		    <a href='https://twitter.com/ohka1' title='Omaha Healthy Kids Alliance - Twitter' target="_blank"><i class='share share-index share-dark fa fa-twitter'></i></a>&nbsp;
 		    <a href='https://www.instagram.com/omahahealthykids/' title='Omaha Healthy Kids Alliance - Instagram' target="_blank"><i class='share share-index share-dark fa fa-instagram'></i></a>
@@ -69,7 +69,7 @@
 		</div>
 	</div>
 
-	<div class="container-fullwidth">
+	<div class='container-fullwidth'>
 		{% for entry in craft.entries.section('newsandevents').limit(2).find() %}
 		<div class='row post_preview-index post_preview'>
 			<article class='has-image columns'>
@@ -79,18 +79,18 @@
 				{% for category in categories %}
 					<a class='post_preview-category' href='{{ category.url }}'>{{ category.title }}&nbsp;&nbsp;</a>
 				{% endfor %}	
-				<a href="{{ entry.url }}" title="{{ entry.title }}">
+				<a href='{{ entry.url }}' title='{{ entry.title }}'>
 					{% for asset in entry.newseventsThumbnail %}
-						<img src="{{ asset.url }}" alt="{{ asset.title }}">
+						<img src='{{ asset.url }}' alt='{{ asset.title }}'>
 					{% endfor %}
 				</a>
-				<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
-				<ul class="share_post">
+				<h2><a href='{{ entry.url }}' title='{{ entry.title }}'>{{ entry.title }}</a></h2>
+				<ul class='share_post'>
 					<li>
 						<span class='sharenow'>Share Now</span>
 						<a class='customer share' href='http://www.facebook.com/sharer.php?u={{ entry.url }}' target='_blank'><i class='share share-light share-post-preview fa fa-facebook fa-lg'></i></a>
 						<a class='customer share' href='http://twitter.com/share?url={{ entry.url }}&amp;text={{ entry.title }}' target='_blank'><i class='share share-light share-post-preview fa fa-twitter fa-lg'></i></a>
-						<a href="{{ entry.url }}" class='readmore_link' title="{{ entry.title }}">READ MORE &#187;</a>
+						<a href='{{ entry.url }}' class='readmore_link' title='{{ entry.title }}'>READ MORE &#187;</a>
 					</li>
 				</ul>
 			</article>
@@ -98,19 +98,19 @@
 		{% endfor %}
 	</div>
 
-	<div class="container">
+	<div class='container'>
 		<div class='row'>
-			<a class="button button-news" href='{{ url('newsandevents') }}' title="More News & Events">More News & Events</a>
+			<a class='button button-news' href='{{ url('newsandevents') }}' title='More News & Events'>More News & Events</a>
 		</div>
 
-		<div class="row animate what actionblock">
-			<div class="action-label">
+		<div class='row animate what actionblock'>
+			<div class='action-label'>
 				<a href='{{ entry.actioncalloutoneLink }}'><h6 class='whatword'>{{ entry.actioncalloutoneHeadline }}</h6></a>
 			</div>
-			<div class="offset-by-three action action-right">
-				<div class="caption-what">
+			<div class='offset-by-three action action-right'>
+				<div class='caption-what'>
 					{% for asset in entry.actioncalloutoneImage %}
-					<img class='whatkid' src="{{ asset.url }}" alt="{{ asset.title }}">
+					<img class='whatkid' src='{{ asset.url }}' alt='{{ asset.title }}'>
 					{% endfor %}
 					<h6 class='whatword-title'>{{ entry.actioncalloutoneHeadline }}</h6>
 					<h3>{{ entry.actioncalloutoneBody }}</h3>
@@ -119,15 +119,15 @@
 			</div>
 		</div>
 
-		<div class="row animate why actionblock">
-			<div class="action-label whyword">
+		<div class='row animate why actionblock'>
+			<div class='action-label whyword'>
 				<a href='{{ entry.actioncallouttwoLink }}'><h6>{{ entry.actioncallouttwoHeadline }}</h6></a>
 			</div>
-			<div class="action action-left">
-				<div class="caption-why">
+			<div class='action action-left'>
+				<div class='caption-why'>
 					{% for asset in entry.actioncallouttwoImage %}
-					<img class='whykid' src="{{ asset.url }}" alt="{{ asset.title }}">
-					{% endfor %}  
+					<img class='whykid' src='{{ asset.url }}' alt='{{ asset.title }}'>
+					{% endfor %}
 					<h6 class='whatword-title'>{{ entry.actioncallouttwoHeadline }}</h6>      			        
 					<h3>{{ entry.actioncallouttwoBody }}</h3>
 					<h4><a href='{{ entry.actioncallouttwoLink }}'>{{ entry.actioncallouttwoLinkText }}</a></h4>
@@ -135,14 +135,14 @@
 			</div>
 		</div>
 
-		<div class="row animate how actionblock">
-			<div class="action-label howword">
+		<div class='row animate how actionblock'>
+			<div class='action-label howword'>
 				<a href='{{ entry.actioncalloutthreeLink }}'><h6>{{ entry.actioncalloutthreeHeadline }}</h6></a>
 			</div>
-			<div class="action action-right">
-				<div class="caption-how">
+			<div class='action action-right'>
+				<div class='caption-how'>
 					{% for asset in entry.actioncalloutthreeImage %}
-					<img class='howkid' src="{{ asset.url }}" alt="{{ asset.title }}">
+					<img class='howkid' src='{{ asset.url }}' alt='{{ asset.title }}'>
 					{% endfor %}
 					<h6 class='whatword-title'>{{ entry.actioncalloutthreeHeadline }}</h6>      			        
 					<h3>{{ entry.actioncalloutthreeBody }}</h3>
@@ -161,7 +161,7 @@
 </div>
 
 {% for asset in entry.homepageFooterImage %}
-	<img class='u-max-full-width' src="{{ asset.url }}" alt="{{ asset.title }}">
+	<img class='u-max-full-width' src='{{ asset.url }}' alt='{{ asset.title }}'>
 {% endfor %}
 
 {% endblock %}

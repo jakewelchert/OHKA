@@ -15,11 +15,11 @@
 			{% set categories = craft.categories.relatedTo(entry) %}
 			{# Output them #}
 			{% for category in categories %}
-				<a href="{{ category.url }}">{{ category.title }}&nbsp;&nbsp;</a>
+				<a href='{{ category.url }}'>{{ category.title }}&nbsp;&nbsp;</a>
 			{% endfor %}
 			</h4>
 
-			<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
+			<h2><a href='{{ entry.url }}' title='{{ entry.title }}'>{{ entry.title }}</a></h2>
 			<a href='{{ entry.url }}' title='{{ entry.title }}'><button class='featured'>Read More</button></a>
 		</div>
 	</div>

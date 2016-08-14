@@ -48,28 +48,28 @@
 		{% paginate craft.entries.relatedTo(category).limit(8) as pageInfo, pageEntries %}
 		{# Output them #}
 		{% for entry in pageEntries %}
-		<div class="row post_preview ten columns offset-by-one">
-			<article class="has-image columns">
+		<div class='row post_preview ten columns offset-by-one'>
+			<article class='has-image columns'>
 				<a class='post_preview-category' href='{{ category.url }}'>{{ category.title }}&nbsp;&nbsp;</a>
-				<a href="{{ entry.url }}" title="{{ entry.title }}">
+				<a href='{{ entry.url }}' title='{{ entry.title }}'>
 					{% for asset in entry.newseventsThumbnail %}
-						<img src="{{ asset.url }}" alt="{{ asset.title }}">
+						<img src='{{ asset.url }}' alt='{{ asset.title }}'>
 					{% endfor %}
 				</a>
-				<h2><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></h2>
+				<h2><a href='{{ entry.url }}' title='{{ entry.title }}'>{{ entry.title }}</a></h2>
 				<p>{{ entry.summary }}</p>
-				<ul class="share_post">
+				<ul class='share_post'>
 					<li>
 						<span class='sharenow'>Share Now</span>
 						<a class='customer share' href='http://www.facebook.com/sharer.php?u={{ entry.url }}' target='_blank'><i class='share share-light share-post-preview fa fa-facebook fa-lg'></i></a>
 						<a class='customer share' href='http://twitter.com/share?url={{ entry.url }}&amp;text={{ entry.title }}' target='_blank'><i class='share share-light share-post-preview fa fa-twitter fa-lg'></i></a>
-						<a href="{{ entry.url }}" class='readmore_link' title="{{ entry.title }}">READ MORE &#187;</a>
+						<a href='{{ entry.url }}' class='readmore_link' title='{{ entry.title }}'>READ MORE &#187;</a>
 					</li>
 				</ul>
 			</article>
 		</div>
 		{% endfor %}
-	</div><!--     End Of Container    -->
+	</div>
 
 	<div class='container pagination'>
 		{% include "_includes/pagination" %}
