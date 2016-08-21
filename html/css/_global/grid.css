@@ -29,6 +29,9 @@
   box-sizing: border-box; 
 }
 
+
+
+
 .bp-row, .v-row { padding: 0 0 60px 0; }
 
   @media (min-width: 800px) {
@@ -153,3 +156,11 @@
   content: "";
   display: table;
   clear: both; }
+
+
+
+  @media (min-width: 1024px) and (max-width: 1440px) {
+  .container-fullwidth {
+    max-width: 90%;
+  }
+  }
