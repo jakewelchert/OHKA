@@ -17,7 +17,7 @@
  # http://craftcms.com/docs/routing
  #}
 
-{% extends "_layout" %}
+{% extends '_layout' %}
 
 {% block content %}
 
@@ -28,7 +28,7 @@
 		<div class='container-fullwidth'>
 		<div class='v-intro-img ten columns offset-by-one'>
 			{% for asset in entry.headerImage %}
-				<img src='{{ craft.retinafy.image(asset) }}'>
+				<img src="{{ asset | retinafy }}">
 			{% endfor %}
 		</div>
 		</div>
