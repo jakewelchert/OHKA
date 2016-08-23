@@ -161,7 +161,7 @@
 </div>
 
 {% for asset in entry.homepageFooterImage %}
-	<img class='u-max-full-width' src='{{ asset.url }}' alt='{{ asset.title }}'>
+	<img class='u-max-full-width' src='{{ craft.retinafy.image(asset) }}' alt='{{ asset.title }}'>
 {% endfor %}
 
 {% endblock %}
