@@ -28,8 +28,7 @@
 		<div class='container-fullwidth'>
 		<div class='v-intro-img ten columns offset-by-one'>
 			{% for asset in entry.headerImage %}
-			<img src="{{ craft.retinafy.image(asset) }}">
-			<!-- <img src='{{ asset.url }}' alt='{{ asset.title }}'> -->
+				<img src="{{ craft.retinafy.image(asset) }}">
 			{% endfor %}
 		</div>
 		</div>
