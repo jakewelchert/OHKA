@@ -26,7 +26,6 @@
   letter-spacing: .2px;
 }
 
-
 .index_intro {
   padding: 35px 0 60px;
 }
@@ -41,15 +40,26 @@
     }
   }
 
-
   @media screen and (max-width: 1023px) {
-  .index_intro .seven {
-    width: 100%;
+    .index_intro .seven {
+      width: 100%;
+    }
+    
+    .follow {
+      display: none;
+    }
   }
-  
-  .follow {
-    display: none;
+
+  @media screen and (min-width: 1024px) and (max-width: 1169px) {
+    .index_intro .seven {
+      width: 80%;
+    }
   }
+
+  @media screen and (min-width: 1170px) and (max-width: 1336px) {
+    .index_intro .seven {
+      width: 70%;
+    }
   }
 
 
