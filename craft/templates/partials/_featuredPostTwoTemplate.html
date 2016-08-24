@@ -1,0 +1,21 @@
+<div class='row'>
+	<div class='ten columns offset-by-one post_featured' style='background-color: {{ entry.newsintroColor }}'>
+	{% set image = entry.newseventsHeaderImage.first() %}
+		{% if image %}
+			<div class='post-title-img' style='background-image:url({{ image.getURL() }})'></div>
+		{% endif %}
+
+		<div class='module_content'>
+			<h4>
+			{# Fetch all of the categories related to this entry #}
+			{% set categories = craft.categories.relatedTo(entry) %}
+			{# Output them #}
+			{% for category in categories %}
+				<a href='{{ category.url }}'>{{ category.title }}&nbsp;&nbsp;</a>
+			{% endfor %}
+			</h4>
+			<h2><a href='{{ entry.url }}' title='{{ entry.title }}'>{{ entry.title }}</a></h2>
+			<a href='{{ entry.url }}' title='{{ entry.title }}'><button class='featured'>Read More</button></a>
+		</div>
+	</div>
+</div>

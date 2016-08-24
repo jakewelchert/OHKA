@@ -17,29 +17,45 @@
 	<div class='container-fullwidth'>
 		<h1 class='bp-row categories-title'>{{ title }}</h1>
 	</div>
+
 		{# Get the featured entries #}
-		{% set featuredPost = craft.entries.section('newsandevents').featuredPost('not 0').first() %}
+		{% set featuredPostOne = craft.entries.section('newsandevents').featuredPostOne('not 0').first() %}
+		{% set featuredPostTwo = craft.entries.section('newsandevents').featuredPostTwo('not 0').first() %}
 
 		{# Get all other entries #}
-		{% set idParam = 'not ' ~ featuredPost.id %}
-		{% set entries = craft.entries.section('newsandevents').id(idParam) %}
+		{% set idParam = 'not ' ~ featuredPostOne.id %}
+		{% set idParam = 'not ' ~ featuredPostTwo.id %}
 
+		{% set entries = craft.entries.section('newsandevents').id(idParam) %}
 		{% paginate entries.limit(8) as pageInfo, pageEntries %}
 	
+	{% if featuredPostOne %}
 	<div class='container-fullwidth'>
 		{# Render the featured entries for the first page only #}
 		{% if pageInfo.currentPage == 1 %}
-		    {% include '/partials/_featuredPostTemplate' with {
-		        entry: featuredPost
-		    } %}
+			{% include '/partials/_featuredPostOneTemplate' with {
+			  entry: featuredPostOne
+			} %}
 		{% endif %}
 	</div>
+	{% endif %}
+
+	{% if featuredPostTwo %}
+	<div class='container-fullwidth'>
+		{# Render the featured entries for the first page only #}
+		{% if pageInfo.currentPage == 1 %}
+			{% include '/partials/_featuredPostTwoTemplate' with {
+			  entry: featuredPostTwo
+			} %}
+		{% endif %}
+	</div>
+	{% endif %}
 
 	<div class='container'>
 		<div class='categories'>
-			<div class='row'>			
+			<div class='row'>
 			<select id='my_selection' class='category_filter four columns offset-by-four'>
-			    <option value='All' href='{{ url('newsandevents') }}'>All Posts</option>
+			   <option value='All' href='{{ url('newsandevents') }}'>All Posts</option>
 				{% nav category in craft.categories.group('newsandevents') %}  
 				<option value='{{ category.title }}' href='{{ category.url }}'>{{ category.title }}</option>
 				{% endnav %}
