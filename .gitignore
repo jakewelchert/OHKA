@@ -3,6 +3,5 @@
 !/craft/storage/logo/*
 
 craft/app/
-craft/plugins/
 craft/storage/
 craft/config/db.php
