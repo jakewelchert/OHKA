@@ -18,7 +18,7 @@
   <nav class='header-nav'>
     <ul>
       <li class='squiggly'><img src='{{ siteUrl }}img/ohka-squiggly.svg'></li>
-      <a class='hvr-underline-reveal' href='{{ url('whats-a-healthy-home') }}' {% if craft.request.firstSegment == 'whats-a-healthy-home' %}class="active"{% endif %}><li>What Is A<br>Healthy Home</li></a>
+      <a class='hvr-underline-reveal' href='{{ url('{{ mainNavigationLinkOne }}') }}' {% if craft.request.firstSegment == 'what-is-a-healthy-home' %}class="active"{% endif %}><li>What Is A<br>Healthy Home</li></a>
       <li class='squiggly'><img src='{{ siteUrl }}img/ohka-squiggly.svg'></li>
       <a class='hvr-underline-reveal' href='{{ url('why-healthy-homes-matter-in-omaha') }}' {% if craft.request.firstSegment == 'why' %}class="active"{% endif %}><li>Why Healthy Homes<br>Matter In Omaha</li></a>
       <li class='squiggly'><img src='{{ siteUrl }}img/ohka-squiggly.svg'></li>
@@ -36,7 +36,7 @@
   <a href='{{ siteUrl }}' class='header-logo-mobile'><img src='{{ siteUrl }}img/ohka-logo-white.svg'></a>
   <div class='wrap'>
     <ul>
-      <li><a href='{{ url('whats-a-healthy-home') }}'>What Is A<br>Healthy Home</a></li>
+      <li><a href='{{ url('what-is-a-healthy-home') }}'>What Is A<br>Healthy Home</a></li>
       <li><a href='{{ url('why-healthy-homes-matter-in-omaha') }}'>Why Healthy Homes<br>Matter In Omaha</a></li>
       <li><a href='{{ url('how-ohka-makes-a-difference') }}'>How OHKA Makes<br>A Difference</a></li>
       <li><a href='{{ url('newsandevents') }}'>News & Events</a></li>
