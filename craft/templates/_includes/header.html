@@ -18,7 +18,7 @@
   <nav class='header-nav'>
     <ul>
       <li class='squiggly'><img src='{{ siteUrl }}img/ohka-squiggly.svg'></li>
-      <a class='hvr-underline-reveal' href='{{ url('{{ mainNavigationLinkOne }}') }}' {% if craft.request.firstSegment == 'what-is-a-healthy-home' %}class="active"{% endif %}><li>What Is A<br>Healthy Home</li></a>
+      <a class='hvr-underline-reveal' href='{{ url('{{ mainNavigationLinkOne }}') }}' {% if craft.request.firstSegment == 'what-is-a-healthy-home' %}class="active"{% endif %}><li>{{ mainNavigationLinkOneName }}</li></a>
       <li class='squiggly'><img src='{{ siteUrl }}img/ohka-squiggly.svg'></li>
       <a class='hvr-underline-reveal' href='{{ url('why-healthy-homes-matter-in-omaha') }}' {% if craft.request.firstSegment == 'why' %}class="active"{% endif %}><li>Why Healthy Homes<br>Matter In Omaha</li></a>
       <li class='squiggly'><img src='{{ siteUrl }}img/ohka-squiggly.svg'></li>
