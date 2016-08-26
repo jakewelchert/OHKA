@@ -33,7 +33,6 @@
 		</div>
 		</div>
 
-
 		{% for block in entry.visualBlocks %}
 	   	{% if block.type == "heading" %}
     	<div class='container'>
@@ -44,7 +43,7 @@
 		</div>
 		</div>
 
-	   {% elseif block.type == "icons" %}
+	   	{% elseif block.type == "icons" %}
     	<div class='container'>
 		<div class='v-row'>
 			<div class='twelve columns v-tertiary'>
@@ -84,8 +83,7 @@
 		</div>
 		</div>
 
-
-	   {% elseif block.type == "staggeredCalloutImageLeft" %}
+	   	{% elseif block.type == "staggeredCalloutImageLeft" %}
 		<div class='container-fullwidth'>
 		<div class='v-row'>
 		    <div class='box1 group'>
@@ -103,8 +101,7 @@
 		</div>
 		</div>
 
-
-	   {% elseif block.type == "text" %}
+	   	{% elseif block.type == "text" %}
     	<div class='container'>
 		<div class='v-row'>
 			<div class="seven columns offset-by-three">
@@ -115,7 +112,7 @@
 		</div>
 		</div>
 
-	   {% elseif block.type == "actionCallout" %}		
+	   	{% elseif block.type == "actionCallout" %}		
     	<div class='container'>
 		<div class='v-row'>
 			{% set image = block.actionCalloutImage.first() %}
