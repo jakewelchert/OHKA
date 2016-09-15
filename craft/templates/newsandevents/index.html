@@ -55,7 +55,7 @@
 		<div class='categories'>
 			<div class='row'>
 			<select id='my_selection' class='category_filter four columns offset-by-four'>
-			   <option value='All' href='{{ url('newsandevents') }}'>All Posts</option>
+			   <option value='All' href='{{ url('newsandevents') }}'>Select A Category</option>
 				{% nav category in craft.categories.group('newsandevents') %}  
 				<option value='{{ category.title }}' href='{{ category.url }}'>{{ category.title }}</option>
 				{% endnav %}
