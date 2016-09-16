@@ -16,14 +16,11 @@
 {% extends "_layout" %}
 
 {% block content %}
-
 <div class='container-fullwidth post-title' style='background-color: {{ entry.resourcesintroColor }}'>
-
 	{% set image = entry.resourcesHeaderImage.first() %}
 		{% if image %}
 			<div class='post-title-img' style='background-image:url({{ image.getURL() }})'></div>
 		{% endif %}
-
 	<div class='ten columns offset-by-one'>
 		<h1>{{ entry.title }}</h1>
 		<p class='post-friends post-friends-mobile'>Tell Your Friends:&nbsp;</p>
@@ -34,13 +31,10 @@
 			<li><a class='share share-post share-light fa fa-twitter fa-lg customer share' href='http://twitter.com/share?url={{ entry.url }}&amp;text={{ entry.title }}' title='Twitter share' target='_blank'></a></li>
 		</ul>
 	</div>
-
 	{% for asset in entry.resourcesThumbnail %}
 		<img class='post-title-thumbnail' src='{{ asset.url }}' alt='{{ asset.title }}'>     
 	{% endfor %}
-
 </div>
-
 
 <div class='container entry'>
 	<div class='three columns offset-by-one post-author'>
@@ -91,7 +85,7 @@
 				{% set categories = craft.categories.relatedTo(entry) %}
 				{# Output them #}
 				{% for category in categories %}
-					<a class='post_preview-category' href='{{ category.url }}'>{{ category.title }}&nbsp;&nbsp;</a>
+				<a class='post_preview-category' href='{{ category.url }}'>{{ category.title }}&nbsp;&nbsp;</a>
 				{% endfor %}	
 				<a href='{{ entry.url }}' title='{{ entry.title }}'>
 					{% for asset in entry.resourcesThumbnail %}
@@ -115,5 +109,4 @@
 		<a class='button' href='{{ url('resources') }}'>More Resources</a>
 	</div>
 </div>
-
 {% endblock %}
