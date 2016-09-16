@@ -38,11 +38,19 @@
   {% endif %}
   <meta property='og:site_name' content='{{ siteName }}'>
   <meta property='og:url' content='{{ url(craft.request.path) }}'>
+  
+  {% if entry.metaDescription is defined %}
+      {% if entry.metaDescription is not empty %}
+        <meta property='og:description' content='{{ mainMetaDescription }}'>
+      {% endif %}
+  {% endif %}
+
   {% if entry.metaDescription is defined %}
       {% if entry.metaDescription is not empty %}
         <meta property='og:description' content='{{ entry.metaDescription }}'>
       {% endif %}
   {% endif %}
+
   {% if entry.shareGraphic is defined %}
       {% if entry.shareGraphic is not empty %}
         <meta property='og:image' content='{% for asset in entry.shareGraphic %}{{ asset.url }}{% endfor %}'>
