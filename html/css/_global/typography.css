@@ -50,12 +50,15 @@ p {
 .lightblue  { color: #538d9d; }
 .orange     { color: #fb9642; }
 
+
+@media (min-width: 1024px) {
 .wf-loading body {
 font-family: "sofia-pro";
 visibility: hidden;
 }
 .wf-active body {
 visibility: visible;
+}
 }
 
 /* Links
