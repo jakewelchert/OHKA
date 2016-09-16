@@ -267,12 +267,12 @@
     display: inline-block;
   }
 
-	.has-image h2 {
-	  padding-right: 180px;
-	}
-
-  .has-image p {
+  .has-image p, .has-image h2 {
     padding-right: 32%;
+  }
+
+  .post_preview-entry .has-image h2 {
+    padding-right: 180px;
   }
   }
 
