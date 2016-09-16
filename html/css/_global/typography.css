@@ -51,7 +51,7 @@ p {
 .orange     { color: #fb9642; }
 
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
 .wf-loading body {
 font-family: "sofia-pro";
 visibility: hidden;
