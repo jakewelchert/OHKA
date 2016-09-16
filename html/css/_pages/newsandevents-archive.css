@@ -267,9 +267,13 @@
     display: inline-block;
   }
 
-	.has-image p, .has-image h2 {
+	.has-image h2 {
 	  padding-right: 180px;
 	}
+
+  .has-image p {
+    padding-right: 32%;
+  }
   }
 
 .category_filter {
