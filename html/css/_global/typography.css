@@ -64,7 +64,7 @@ visibility: visible;
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-  transition: all 225ms ease;
+  transition: color .225s ease;
   text-decoration: none;
   -moz-transition: all 0.3s ease-in,all 0.35s ease-out;
   -o-transition: all 0.3s ease-in,all 0.35s ease-out;
