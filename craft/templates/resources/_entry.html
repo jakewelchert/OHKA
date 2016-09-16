@@ -83,8 +83,8 @@
 
 		<p>What&rsquo;s Next:</p>
 
-		{% paginate craft.entries.section('resources').limit(2) as pageInfo, pageEntries %}
-		{% for entry in pageEntries %}
+		{% set nextEntries = craft.entries.section('resources').postDate('< ' ~ entry.postDate).limit(2) %}
+		{% for entry in nextEntries %}
 		<div class='row post_preview-entry post_preview'>
 			<article class='has-image columns'>
 				{# Fetch all of the categories related to this entry #}

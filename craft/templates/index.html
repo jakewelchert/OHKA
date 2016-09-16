@@ -73,10 +73,8 @@
 		{# Get the featured entries #}
 		{% set featuredPostOne = craft.entries.section('newsandevents').featuredPostOne('not 0').first() %}
 		{% set featuredPostTwo = craft.entries.section('newsandevents').featuredPostTwo('not 0').first() %}
-
 		{% set entries = craft.entries.section('newsandevents').id(idParam) %}
-		{% paginate entries.limit(8) as pageInfo, pageEntries %}
-		
+		{% paginate entries.limit(2) as pageInfo, pageEntries %}
 		{% if featuredPostOne %}
 		<div class='container-fullwidth'>
 			{# Render the featured entries for the first page only #}
@@ -87,7 +85,6 @@
 			{% endif %}
 		</div>
 		{% endif %}
-
 		{% if featuredPostTwo %}
 		<div class='container-fullwidth'>
 			{# Render the featured entries for the first page only #}
@@ -104,7 +101,6 @@
 		<div class='row'>
 			<a class='button button-news' href='{{ url('newsandevents') }}' title='More News & Events'>More News & Events</a>
 		</div>
-
 		<div class='row animate what actionblock'>
 			<div class='action-label'>
 				<a href='{{ entry.actioncalloutoneLink }}'><h6 class='whatword'>{{ entry.actioncalloutoneHeadline }}</h6></a>
