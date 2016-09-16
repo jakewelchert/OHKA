@@ -75,25 +75,23 @@
 		{% set featuredPostTwo = craft.entries.section('newsandevents').featuredPostTwo('not 0').first() %}
 		{% set entries = craft.entries.section('newsandevents').id(idParam) %}
 		{% paginate entries.limit(2) as pageInfo, pageEntries %}
+		
 		{% if featuredPostOne %}
-		<div class='container-fullwidth'>
 			{# Render the featured entries for the first page only #}
 			{% if pageInfo.currentPage == 1 %}
 				{% include '/partials/_featuredPostHomepage' with {
 				  entry: featuredPostOne
 				} %}
 			{% endif %}
-		</div>
 		{% endif %}
+
 		{% if featuredPostTwo %}
-		<div class='container-fullwidth'>
 			{# Render the featured entries for the first page only #}
 			{% if pageInfo.currentPage == 1 %}
 				{% include '/partials/_featuredPostHomepage' with {
 				  entry: featuredPostTwo
 				} %}
 			{% endif %}
-		</div>
 		{% endif %}
 	</div>
 
