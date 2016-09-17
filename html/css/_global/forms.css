@@ -27,15 +27,14 @@ form input.newsletter {
 input[type="submit"] {
   border: 1px solid #fb9642;
   color: #fff;
-  background: #fb9642;
+  background-image:url('../../img/ohka-emailsubmit.svg');
   height: 45px;
   width: 45px;
-  margin-left: -30px;
   padding-top: 1px;
 }
 
 input[type="submit"]:hover {
-  background: #d07f3c;
+  opacity: .9;
 }
 
 
@@ -81,3 +80,16 @@ label > .label-body {
   display: inline-block;
   margin-left: .5rem;
   font-weight: normal; }
+
+
+#mc_embed_signup div.mce_inline_error {
+  margin: 0 0 1em 0;
+  padding: 5px 10px;
+  background-color: #6cb358 !important;
+  z-index: 1;
+  color: #fff;
+}
+
+.input-back {
+  background-image:url('../../img/ohka-emailsubmit.svg');
+}
