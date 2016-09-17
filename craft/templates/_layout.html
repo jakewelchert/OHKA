@@ -38,9 +38,9 @@
   {% endif %}
   <meta property='og:site_name' content='{{ siteName }}'>
   <meta property='og:url' content='{{ url(craft.request.path) }}'>
-  
-  {% if entry.metaDescription is defined %}
-      {% if entry.metaDescription is not empty %}
+
+  {% if mainMetaDescription is defined %}
+      {% if mainMetaDescription is not empty %}
         <meta property='og:description' content='{{ mainMetaDescription }}'>
       {% endif %}
   {% endif %}

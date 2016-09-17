@@ -20,6 +20,12 @@
   outline: none;
 }
 
+@media (max-width: 400px) {
+.button, button {
+  padding: 0px 20px 3px;
+}
+}
+
 @media (max-width: 1023px) {
 .button-news, .button-category {
   display: block;
