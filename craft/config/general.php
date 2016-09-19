@@ -10,4 +10,5 @@
 return array(
 	'omitScriptNameInUrls' => true,
 	'enableCsrfProtection' => true,
+	'usePathInfo' => true,
 );
