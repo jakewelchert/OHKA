@@ -33,6 +33,23 @@
   {% include "_includes/analytics" %}
   {% hook 'seomaticRender' %}
 
+  <!-- Facebook Ebtry Meta Tags -->
+  {% if entry.title is defined %}
+      <meta property='og:title' content='{{ entry.title }}'>
+  {% endif %}
+
+  {% if entry.metaDescription is defined %}
+    {% if entry.metaDescription is not empty %}
+      <meta property='og:description' content='{{ entry.metaDescription }}'>
+    {% endif %}
+  {% endif %}
+
+  {% if entry.shareGraphic is defined %}
+    {% if entry.shareGraphic is not empty %}
+      <meta property='og:image' content='{% for asset in entry.shareGraphic %}{{ asset.url }}{% endfor %}'>
+    {% endif %}
+  {% endif %}
+
   <meta name='google-site-verification' content='n4xSxeteFJVdhSSjbADe26M0gKhKYalyg53sSUeaUMg' />
   <link rel='icon' type='image/gif' href='{{ siteUrl }}img/ohka_fav.gif'>
 
