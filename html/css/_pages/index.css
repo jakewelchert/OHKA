@@ -145,7 +145,8 @@
 .actionblock {
   position: relative;
   border-bottom: 1px solid #ddd;
-  width: 100%;
+  width: 98%;
+  margin-left: 1%;
 }
 
 @media (max-width: 599px) {
@@ -155,10 +156,9 @@
   }
 }
 
-
 @media (min-width: 1024px) {
   .actionblock { 
-    width: 74.0%;
+    width: 72.0%;
     border-bottom: none;
   }
 
