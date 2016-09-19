@@ -33,11 +33,50 @@
 
 		<div class='v-row v-row-contact six columns offset-by-three'>
 			<form action='action_page.php'>
-				<input type='text' name='firstname' onfocus="if(this.value == 'Name (required)') { this.value = ''; }" value='Name (required)'><br>
-				<input type='text' name='lastname' onfocus="if(this.value == 'Email (required)') { this.value = ''; }" value='Email (required)'><br>
-				<textarea rows='4' cols='50' name="comment" form="usrform" onfocus="if(this.value == 'Message') { this.value = ''; }" value='Message'>Message</textarea> 
+				<input type='text' placeholder='Name (required)'><br>
+				<input type='text' placeholder='Email (required)'><br>
+				<textarea rows='4' cols='50' placeholder='Message (required)'></textarea> 
 				<button type='submit' value='Submit'>SUBMIT MESSAGE</button>
 			</form>
+
+
+<?php
+$action=$_REQUEST['action'];
+if ($action=="")    /* display the contact form */
+    {
+    ?>
+    <form  action="" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="action" value="submit">
+    Your name:<br>
+    <input name="name" type="text" value="" size="30"/><br>
+    Your email:<br>
+    <input name="email" type="text" value="" size="30"/><br>
+    Your message:<br>
+    <textarea name="message" rows="7" cols="30"></textarea><br>
+    <input type="submit" value="Send email"/>
+    </form>
+    <?php
+    } 
+else                /* send the submitted data */
+    {
+    $name=$_REQUEST['name'];
+    $email=$_REQUEST['email'];
+    $message=$_REQUEST['message'];
+    if (($name=="")||($email=="")||($message==""))
+        {
+		echo "All fields are required, please fill <a href=\"\">the form</a> again.";
+	    }
+    else{		
+	    $from="From: $name<$email>\r\nReturn-path: $email";
+        $subject="Message sent using your contact form";
+		mail("jakewelchert@gmail.com", $subject, $message, $from);
+		echo "Email sent!";
+	    }
+    }  
+?>
+
+
+
 		</div>
 
 		<div class='v-row v-row-contact six columns offset-by-three'>
