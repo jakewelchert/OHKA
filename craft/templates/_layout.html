@@ -18,22 +18,19 @@
 <head>
 
   <script src='http://s.codepen.io/assets/libs/modernizr.js' type='text/javascript'></script>
-
   <meta charset='utf-8' />
   <title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}{% if tagline is defined %} - {{ tagline }}{% endif %}</title>
   <link rel='home' href='{{ siteUrl }}' />
 
-  <meta name="" content="">
-
+  <!-- Styles -->
   <link rel='stylesheet' type='text/css' href="" />
 	<link rel='stylesheet' href='{{ siteUrl }}css/master.css'>
 
   <script src='/modernizr-custom.js'></script>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
-  {% include "_includes/analytics" %}
   {% hook 'seomaticRender' %}
 
-  <!-- Facebook Ebtry Meta Tags -->
+  <!-- Facebook Entry Meta Tags -->
   {% if entry.title is defined %}
       <meta property='og:title' content='{{ entry.title }}'>
   {% endif %}
@@ -50,7 +47,6 @@
     {% endif %}
   {% endif %}
 
-  <meta name='google-site-verification' content='n4xSxeteFJVdhSSjbADe26M0gKhKYalyg53sSUeaUMg' />
   <link rel='icon' type='image/gif' href='{{ siteUrl }}img/ohka_fav.gif'>
 
   <!-- TYPE -->
