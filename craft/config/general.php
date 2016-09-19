@@ -8,5 +8,7 @@
  */
 
 return array(
-
+	'omitScriptNameInUrls' => true,
+	'devMode' => true,
+	'enableCsrfProtection' => true,
 );

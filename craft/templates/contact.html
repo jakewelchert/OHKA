@@ -32,49 +32,42 @@
 		</div>
 
 		<div class='v-row v-row-contact six columns offset-by-three'>
-			<form action='action_page.php'>
+<!-- 			<form action='action_page.php'>
 				<input type='text' placeholder='Name (required)'><br>
 				<input type='text' placeholder='Email (required)'><br>
 				<textarea rows='4' cols='50' placeholder='Message (required)'></textarea> 
 				<button type='submit' value='Submit'>SUBMIT MESSAGE</button>
+			</form> -->
+
+			{% macro errorList(errors) %}
+			    {% if errors %}
+			        <ul class="errors">
+			            {% for error in errors %}
+			                <li>{{ error }}</li>
+			            {% endfor %}
+			        </ul>
+			    {% endif %}
+			{% endmacro %}
+
+			{% from _self import errorList %}
+
+			<form method="post" action="" accept-charset="UTF-8">
+			    {{ getCsrfInput() }}
+			    <input type="hidden" name="action" value="contactForm/sendMessage">
+			    <input type="hidden" name="redirect" value="contact/thanks">
+
+			    <input id="fromName" type="text" name="fromName" value="{% if message is defined %}{{ message.fromName }}{% endif %}" placeholder='Name (required)'>
+			    {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
+
+			    <input id="fromEmail" type="email" name="fromEmail" value="{% if message is defined %}{{ message.fromEmail }}{% endif %}" placeholder='Email (required)'>
+			    {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
+
+			    <textarea rows="10" cols="40" id="message" name="message" placeholder='Message (required)'>{% if message is defined %}{{ message.message }}{% endif %}</textarea>
+			    {{ message is defined and message ? errorList(message.getErrors('message')) }}
+
+			    <input class='button' type='submit' value='Submit Message'>
+				<input id="healthykidsnospam" name="healthykidsnospam" type="text">
 			</form>
-
-
-<?php
-$action=$_REQUEST['action'];
-if ($action=="")    /* display the contact form */
-    {
-    ?>
-    <form  action="" method="POST" enctype="multipart/form-data">
-    <input type="hidden" name="action" value="submit">
-    Your name:<br>
-    <input name="name" type="text" value="" size="30"/><br>
-    Your email:<br>
-    <input name="email" type="text" value="" size="30"/><br>
-    Your message:<br>
-    <textarea name="message" rows="7" cols="30"></textarea><br>
-    <input type="submit" value="Send email"/>
-    </form>
-    <?php
-    } 
-else                /* send the submitted data */
-    {
-    $name=$_REQUEST['name'];
-    $email=$_REQUEST['email'];
-    $message=$_REQUEST['message'];
-    if (($name=="")||($email=="")||($message==""))
-        {
-		echo "All fields are required, please fill <a href=\"\">the form</a> again.";
-	    }
-    else{		
-	    $from="From: $name<$email>\r\nReturn-path: $email";
-        $subject="Message sent using your contact form";
-		mail("jakewelchert@gmail.com", $subject, $message, $from);
-		echo "Email sent!";
-	    }
-    }  
-?>
-
 
 
 		</div>

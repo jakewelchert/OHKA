@@ -42,3 +42,5 @@
 .gm-style {
 	border-radius: 300px;
 }
+
+input#healthykidsnospam { display: none; }
