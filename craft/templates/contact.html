@@ -65,8 +65,8 @@
 			    <textarea rows="10" cols="40" id="message" name="message" placeholder='Message (required)'>{% if message is defined %}{{ message.message }}{% endif %}</textarea>
 			    {{ message is defined and message ? errorList(message.getErrors('message')) }}
 
-			    <input class='button' type='submit' value='Submit Message'>
-				<input id="healthykidsnospam" name="healthykidsnospam" type="text">
+			    <button type='submit' value='Submit Message' class='button'>Submit Message</button>
+				<input id="healthykidsnospam" name='healthykidsnospam' type='text'>
 			</form>
 
 
