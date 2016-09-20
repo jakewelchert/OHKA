@@ -21,12 +21,6 @@
   <meta charset='utf-8' />
   <title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}{% if tagline is defined %} - {{ tagline }}{% endif %}</title>
   <link rel='home' href='{{ siteUrl }}' />
-
-  <!-- Styles -->
-  <link rel='stylesheet' type='text/css' href="" />
-	<link rel='stylesheet' href='{{ siteUrl }}css/master.css'>
-
-  <script src='/modernizr-custom.js'></script>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   {% hook 'seomaticRender' %}
 
@@ -48,6 +42,12 @@
   {% endif %}
 
   <link rel='icon' type='image/gif' href='{{ siteUrl }}img/ohka_fav.gif'>
+
+  <!-- Styles -->
+  <link rel='stylesheet' href='{{ siteUrl }}css/master.css'>
+  <link rel="stylesheet" href="{{ siteUrl }}css/_global/font-awesome.css">
+
+  <script src='/modernizr-custom.js'></script>
 
   <!-- TYPE -->
   <script>
