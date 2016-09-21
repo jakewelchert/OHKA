@@ -8,21 +8,9 @@
  */
 
 return array(
-  'localhost' => array(
+	'enableCsrfProtection' => true,
+	'usePathInfo' => true,
+	'omitScriptNameInUrls' => true,
+    'siteUrl'  => 'http://omahahealthykids.org',
     'devMode' => true,
-    'siteUrl' => 'http://localhost:8888/',
-    'environmentVariables' => array(
-      'baseUrl'  => 'http://localhost:8888/',
-    ),
-    'testToEmailAddress' => 'jakewelchert@gmail.com',
-  ),
-
-  // Use IP address of your droplet below
-  'omahahealthykids.org' => array(
-    'siteUrl' => 'http://omahahealthykids.org/',
-    'environmentVariables' => array(
-      'basePath' => '/var/www/html/',
-      'baseUrl'  => 'http://omahahealthykids.org/',
-    )
-  )
 );
