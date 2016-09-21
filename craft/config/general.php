@@ -11,6 +11,6 @@ return array(
 	'enableCsrfProtection' => true,
 	'usePathInfo' => true,
 	'omitScriptNameInUrls' => true,
-    'siteUrl'  => 'http://omahahealthykids.org',
+    'siteUrl'  => 'http://omahahealthykids.org/',
     'devMode' => true,
 );
