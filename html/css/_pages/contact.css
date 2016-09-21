@@ -32,6 +32,10 @@
 	margin: 0 auto !important;
 }
 
+#map div {
+   background:none !important;
+}
+
 .gmnoprint a, .gmnoprint span {
    display:none;
 }
