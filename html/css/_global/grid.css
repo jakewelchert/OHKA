@@ -9,9 +9,7 @@
   margin: 0 auto;
 }
 
-
 @media (min-width: 500px) {}
-
 @media (min-width: 1200px) {}
 
 .container {
@@ -29,15 +27,11 @@
   box-sizing: border-box; 
 }
 
-
-
-
 .bp-row, .v-row { padding: 0 0 60px 0; }
 
   @media (min-width: 800px) {
   .v-row { padding: 0 0 120px 0; }
   }
-
 
 .column,
 .columns,
@@ -63,7 +57,6 @@
 @media (min-width: 800px) {
   .container, .container-fullwidth {
     max-width: 1300px; }
-
 
   .column,
   .columns {
@@ -128,7 +121,6 @@
   .offset-by-one-half.columns     { margin-left: 52%; }
 }
 
-
 /* Utilities
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .u-full-width {
@@ -142,10 +134,8 @@
 .u-pull-left {
   float: left; }
 
-
 /* Clearing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
 /* Self Clearing Goodness */
 .container:after,
 .container-fullwidth:after,
@@ -156,8 +146,6 @@
   content: "";
   display: table;
   clear: both; }
-
-
 
   @media (min-width: 1024px) and (max-width: 1440px) {
   .container-fullwidth {
