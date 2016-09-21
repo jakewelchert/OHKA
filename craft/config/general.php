@@ -23,6 +23,7 @@ return array(
     'environmentVariables' => array(
       'basePath' => '/var/www/html/',
       'baseUrl'  => 'http://omahahealthykids.org/',
+      'enableCsrfProtection' => true,
     )
   )
 );
