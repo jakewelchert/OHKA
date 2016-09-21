@@ -47,9 +47,11 @@
     {% endif %}
   {% endif %}
 
-  {% for asset in entry.visualShareGraphic %}
-    <meta property='og:image' content='{% for asset in entry.visualShareGraphic %}{{ asset.url }}{% endfor %}'>
-  {% endfor %}
+  {% if entry.visualShareGraphic is defined %}
+    {% if entry.shareGraphic is not empty %}
+      <meta property='og:image' content='{% for asset in entry.visualShareGraphic %}{{ asset.url }}{% endfor %}'>
+    {% endif %}
+  {% endif %}
 
   <link rel='icon' type='image/gif' href='{{ siteUrl }}img/ohka_fav.gif'>
 
