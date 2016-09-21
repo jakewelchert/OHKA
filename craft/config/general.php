@@ -18,7 +18,7 @@ return array(
   ),
 
   // Use IP address of your droplet below
-  '104.131.188.200' => array(
+  'omahahealthykids.org' => array(
     'siteUrl' => 'http://omahahealthykids.org/',
     'environmentVariables' => array(
       'basePath' => '/var/www/html/',
