@@ -21,6 +21,7 @@
   <title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}{% if tagline is defined %} - {{ tagline }}{% endif %}</title>
   <link rel='home' href='{{ siteUrl }}' />
   <meta name='viewport' content='width=device-width,initial-scale=1'>
+  
   {% hook 'seomaticRender' %}
 
   <!-- Facebook Entry Meta Tags -->
@@ -39,6 +40,16 @@
       <meta property='og:image' content='{% for asset in entry.shareGraphic %}{{ asset.url }}{% endfor %}'>
     {% endif %}
   {% endif %}
+
+  {% if entry.shareGraphic is defined %}
+    {% if entry.shareGraphic is not empty %}
+      <meta property='og:image' content='{% for asset in entry.shareGraphic %}{{ asset.url }}{% endfor %}'>
+    {% endif %}
+  {% endif %}
+
+  {% for asset in entry.visualShareGraphic %}
+    <meta property='og:image' content='{% for asset in entry.visualShareGraphic %}{{ asset.url }}{% endfor %}'>
+  {% endfor %}
 
   <link rel='icon' type='image/gif' href='{{ siteUrl }}img/ohka_fav.gif'>
 
