@@ -31,44 +31,41 @@
     		</div>
 		</div>
 
+
 		<div class='v-row v-row-contact six columns offset-by-three'>
-<!-- 			<form action='action_page.php'>
-				<input type='text' placeholder='Name (required)'><br>
-				<input type='text' placeholder='Email (required)'><br>
-				<textarea rows='4' cols='50' placeholder='Message (required)'></textarea> 
-				<button type='submit' value='Submit'>SUBMIT MESSAGE</button>
-			</form> -->
 
-			{% macro errorList(errors) %}
-			    {% if errors %}
-			        <ul class="errors">
-			            {% for error in errors %}
-			                <li>{{ error }}</li>
-			            {% endfor %}
-			        </ul>
-			    {% endif %}
-			{% endmacro %}
-
-			{% from _self import errorList %}
-
-			<form method="post" action="" accept-charset="UTF-8">
-			    {{ getCsrfInput() }}
-			    <input type="hidden" name="action" value="contactForm/sendMessage">
-			    <input type="hidden" name="redirect" value="contact/thanks">
-
-			    <input id="fromName" type="text" name="fromName" value="{% if message is defined %}{{ message.fromName }}{% endif %}" placeholder='Name (required)'>
-			    {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
-
-			    <input id="fromEmail" type="email" name="fromEmail" value="{% if message is defined %}{{ message.fromEmail }}{% endif %}" placeholder='Email (required)'>
-			    {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
-
-			    <textarea rows="10" cols="40" id="message" name="message" placeholder='Message (required)'>{% if message is defined %}{{ message.message }}{% endif %}</textarea>
-			    {{ message is defined and message ? errorList(message.getErrors('message')) }}
+			<form class="cd-form floating-labels" action="contact.php" method="post">
+			    <input placeholder='Name (required)' class="user" type="text" name="cf_name" id="cd-name" required><br>
+			    
+			    <input placeholder='Email (required)' class="email error" type="email" name="cf_email" id="cd-email" required><br>
+			    
+			    <textarea placeholder='Message (required)' class="message" name="cf_message" id="cd-textarea" required></textarea>
 
 			    <button type='submit' value='Submit Message' class='button'>Submit Message</button>
 				<input id="healthykidsnospam" name='healthykidsnospam' type='text'>
 			</form>
 
+			<script type="text/javascript">
+			    jQuery(document).ready(function($){
+			        if( $('.floating-labels').length > 0 ) floatLabels();
+
+			        function floatLabels() {
+			            var inputFields = $('.floating-labels .cd-label').next();
+			            inputFields.each(function(){
+			                var singleInput = $(this);
+			                //check if user is filling one of the form fields 
+			                checkVal(singleInput);
+			                singleInput.on('change keyup', function(){
+			                    checkVal(singleInput);  
+			                });
+			            });
+			        }
+
+			        function checkVal(inputField) {
+			            ( inputField.val() == '' ) ? inputField.prev('.cd-label').removeClass('float') : inputField.prev('.cd-label').addClass('float');
+			        }
+			    });
+			</script>
 
 		</div>
 
